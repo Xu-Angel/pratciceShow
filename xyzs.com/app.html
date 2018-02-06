@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>苹果IOS游戏软件推荐下载</title>
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="icon" href="img/favicon.ico">
+</head>
+
+<body>
+<div class="toolbar-wrapper">
+    <div class="toolbar-box">
+        <ul class="tool-link">
+            <li>
+                <a href="">XY苹果助手官网</a>
+            </li>
+            <li>
+                <a href="">XY手游</a>
+            </li>
+            <li>
+                <a href="">产品中心</a>
+            </li>
+            <li>
+                <a href="">开发者中心</a>
+            </li>
+            <li>
+                <a href="" class="tool-link-last">XY论坛</a>
+            </li>
+        </ul>
+        <div class="user-link">
+            <a href="">注册</a>
+            <i></i>
+            <a href="">登录</a>
+            <p>
+                <a href="javascript:void(0)" class="closeTopLoginTips"></a>
+                <span>【适龄提示】游戏适合18岁以上人群</span>
+                <em></em>
+            </p>
+        </div>
+    </div>
+</div>
+<!--toolBar end-->
+<div class="headwrapper">
+    <header>
+        <div class="logo"></div>
+        <div class="search">
+            <div class="searchbox">
+                <div class="SearchBoxLeft" id="searchBoxL">
+                    <p class="apply-img hide" ></p>
+                    <p class="consult-img"></p>
+                    <ul id="secrch_list" class="hide">
+                        <li class="applyDown-img">应用</li>
+                        <li class="consultDown-img">资讯</li>
+                    </ul>
+                </div>
+                <input id="search_info" type="text" class="SearchBoxInput" placeholder="" value="">
+                <i href="javascript:void(0)" onclick="submit_search();"></i>
+            </div>
+            <div class="wordsearch">
+                <span>搜索热词：</span>
+                <a href="">全民奇迹</a>
+                <a href="">iOS10.3</a>
+                <a href="">iPhone8尺寸设计</a>
+                <a href="">iOS10注意事项</a>
+                <a href="">未受信任的企业级开发者</a>
+            </div>
+        </div>
+    </header>
+</div>
+<!--headwraaper end-->
+<div class="menu-wrapper">
+    <div class="menu-box">
+        <nav>
+            <ul class="main-list" id="mainMenu">
+                <li>
+                    <a href="index.html" class="active">首页</a>
+                </li>
+                <li>
+                    <a href="app.html" data-num = "0">应用下载</a>
+                </li>
+                <li>
+                    <a href="guide.html" data-num = "1">苹果资讯</a>
+                </li>
+                <li>
+                    <a href="" data-num = "2">苹果教程</a>
+                </li>
+                <li>
+                    <a href="">壁纸下载</a>
+                </li>
+                <li>
+                    <a href="yueyu.html">苹果越狱</a>
+                </li>
+                <li>
+                    <a href="xuliehao.html" class="Hotpoint">产品中心</a>
+                </li>
+                <li>
+                    <a href="">保修查询</a>
+                </li>
+                <li>
+                    <a href="" class="menu-lastitem">XY手游</a>
+                </li>
+            </ul>
+            <div class="child-list" id="menuChild">
+                <ul class="child child-index hide">
+                    <li>
+                        <a href="">游戏</a>
+                    </li>
+                    <li>
+                        <a href="">软件</a>
+                    </li>
+                    <li>
+                        <a href="">专题</a>
+                    </li>
+                    <li>
+                        <a href="">排行榜</a>
+                    </li>
+                    <li>
+                        <a href="">限时免费</a>
+                    </li>
+                    <li>
+                        <a href="">装机必备</a>
+                    </li>
+                    <li>
+                        <a href="">女性专区</a>
+                    </li>
+                    <li>
+                        <a href="">榜中榜</a>
+                    </li>
+                </ul>
+
+                <ul class="child child-app hide">
+                    <li>
+                        <a href="">苹果动态</a>
+                    </li>
+                    <li>
+                        <a href="">越狱咨询</a>
+                    </li>
+                    <li>
+                        <a href="">游戏新闻</a>
+                    </li>
+                    <li>
+                        <a href="">应用资讯</a>
+                    </li>
+                    <li>
+                        <a href="">游戏测评</a>
+                    </li>
+                    <li>
+                        <a href="">应用测评</a>
+                    </li>
+                    <li>
+                        <a href="">产品动态</a>
+                    </li>
+                </ul>
+
+                <ul class="child child-news hide">
+                    <li>
+                        <a href="">实用技巧</a>
+                    </li>
+                    <li>
+                        <a href="">XY苹果助手教程</a>
+                    </li>
+                    <li>
+                        <a href="">iOS7</a>
+                    </li>
+                    <li>
+                        <a href="">iOS8</a>
+                    </li>
+                </ul>
+
+                <div class="hotconcern">
+                    <a href="">XY手游中心</a>
+                    <strong>|</strong>
+                    <a href="" style="color:#ff2500">iOS9用户必看</a>
+                    <strong>|</strong>
+                    <a href="">苹果助手</a>
+                    <span>热点关注：</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!--menu wrapper end-->
+
+<!--2017.12.16  do  main-wrap to footer-->
+<div class="main-wrap">
+    <div class="hot-section">
+        <!--轮播图-->
+        <div class="carousel" id="carousel">
+            <ul class="img-box" id="slide-box">
+                <li>
+                    <a href=""><img src="img/lunbo_1.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="img/lunbo_2.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="img/lunbo_3.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="img/lunbo_4.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href=""><img src="img/lunbo_5.jpg" alt="" /></a>
+                </li>
+            </ul>
+            <ul class="img-title" id="img-h">
+                <li>
+                    <a href="" class="fadeIn_title">拍照技术哪家强？iPhone8/8Plus拍摄功能评测</a>
+                </li>
+                <li class="hidden-it">
+                    <a href="">iPhone 8 Plus后壳摔碎了？国内修理费高达3288元</a>
+                </li>
+                <li class="hidden-it">
+                    <a href="">苹果确认iPhone 8听筒有噪音问题，将推补丁修复</a>
+                </li>
+                <li class="hidden-it">
+                    <a href="">《少年锦衣卫》手游测评：做一名真正的江湖侠客</a>
+                </li>
+                <li class="hidden-it">
+                    <a href="">iPhone 8 Plus充电中屏幕开裂！苹果称正在了解情况</a>
+                </li>
+            </ul>
+            <div class="slide-btn">
+                <span id="prev"></span>
+                <span id="next"></span>
+            </div>
+        </div>
+        <!--carousel figure end-->
+
+        <!--news-wrapper end-->
+        <div class="download-App">
+         <ul>
+             <li>
+                <a href=""></a>
+                 <div>
+                     <h4>V聊-高颜值一对一视频聊天</h4>
+                     <div>
+                         <span class="startimg"></span><a href="" class="exe">安装</a>
+                         <p><span class="num">4800</span>次下载</p>
+                     </div>
+
+                 </div>
+             </li>
+             <li>
+                 <a href=""></a>
+                 <div>
+                     <h4>V聊-高颜值一对一视频聊天</h4>
+                     <div>
+                         <span class="startimg"></span><a href="" class="exe">安装</a>
+                         <p><span class="num">4800</span>次下载</p>
+                     </div>
+
+                 </div>
+             </li>
+             <li>
+                 <a href=""></a>
+                 <div>
+                     <h4>V聊-高颜值一对一视频聊天</h4>
+                     <div>
+                         <span class="startimg"></span><a href="" class="exe">安装</a>
+                         <p><span class="num">4800</span>次下载</p>
+                     </div>
+
+                 </div>
+             </li>
+         </ul>
+        </div>
+    </div>
+    <div class="sort">
+        <h2 class="clearfix">
+            <span>游戏：</span>
+            <p>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+            </p>
+            <a href="">更多</a>
+        </h2>
+        <h2 class="clearfix">
+            <span>游戏：</span>
+            <p>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+                <a href="">必玩网游</a>
+                <strong>|</strong>
+            </p>
+            <a href="">更多</a>
+        </h2>
+    </div>
+    <!--sort end-->
+    <div class="rec clearfix">
+        <div class="recl">
+            <h2><span>游戏推荐</span><a href="">更多</a></h2>
+            <ul>
+                <li>
+                    <a href="" class="recimg"></a>
+                    <div>
+                        <h4><a href="">斗战仙魔</a></h4>
+                        <span class="startimg"></span>
+                        <p><span class="num">4800</span>次下载</p>
+                        <p>142.16MB|2017-12-12</p>
+                        <a href="" style="display: none">安装</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="recimg"></a>
+                    <div>
+                        <h4><a href="">斗战仙魔</a></h4>
+                        <span class="startimg"></span>
+                        <p><span class="num">4800</span>次下载</p>
+                        <p>142.16MB|2017-12-12</p>
+                        <a href="" style="display: none">安装</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="recimg"></a>
+                    <div>
+                        <h4><a href="">斗战仙魔</a></h4>
+                        <span class="startimg"></span>
+                        <p><span class="num">4800</span>次下载</p>
+                        <p>142.16MB|2017-12-12</p>
+                        <a href="" style="display: none">安装</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="recimg"></a>
+                    <div>
+                        <h4><a href="">斗战仙魔</a></h4>
+                        <span class="startimg"></span>
+                        <p><span class="num">4800</span>次下载</p>
+                        <p>142.16MB|2017-12-12</p>
+                        <a href="" style="display: none">安装</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="recimg"></a>
+                    <div>
+                        <h4><a href="">斗战仙魔</a></h4>
+                        <span class="startimg"></span>
+                        <p><span class="num">4800</span>次下载</p>
+                        <p>142.16MB|2017-12-12</p>
+                        <a href="" style="display: none">安装</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="recimg"></a>
+                    <div>
+                        <h4><a href="">斗战仙魔</a></h4>
+                        <span class="startimg"></span>
+                        <p><span class="num">4800</span>次下载</p>
+                        <p>142.16MB|2017-12-12</p>
+                        <a href="" style="display: none">安装</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="recimg"></a>
+                    <div>
+                        <h4><a href="">斗战仙魔</a></h4>
+                        <span class="startimg"></span>
+                        <p><span class="num">4800</span>次下载</p>
+                        <p>142.16MB|2017-12-12</p>
+                        <a href="" style="display: none">安装</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="recimg"></a>
+                    <div>
+                        <h4><a href="">斗战仙魔</a></h4>
+                        <span class="startimg"></span>
+                        <p><span class="num">4800</span>次下载</p>
+                        <p>142.16MB|2017-12-12</p>
+                        <a href="" style="display: none">安装</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="recimg"></a>
+                    <div>
+                        <h4><a href="">斗战仙魔</a></h4>
+                        <span class="startimg"></span>
+                        <p><span class="num">4800</span>次下载</p>
+                        <p>142.16MB|2017-12-12</p>
+                        <a href="" style="display: none">安装</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="recimg"></a>
+                    <div>
+                        <h4><a href="">斗战仙魔</a></h4>
+                        <span class="startimg"></span>
+                        <p><span class="num">4800</span>次下载</p>
+                        <p>142.16MB|2017-12-12</p>
+                        <a href="" style="display: none">安装</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="" class="recimg"></a>
+                    <div>
+                        <h4><a href="">斗战仙魔</a></h4>
+                        <span class="startimg"></span>
+                        <p><span class="num">4800</span>次下载</p>
+                        <p>142.16MB|2017-12-12</p>
+                        <a href="" style="display: none">安装</a>
+                    </div>
+                </li>
+                </li>
+
+            </ul>
+        </div>
+        <div class="recr">
+            <h2><span>游戏排行榜</span><a href="">更多</a></h2>
+            <ul>
+                <li class="clearfix">
+                    <em>1</em>
+                    <a href="" class="recrimg"></a>
+                    <div class="con-word">
+                        <p>途游斗地主</p>
+                        <p>评分：<span>3.00</span></p>
+                        <a href="">安装</a>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <em>1</em>
+                    <a href="" class="recrimg"></a>
+                    <div class="con-word">
+                        <p>途游斗地主</p>
+                        <p>评分：<span>3.00</span></p>
+                        <a href="">安装</a>
+                    </div>
+                </li>
+                <h>
+                    <em>1</em><span>途游斗地主</span><i>评分：3.00</i>
+                </h>
+                <li class="clearfix">
+                    <em>1</em>
+                    <a href="" class="recrimg"></a>
+                    <div class="con-word">
+                        <p>途游斗地主</p>
+                        <p>评分：<span>3.00</span></p>
+                        <a href="">安装</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--rec end-->
+    <div class="list">
+        <h><span>游戏排行榜</span><a href="">+全部</a></h>
+        <div class="list-con clearfix">
+            <ul>
+                <h><span>动作游戏</span><a href="">更多》</a></h>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+            </ul>
+            <ul>
+                <h><span>动作游戏</span><a href="">更多》</a></h>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+            </ul>
+            <ul>
+                <h><span>动作游戏</span><a href="">更多》</a></h>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+
+            </ul>
+            <ul>
+                <h><span>动作游戏</span><a href="">更多》</a></h>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+                <li class="li-con clearfix">
+                    <a href="" class="imga"></a><p><a href="">全民枪战2.0-生存竞技</a></p><span>1</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!--list end-->
+    <div class="index-partner">
+        <h3>合作伙伴</h3>
+        <div>
+            <a href="" title="移动叔叔" target="_blank">移动叔叔</a>
+            <a href="" title="移动叔叔" target="_blank">移动叔叔</a>
+            <a href="" title="2018分类信息网" target="_blank">2018分类信息网</a>
+            <a href="" title="统一手机站" target="_blank">统一手机站</a>
+            <a href="" title="移动叔叔" target="_blank">移动叔叔</a>
+            <a href="" title="2018分类信息网" target="_blank">2018分类信息网</a>
+            <a href="" title="统一手机站" target="_blank">统一手机站</a>
+            <a href="" title="2018分类信息网" target="_blank">2018分类信息网</a>
+            <a href="" title="统一手机站" target="_blank">统一手机站</a>
+            <a href="" title="移动叔叔" target="_blank">移动叔叔</a>
+            <a href="" title="移动叔叔" target="_blank">移动叔叔</a>
+            <a href="" title="2018分类信息网" target="_blank">2018分类信息网</a>
+            <a href="" title="统一手机站" target="_blank">统一手机站</a>
+            <a href="" title="移动叔叔" target="_blank">移动叔叔</a>
+            <a href="" title="2018分类信息网" target="_blank">2018分类信息网</a>
+            <a href="" title="统一手机站" target="_blank">统一手机站</a>
+            <a href="" title="移动叔叔" target="_blank">移动叔叔</a>
+            <a href="" title="2018分类信息网" target="_blank">2018分类信息网</a>
+            <a href="" title="统一手机站" target="_blank">统一手机站</a>
+            <a href="" title="移动叔叔" target="_blank">移动叔叔</a>
+            <a href="" title="2018分类信息网" target="_blank">2018分类信息网</a>
+            <a href="" title="统一手机站" target="_blank">统一手机站</a>
+            <a href="" title="2018分类信息网" target="_blank">2018分类信息网</a>
+            <a href="" title="统一手机站" target="_blank">统一手机站</a>
+            <a href="" title="移动叔叔" target="_blank">移动叔叔</a>
+            <a href="" title="2018分类信息网" target="_blank">2018分类信息网</a>
+            <a href="" title="统一手机站" target="_blank">统一手机站</a>
+            <a href="" title="移动叔叔" target="_blank">移动叔叔</a>
+        </div>
+        <!--index-partner end-->
+    </div>
+    <div class="footer clearfix">
+        <dl>
+            <dt>XY产品中心</dt>
+            <dd><a href="">电脑版XY苹果助手</a></dd>
+            <dd><a href="">XY越狱助手</a></dd>
+            <dd><a href="">XY刷机助手</a></dd>
+            <dd><a href="" class="safe"></a></dd>
+            <dd><a href="" class="shanghai"></a></dd>
+        </dl>
+        <dl>
+            <dt>关于我们</dt>
+            <dd><a href="">公司简洁</a></dd>
+            <dd><a href="">法律声明</a></dd>
+            <dd><a href="">用户协议</a></dd>
+            <dd><a href="">问题反馈</a></dd>
+            <dd><a href="">网站地图</a></dd>
+        </dl>
+        <dl>
+            <dt>越狱专区</dt>
+            <dd><a href="">越狱教程</a></dd>
+            <dd><a href="">固件下载</a></dd>
+            <dd><a href="">越狱咨询</a></dd>
+            <dd><a href="">常见错误</a></dd>
+        </dl>
+        <dl>
+            <dt>合作专区</dt>
+            <dd><a href="">开发者平台</a></dd>
+            <dd><a href="">商务合作</a></dd>
+            <dd>合作QQ:2559144787</dd>
+            <dd><a href="" class="qqcontact"></a></dd>
+        </dl>
+    </div>
+    <footer>
+        <p >Copyright © 2008 - 2017 xyzs.com All Rights Reserved.上海恺英网络科技有限公司 版权所有
+        </p>
+        <p>本站所有资源均为用户上传或网络抓取，若无意中侵犯到了您的权利请及时联系我们予以清理。<a href="">点击这里</a>。</p>
+        <p><a href="">纠纷处理</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">家长监护</a>&nbsp;&nbsp;
+            文化部网络游戏举报和联系电子邮箱：wlyxjb@gmail.com 举报电话：021-50908789-8071</p>
+        <p>抵制不良游戏， 拒绝盗版游戏。注意自我保护， 谨防受骗上当。适度游戏益脑， 沉迷游戏伤身。合理安排时间， 享受健康生活。 </p>
+        <p> 沪IAS备201703010005 丨 沪网文[2016] 2600-152号 丨 ICP证：沪B2-20100077 丨 沪ICP备10215773号-30  </p>
+        <a  href="" ><p><img src="img/beian.png" />沪公网安备 31010402003104号</p></a>
+    </footer>
+    <!--footer end-->
+</div>
+<!--main-wrap end-->
+
+<div class="share">
+    <div class="left">
+        <a href="#" class="weixin"></a>
+        <a href="#" class="weibo"></a>
+        <a href="#" class="QQ"></a>
+    </div>
+    <!--右边二维码-->
+    <div class="right"></div>
+</div>
+<!--share-end-->
+<script src="js/xyzs_lunbo.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/event.js"></script>
+</body>
+
+</html>
