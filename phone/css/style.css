@@ -1,0 +1,459 @@
+/* header */
+.header{
+	background-color: #f7f7f7;
+	position: fixed;
+	z-index: 3;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+.header__wrap{
+	width: 1200px;
+	height: 60px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.header__logo{
+	width: 150px;
+	height: 40px;
+	font-size: 20px;
+	color: #07111b;
+	line-height: 40px;
+	background: url('../images/logo.png') left top no-repeat;
+	text-indent: 50px;
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	margin-top: -20px;
+}
+
+.header__nav{
+	width: 550px;
+	height: 38px;
+	position: absolute;
+	top: 50%;
+	margin-top: -19px;
+	right:0px;
+}
+
+.header__nav-item{
+	float: left;
+	padding: 0 22px;
+	line-height: 38px;
+	font-size: 14px;
+	color: #292f35;
+	position: relative;
+}
+
+.header__nav-item:hover{
+	color: #f01400;
+}
+
+.header__nav-item_status_active{
+	color: #f01400;
+}
+
+.header__nav-btn{
+	float: left;
+	margin-left: 22px;
+	line-height: 38px;
+	font-size: 14px;
+	width: 90px;
+	height: 38px;
+	background-color: #07111b;
+	border-radius: 3px;
+	text-align: center;
+	color: #f4f4f5;
+	transition: all .5s;
+}
+
+.header__nav-btn:hover{
+	box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.header_status_scroll .header__nav-btn:hover{
+	box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+}
+
+/* 第一屏 */
+.screen-1{
+	height: 800px;
+	background: #e7e7e7 url('../images/bg-screen-1.png') no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	min-width: 1200px;
+}
+
+.screen-1__title{
+	font-size: 46px;
+	color: #f01400;
+	line-height: 46px;
+	text-align: center;
+	padding-top: 152px;
+}
+
+.screen-1__title span{
+	color: #4d555d;
+}
+
+.screen-1__phone{
+	width: 1374px;
+	height: 305px;
+	position: absolute;
+	left: 50%;
+	margin-left: -687px;
+	bottom: 179px;
+	background: url('../images/screen-1-phone.png') center no-repeat;
+	z-index: 1;
+}
+
+.screen-1__shadow{
+	width: 1234px;
+	height: 411px;
+	position: absolute;
+	left: 50%;
+	margin-left: -617px;
+	bottom: 20px;
+	background: url('../images/screen-1-shadow.png') center no-repeat;
+}
+
+/* 第二屏 */
+.screen-2{
+	height: 800px;
+	background-color: #fafafa;
+	position: relative;
+	overflow: hidden;
+	min-width: 1200px;
+}
+
+.screen-2__title{
+	font-size: 46px;
+	line-height: 46px;
+	color: #f01400;
+	text-align: center;
+	padding-top: 96px;
+}
+
+.screen-2__subtitle{
+	color: #2c3137;
+	font-size: 14px;
+	line-height: 28px;
+	padding-top: 25px;
+	text-align: center;
+}
+
+.screen-2__phone{
+	width: 928px;
+	height: 873px;
+	position: absolute;
+	left: 50%;
+	margin-left: -464px;
+	bottom: -340px;
+	background: url('../images/bg-screen-2.png') center no-repeat;
+}
+
+.screen-2__point{
+	width: 108px;
+	height: 22px;
+	font-size: 22px;
+	line-height: 22px;
+	padding-right: 112px;
+	background: url('../images/icon-point-right.png') right center no-repeat;
+	color: #4d555d;
+}
+
+.screen-2__point-right{
+	padding-left: 112px;
+	background: url('../images/icon-point-left.png') left center no-repeat;
+}
+
+.screen-2__point_i_1{
+	position: absolute;
+	left: -120px;
+	top: 190px;
+}
+
+.screen-2__point_i_2{
+	position: absolute;
+	right: 20px;
+	top: 50px;
+}
+
+.screen-2__point_i_3{
+	position: absolute;
+	right: -90px;
+	top: 350px;
+}
+
+/* 第三屏 */
+.screen-3{
+	height: 800px;
+/* 	overflow: hidden; */
+	background-color: #a71316;
+}
+
+.screen-3__wrap{
+	width: 1200px;
+	height: 800px;
+	position: relative;
+	background-color: #a71316;
+	margin: 0 auto;
+}
+
+.screen-3__title{
+	font-size: 46px;
+	line-height: 46px;
+	color: #fff;
+	padding-top: 94px;
+	padding-left: 20px;
+}
+
+.screen-3__subtitle{
+	color: #fff;
+	font-size: 14px;
+	line-height: 28px;
+	padding-top: 25px;
+	padding-left: 20px;
+}
+
+.screen-3__phone{
+	width: 729px;
+	height: 900px;
+	position: absolute;
+	right: 20px;
+	bottom: -300px;
+	background: url('../images/bg-screen-3.png') center no-repeat;
+}
+
+.screen-3__features{
+	width: 320px;
+	height: 280px;
+	position: absolute;
+	left: 20px;
+	bottom: 150px;
+}
+
+.screen-3__features__item{
+	width: 138px;
+	height: 118px;
+	color: #fff;
+	float: left;
+	border: 1px solid #cb7173;
+	border-radius: 3px;
+	margin: 0 20px 20px 0;
+	text-align: center;
+}
+
+.screen-3__features__item-num{
+	height: 36px;
+	line-height: 36px;
+	font-size: 36px;
+	padding: 28px 0 7px 0;
+}
+
+.screen-3__features__item-desc{
+	height: 14px;
+	line-height: 14px;
+	font-size: 14px;
+}
+
+/* 第四屏 */
+.screen-4{
+	height: 800px;
+	background-color: #fff;
+}
+
+.screen-4__wrap{
+	width: 1200px;
+	height: 800px;
+	position: relative;
+	overflow: hidden;
+	background-color: #fff;
+	margin: 0 auto;
+}
+
+.screen-4__title{
+	font-size: 46px;
+	line-height: 46px;
+	color: #f01400;
+	text-align: center;
+	padding-top: 136px;
+}
+
+.screen-4__subtitle{
+	color: #464a4f;
+	text-align: center;
+	font-size: 14px;
+	line-height: 28px;
+	padding-top: 29px;
+}
+
+.screen-4__phone{
+	position: absolute;
+	left: 0;
+	top: 306px;
+}
+
+.screen-4__phone__item{
+	width: 240px;
+	height: 270px;
+	float: left;
+	margin: 0 30px;
+	position: relative;
+}
+
+.screen-4__phone__item_i_1{
+	background: url('../images/phone-1.png') 12px top no-repeat;
+}
+
+.screen-4__phone__item_i_2{
+	background: url('../images/phone-2.png') 12px top no-repeat;
+}
+
+.screen-4__phone__item_i_3{
+	background: url('../images/phone-3.png') 12px top no-repeat;
+}
+
+.screen-4__phone__item_i_4{
+	background: url('../images/phone-4.png') 12px top no-repeat;
+}
+
+.screen-4__phone__item-color{
+	width: 100%;
+	font-size: 14px;
+	line-height: 14px;
+	color: #2c3238;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	bottom: -44px;
+}
+
+.screen-4__phone__item-storage{
+	width: 100%;
+	font-size: 12px;
+	line-height: 12px;
+	color: #a4a9ae;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	bottom: -66px;
+}
+
+/* 第五屏 */
+.screen-5{
+	height: 800px;
+	overflow: hidden;
+	position: relative;
+	background-color: #d9dde1;
+	min-width: 1200px;
+}
+
+.screen-5__title{
+	font-size: 46px;
+	line-height: 46px;
+	color: #f01400;
+	text-align: center;
+	padding-top: 180px;
+}
+
+.screen-5__subtitle{
+	color: #464a4f;
+	text-align: center;
+	font-size: 14px;
+	line-height: 28px;
+	padding-top: 28px;
+}
+
+.screen-5__phone{
+	width: 100%;
+	height: 433px;
+	position: absolute;
+	left: 0;
+	bottom: -120px;
+	background: url('../images/bg-screen-5.png') center top no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+/* 第六屏 */
+.screen-6{
+	height: 80px;
+	padding: 120px 0;
+	background: #2b333b url('../images/bg-screen-buy.png') center no-repeat;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+	min-width: 1200px;
+}
+
+.screen-6__btn{
+	display: inline-block;
+	width: 240px;
+	height: 80px;
+	background-color: #f01414;
+	color: #fff;
+	font-size: 24px;
+	line-height: 80px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+/* 侧导航条 sidenav */
+.sidenav{
+	position: fixed;
+	right: 0;
+	bottom: 120px;
+	padding: 5px 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, .5);
+	z-index: 10;
+	background-color: #fff;
+	transition: all 1s;
+}
+
+.sidenav__item{
+	display: block;
+	width: 40px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+	padding: 5px 0;
+	margin-top: 5px;
+	border-top: 1px solid #eee;
+	color: #93999f;
+}
+
+.sidenav__item:first-child{
+	border-top: none;
+}
+
+.sidenav__item_status_active{
+	color: #f01400;
+}
+
+/* footer */
+.footer{
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+	background-color: #07111b;
+	min-width: 1200px;
+}
+
+/* 头部导航滑动门 */
+.header__underline{
+	width: 50px;
+	height: 2px;
+	background-color: #f01400;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin-left: 11px;
+}
