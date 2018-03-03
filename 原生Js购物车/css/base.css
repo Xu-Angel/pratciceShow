@@ -1,0 +1,142 @@
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:15px; margin:0; }
+textarea { resize:none; }
+img {border:0;	vertical-align:middle;}
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#6C6C6C;
+    background:#fff
+}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a{color:#6C6C6C; text-decoration:none; }
+a:hover{color:#ff4400;}
+h1,h2,h3,h4,h5,h6{text-decoration:none;font-weight:normal;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-orange{color: #F22E00!important;}
+
+/*公共类*/
+.w{
+    width: 1200px;margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+
+/*头部公共部分开始*/
+.top{
+    height: 40px;
+    background: #F5F5F5;
+    border-bottom: #F5F5F5;
+}
+
+.tp-nav ul li{
+    float: left;
+    height: 15px;
+    margin-top: 12px;
+}
+
+.tp-nav-fl li:first-child{
+    margin-right:10px;
+}
+.tp-nav-fl li:nth-child(2){
+    margin-right: 20px;
+}
+
+.tp-nav-fr li{
+    float: left;
+    padding: 0px 10px;
+}
+.tp-nav-fr li a{
+    position: relative;
+    top: -2px;
+}
+
+.tp-nav-fr li:nth-child(5){
+    border-right: 2px solid #E1E1E9;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*<!--页脚友情链接开始-->*/
+.friendlink{
+    height: 40px;
+    margin-top: 60px;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+}
+.friendlink ul li{
+    float: left;
+    margin-left: 10px;
+}
+.friendlink ul a{
+    line-height: 40px;
+    border-right: 2px solid #E1E1E9;
+    padding-right: 10px;
+}
+.friendlink ul li:last-child a{
+    border-right: none;
+}
+.copyright{
+    height:35px;
+}
+
+.copyright ul li{
+    float: left;
+    margin-left: 10px;
+}
+.copyright ul li a{
+    line-height: 35px;
+}
+.copyright label{
+    line-height: 35px;
+    margin-left: 20px;
+}
+.permission li{
+    float: left;
+}
+.permission li label{
+    border-left: 2px solid #E1E1E9;
+    padding-left: 10px;
+    margin-left: 10px;
+    color: #9C9C9C;
+}
+.permission li:first-child label{
+    margin-left: 0;
+    border-left: none;
+}

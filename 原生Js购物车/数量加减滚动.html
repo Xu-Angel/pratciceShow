@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 300px;
+            height: 20px;
+            margin: 50px auto;
+        }
+        .box a{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: grey;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+        }
+        .box .input{
+            float: left;
+            border: 1px solid grey;
+            position: relative;
+            height: 18px;
+            overflow: hidden;
+        }
+        .input span{
+            width: 10px;
+            height: 20px;
+            font: 12px/150% '微软雅黑';
+            text-align: center;
+        }
+        .input #ten{
+            position: absolute;
+            top: 0;
+            left: 6px;
+        }
+        .input #one{
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            height: 200px;
+        }
+        #one label{
+            width: 10px;
+            height: 20px;
+            text-align: center;
+            display: block;
+        }
+        .input input{
+            text-align: center;
+            height: 18px;
+            width: 30px;
+
+            float: left;
+            outline: none;
+            border: none;
+            font: 12px/150% '微软雅黑';
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <a href="javascript:" id="minus">-</a>
+    <div class="input">
+        <input type="text" id="input" value="1">
+        <span id="ten"></span>
+        <span id="one">
+            <label>0</label>
+            <label>1</label>
+            <label>2</label>
+            <label>3</label>
+            <label>4</label>
+            <label>5</label>
+            <label>6</label>
+            <label>7</label>
+            <label>8</label>
+            <label>9</label>
+            <label>0</label>
+            <label>1</label>
+        </span>
+    </div>
+    <a href="javascript:" id="add">+</a>
+</div>
+</body>
+<script src="myJquery-1.5.js"></script>
+<script>
+    var add = $('#add');
+    var minus = $('#minus');
+    var ten = $('#ten');
+    var one = $('#one');
+    var times = 1;
+    var ten_num = 0;
+    var input = $('#input');
+    addEvent(add,'click',function () {
+        if(ten_num>=5||times >10){
+            return
+        }
+        input.value = '';
+        times++;
+        if(times == 10){
+            ten_num++;
+        }
+        var y_pos = 20*times;
+        animation(one,{top:-y_pos},function () {
+            if(times >=11){
+                times -=10;
+                one.style.top =-20* times +'px';
+            }
+        })
+        if(ten_num !=0){
+            ten.innerHTML = ten_num;
+        }else{
+            ten.innerHTML = '';
+        }
+        inputShow(times,ten_num)
+    });
+    addEvent(minus,'click',function () {
+        if((times <=1 && ten_num <=0) || times<1){
+            return
+        }
+        input.value = '';
+        times--;
+        var y_pos = 20*times;
+        animation(one,{top:-y_pos},function () {
+            if(times ==0){
+                times +=10;
+                one.style.top =-20* times +'px';
+            }
+        });
+        if(times == 9){
+            ten_num --;
+        }
+        if(ten_num !=0){
+            ten.innerHTML = ten_num;
+        }else{
+            ten.innerHTML = '';
+        }
+        inputShow(times,ten_num)
+    });
+    function inputShow(times,ten_num) {
+        if(ten_num<1){
+            one.style.left = '10px';
+        }else{
+            one.style.left = '13px';
+        }
+        var inputValue =((times ==10 ||times ==11) ?times-10 :times)+ten_num*10;
+        clearTimeout(input.timer);
+        input.timer = setTimeout(function () {
+            input.value = inputValue;
+        },500);
+    }
+    addEvent(input,'input',function () {
+        if(isNaN(this.value)){
+            var text = this.value;
+            if(text.slice(0,1)){
+                this.value =1;
+            }else {
+                this.value = text.slice(0,1);
+            }
+        }else if(this.value<0){
+            this.value =1;
+        }else if(this.value>50){
+            this.value =50;
+
+        }
+        ten_num = parseInt(this.value/10);
+        times = this.value%10;
+        if(times == 0){
+            times = 10;
+        }
+        one.style.top =-20* times +'px';
+        ten.innerHTML = ten_num;
+
+    });
+    addEvent(input,'focus',function () {
+        one.style.display = 'none';
+        ten.style.display = 'none';
+    });
+    addEvent(input,'blur',function () {
+        one.style.display = 'block';
+        ten.style.display = 'block';
+        if(ten_num<1){
+            one.style.left = '10px';
+        }else{
+            one.style.left = '13px';
+        }
+
+    });
+</script>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝网-购物车</title>
+    <link rel="shortcut icon" href="taobao.gif">
+    <link rel="stylesheet" href="css/ShoppingCar.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_508229_8k7coowcxflxr.css">
+</head>
+<body>
+<!--头部公共部分开始-->
+<div class="top">
+    <div class="tp-nav w">
+        <ul class="tp-nav-fl fl">
+            <li><a href="login.html" class="col-orange">亲，请登录</a></li>
+            <li><a href="register.html">免费注册</a></li>
+            <li><a href="javascript:">手机逛淘宝</a></li>
+        </ul>
+        <ul class="tp-nav-fr fr">
+            <li><a href="index.html" class="col-orange">淘宝网首页</a></li>
+            <li><a href="mytaobao.html">我的淘宝</a></li>
+            <li><a href="ShoppingCar.html"><i class="iconfont icon-gouwuche1 col-orange"></i>购物车<label class="col-orange" style="font-weight: bold">0</label></a></li>
+            <li><a href="javascript:"><i class="iconfont icon-wujiaoxing"></i>收藏夹<i class="iconfont icon-xiajiantouxiao"></i></a></li>
+            <li><a href="javascript:">商品分类</a></li>
+            <li><a href="javascript:">卖家中心<i class="iconfont icon-xiajiantouxiao"></i></a></li>
+            <li><a href="javascript:">联系客服<i class="iconfont icon-xiajiantouxiao"></i></a></li>
+            <li><a href="javascript:"><i class="iconfont icon-liebiao col-orange"></i>网站导航<i class="iconfont icon-xiajiantouxiao col-orange"></i></a></li>
+        </ul>
+    </div>
+</div>
+
+<!--头部logo和搜索部分-->
+<div class="w clearfix logo-box">
+    <div class="logo fl">
+        <h1 class="fl"><a href="https://www.taobao.com/" title="淘宝网">淘宝网</a></h1>
+        <h2 class="fr">购物车</h2>
+    </div>
+    <div class="fr search">
+        <span class="fl">宝贝<i class="iconfont icon-arrowdownsmall fr"></i></span>
+        <div>
+            <i class="iconfont icon-sousuo fl"></i>
+            <input type="text" class="search-input fl">
+        </div>
+        <button class="search-button fr">搜索</button>
+    </div>
+    <div class="Advertisement">
+        <img src="http://img.alicdn.com/tfscom/TB1yA71i26H8KJjy0FjXXaXepXa.png" alt=""id="img1">
+        <img src="img/small2.png" alt=""id="img2">
+    </div>
+</div>
+
+<!--页头导航nav部分-->
+<div class="nav-box w">
+    <ul class="nav fl">
+        <li><a href="">全部商品</a><span class="col-orange">6</span></li>
+        <li><a href="">降价商品</a><span class="col-orange">0</span></li>
+        <li><a href="">库存紧张</a><span class="col-orange">0</span></li>
+    </ul>
+    <div class="nav-fr fr">
+        <span class="fl">已选商品(不含运费)</span>
+        <span class="col-orange totlemoney fl">0.00</span>
+        <a href="javacript:" class="pay fl">结算</a>
+    </div>
+</div>
+
+<!--购物车主体内容开始-->
+<!--购物车标题-->
+<div class="title w clearfix">
+    <ul class="fl">
+        <li><a href="javascript:" class="select-all-box"><span class="select-all"></span>全选</a></li>
+        <li>商品信息</li>
+    </ul>
+    <ul class="fr">
+        <li><label>单价</label></li>
+        <li><label>数量</label></li>
+        <li><label>金额</label></li>
+        <li><label>操作</label></li>
+    </ul>
+</div>
+<!--商家-->
+<div class="shop-box">
+    <div class="shop-inf w">
+        <span class="shop fl"></span>
+        <span class="shop-pic fl"></span>
+        <span class="fl">店铺:</span>
+        <a href="#" class="shop-name fl">大象摄影公会</a>
+        <span class="custom fl"></span>
+        <a href="javascript:" class="coupon fl">优惠券<i class="iconfont icon-arrowdownsmall"></i></a>
+    </div>
+    <!--商品部分-->
+    <ul class="good-box w">
+        <li><span class="good fl"></span></li>
+        <li><img src="img/相机.jpg" alt=""></li>
+        <li>
+            <a href="#" class="fl">【直播教学】国行尼康D7200套机 中级单反 专业高清数码相机</a>
+            <span class="fl" title="支持信用卡支付"><img src="img/xcard.png" alt=""></span>
+            <span class="fl" title="消费者保障服务，卖家承诺商品如实描述"><img src="img/shop_save.png" alt=""></span>
+            <span class="fl" title="15天退货，退货邮费卖家承担"><img src="img/shop_back.png" alt=""></span>
+        </li>
+        <li>
+            <div><label>颜色分类：配尼康18-300 原装长焦镜头</label></div>
+            <div><label>套餐：官方标配</label></div>
+        </li>
+        <li>
+            <label class="price-old fl">￥10497.50</label>
+            <label class="price fl">￥8398.00</label>
+        </li>
+        <li>
+            <a href="javascript:" class="minus fl">-</a>
+            <input type="text" class="fl input-num" value="1">
+            <a href="javascript:" class="add fl">+</a>
+            <span class='hide'></span>
+        </li>
+        <li>
+            <label class="money col-orange">￥8398.00</label>
+        </li>
+        <li>
+            <a href="javascript:" class="move-store fl">移入收藏夹</a>
+            <a href="javascript:" class="delete fl ">删除</a>
+            <a href="#" class="like fl">相似宝贝<i class="iconfont icon-xiajiantouxiao"></i></a>
+        </li>
+    </ul>
+    <ul class="good-box w">
+        <li><span class="good fl"></span></li>
+        <li><img src="img/shop2.jpg" alt=""></li>
+        <li>
+            <a href="#" class="fl">【大象摄影】 行货 Canon/佳能M3 微单反高清数码相机美颜自拍</a>
+            <span class="fl" title="支持信用卡支付"><img src="img/xcard.png" alt=""></span>
+            <span class="fl" title="消费者保障服务，卖家承诺商品如实描述"><img src="img/shop_save.png" alt=""></span>
+            <span class="fl" title="15天退货，退货邮费卖家承担"><img src="img/shop_back.png" alt=""></span>
+        </li>
+        <li>
+            <div><label>套餐类型：官方标配</label></div>
+            <div><label>颜色分类：白色M3+15-45STM+腾龙18-200[送转接环]</label></div>
+        </li>
+        <li>
+            <label class="price-old fl">￥5437.50</label>
+            <label class="price fl">￥4350.00</label>
+        </li>
+        <li>
+            <a href="javascript:" class="minus fl">-</a>
+            <input type="text" class="fl input-num" value="1">
+            <a href="javascript:" class="add fl">+</a>
+            <span class="hide"></span>
+        </li>
+        <li>
+            <label class="money col-orange">￥4350.00</label>
+        </li>
+        <li>
+            <a href="javascript:" class="move-store fl">移入收藏夹</a>
+            <a href="javascript:" class="delete fl ">删除</a>
+            <a href="#" class="like fl">相似宝贝<i class="iconfont icon-xiajiantouxiao"></i></a>
+        </li>
+    </ul>
+    <ul class="good-box w">
+        <li><span class="good fl"></span></li>
+        <li><img src="img/shop2.jpg" alt=""></li>
+        <li>
+            <a href="#" class="fl">【大象摄影】 行货 Canon/佳能M3 微单反高清数码相机美颜自拍</a>
+            <span class="fl" title="支持信用卡支付"><img src="img/xcard.png" alt=""></span>
+            <span class="fl" title="消费者保障服务，卖家承诺商品如实描述"><img src="img/shop_save.png" alt=""></span>
+            <span class="fl" title="15天退货，退货邮费卖家承担"><img src="img/shop_back.png" alt=""></span>
+        </li>
+        <li>
+            <div><label>套餐类型：套餐八</label></div>
+            <div><label>颜色分类：M3白色+15-45STM+七工匠25 1.8[人像/送三脚架]</label></div>
+        </li>
+        <li>
+            <label class="price-old fl">￥4925.00</label>
+            <label class="price fl">￥3940.00</label>
+        </li>
+        <li>
+            <a href="javascript:" class="minus fl">-</a>
+            <input type="text" class="fl input-num" value="1">
+            <a href="javascript:" class="add fl">+</a>
+            <span class='hide'></span>
+        </li>
+        <li>
+            <label class="money col-orange">￥3940.00</label>
+        </li>
+        <li>
+            <a href="javascript:" class="move-store fl">移入收藏夹</a>
+            <a href="javascript:" class="delete fl ">删除</a>
+            <a href="#" class="like fl">相似宝贝<i class="iconfont icon-xiajiantouxiao"></i></a>
+        </li>
+    </ul>
+</div>
+<div class="shop-box">
+    <div class="shop-inf w">
+        <span class="shop fl"></span>
+        <span class="shop-pic fl"></span>
+        <span class="fl">店铺:</span>
+        <a href="#" class="shop-name fl">索尼官方旗舰店</a>
+        <span class="custom fl"></span>
+    </div>
+    <!--商品部分-->
+    <ul class="good-box w">
+        <li><span class="good fl"></span></li>
+        <li><img src="img/erji.jpg" alt=""></li>
+        <li>
+            <a href="#" class="fl">Sony/索尼 MDR-100AAP 耳机头戴式耳麦 手机游戏耳机</a>
+            <span class="fl" title="支持信用卡支付"><img src="img/xcard.png" alt=""></span>
+            <span class="fl" title="消费者保障服务，卖家承诺商品如实描述"><img src="img/shop_save.png" alt=""></span>
+            <span class="fl" title="15天退货，退货邮费卖家承担"><img src="img/shop_back.png" alt=""></span>
+        </li>
+        <li>
+            <div><label>套餐类型：官方标配</label></div>
+            <div><label>颜色分类：炭黑</label></div>
+        </li>
+        <li>
+            <label class="price fl">￥1299.00</label>
+        </li>
+        <li>
+            <a href="javacript:" class="minus fl">-</a>
+            <input type="text" class="fl input-num" value="1">
+            <a href="javascript:" class="add fl">+</a>
+            <span class='hide'></span>
+        </li>
+        <li>
+            <label class="money col-orange">￥1299.00</label>
+        </li>
+        <li>
+            <a href="javascript:" class="move-store fl">移入收藏夹</a>
+            <a href="javascript:" class="delete fl ">删除</a>
+            <a href="#" class="like fl">相似宝贝<i class="iconfont icon-xiajiantouxiao"></i></a>
+        </li>
+    </ul>
+</div>
+<div class="shop-box">
+    <div class="shop-inf w">
+        <span class="shop fl"></span>
+        <span class="shop-pic fl"></span>
+        <span class="fl">店铺:</span>
+        <a href="#" class="shop-name fl">asus华硕恩荣专卖</a>
+        <span class="custom fl"></span>
+        <a href="javascript:" class="coupon fl">优惠券<i class="iconfont icon-arrowdownsmall"></i></a>
+    </div>
+    <!--商品部分-->
+    <ul class="good-box w">
+        <li><span class="good fl"></span></li>
+        <li><img src="img/computer.jpg" alt=""></li>
+        <li>
+            <a href="#" class="fl">Asus/华硕 R RX310UA7100超薄13手提游戏轻薄便携学生笔记本电脑</a>
+            <span class="fl" title="支持信用卡支付"><img src="img/xcard.png" alt=""></span>
+            <span class="fl" title="消费者保障服务，卖家承诺商品如实描述"><img src="img/shop_save.png" alt=""></span>
+            <span class="fl" title="15天退货，退货邮费卖家承担"><img src="img/shop_back.png" alt=""></span>
+        </li>
+        <li>
+            <div><label>套餐类型：官方标配</label></div>
+            <div><label>颜色分类：玫瑰金</label></div>
+        </li>
+        <li>
+            <label class="price-old fl">￥4699.00</label>
+            <label class="price fl">￥4299.00</label>
+        </li>
+        <li>
+            <a href="javacript:" class="minus fl">-</a>
+            <input type="text" class="fl input-num" value="1">
+            <a href="javascript:" class="add fl">+</a>
+            <span class='hide'></span>
+        </li>
+        <li>
+            <label class="money col-orange">￥4299.00</label>
+        </li>
+        <li>
+            <a href="javascript:" class="move-store fl">移入收藏夹</a>
+            <a href="javascript:" class="delete fl ">删除</a>
+            <a href="#" class="like fl">相似宝贝<i class="iconfont icon-xiajiantouxiao"></i></a>
+        </li>
+    </ul>
+    <ul class="good-box w">
+        <li><span class="good fl"></span></li>
+        <li><img src="img/shop1.jpg" alt=""></li>
+        <li>
+            <a href="good.html" class="fl">【冰雪燃冬价】Asus/华硕 R _R416NA4200超薄游戏上网轻薄便携学生</a>
+            <span class="fl" title="支持信用卡支付"><img src="img/xcard.png" alt=""></span>
+            <span class="fl" title="消费者保障服务，卖家承诺商品如实描述"><img src="img/shop_save.png" alt=""></span>
+            <span class="fl" title="15天退货，退货邮费卖家承担"><img src="img/shop_back.png" alt=""></span>
+        </li>
+        <li>
+            <div><label>颜色分类：星空灰</label></div>
+            <div><label>套餐类型：官方标配</label></div>
+        </li>
+        <li>
+            <label class="price-old fl">￥3599.00</label>
+            <label class="price fl">￥3099.00</label>
+        </li>
+        <li>
+            <a href="javascript:" class="minus fl">-</a>
+            <input type="text" class="fl input-num" value="1">
+            <a href="javascript:" class="add fl">+</a>
+            <span class='hide'></span>
+        </li>
+        <li>
+            <label class="money col-orange">￥3099.00</label>
+        </li>
+        <li>
+            <a href="javascript:" class="move-store fl">移入收藏夹</a>
+            <a href="javascript:" class="delete fl ">删除</a>
+            <a href="#" class="like fl">相似宝贝<i class="iconfont icon-xiajiantouxiao"></i></a>
+        </li>
+    </ul>
+</div>
+<!--结算部分-->
+<div class="counter w">
+    <ul class="fl">
+        <li><a href="javascript:" class="select-all-box"><span class="select-all"></span>全选</a></li>
+        <li><a href="javascript:" class="delete-all">删除</a></li>
+        <li><a href="javascript:">移入收藏夹</a></li>
+        <li><a href="javascript:">分享</a></li>
+    </ul>
+    <div class="counter-fr fr">
+        <span class="pay fr">结算</span>
+        <span class="totle-money fr col-orange">0.00</span>
+        <span class="fr">合计（不含运费）:</span>
+        <div class="fr">
+            <span class="fl">已选商品</span>
+            <span class="totle-num fl col-orange">0</span>
+            <span class="fl">件<i class="iconfont icon-_weiduxiaoxishuangshangjiantou"></i></span>
+        </div>
+    </div>
+</div>
+
+<!--滚动时出现的结算模块-->
+<div class="counter w follow">
+    <ul class="fl">
+        <li><a href="javascript:" class="select-all-box"><span class="select-all"></span>全选</a></li>
+        <li><a href="javascript:" class="delete-all">删除</a></li>
+        <li><a href="javascript:">移入收藏夹</a></li>
+        <li><a href="javascript:">分享</a></li>
+    </ul>
+    <div class="counter-fr fr">
+        <span class="pay fr">结算</span>
+        <span class="totle-money fr col-orange">0.00</span>
+        <span class="fr">合计（不含运费）:</span>
+        <div class="fr">
+            <span class="fl">已选商品</span>
+            <span class="totle-num fl col-orange">0</span>
+            <span class="fl">件<i class="iconfont icon-_weiduxiaoxishuangshangjiantou"></i></span>
+        </div>
+    </div>
+</div>
+
+<!--提示模块-->
+<div id="tips-store"></div>
+<div id="tips-del">
+    <div>删除宝贝<span class="del-close fr">&times;</span></div>
+    <div>确认要删除该宝贝吗？</div>
+    <div>
+        <a href="javascript:">确认</a>
+        <a href="javascript:">取消</a>
+    </div>
+</div>
+<div id="select-only"></div>
+<!--页脚友情链接开始-->
+<div class="friendlink w">
+    <ul>
+        <li><a href="">阿里巴巴集团</a></li>
+        <li><a href="">阿里巴巴国际站</a></li>
+        <li><a href="">阿里巴巴中国站</a></li>
+        <li><a href="">全球速卖通</a></li>
+        <li><a href="">淘宝网</a></li>
+        <li><a href="">天猫</a></li>
+        <li><a href="">聚划算</a></li>
+        <li><a href="">一淘</a></li>
+        <li><a href="">阿里妈妈</a></li>
+        <li><a href="">飞猪</a></li>
+        <li><a href="">虾米</a></li>
+        <li><a href="">阿里云计算</a></li>
+        <li><a href="">云OS</a></li>
+        <li><a href="">万网</a></li>
+        <li><a href="">支付宝</a></li>
+        <li><a href="">来往</a></li>
+    </ul>
+</div>
+<div class="copyright w">
+    <ul>
+        <li><a href="">关于淘宝</a></li>
+        <li><a href="">合作伙伴</a></li>
+        <li><a href="">营销中心</a></li>
+        <li><a href="">廉政举报</a></li>
+        <li><a href="">联系客服</a></li>
+        <li><a href="">开放平台</a></li>
+        <li><a href="">诚征中心</a></li>
+        <li><a href="">联系我们</a></li>
+        <li><a href="">网站地图</a></li>
+        <li><a href="">法律声明及隐私政策</a></li>
+    </ul>
+    <label>© 2017 Taobao.com 版权所有</label>
+</div>
+<ul class="permission w clearfix">
+    <li><label>网络文化经营许可证:</label>&nbsp;&nbsp;&nbsp;<a href="">文网文[2010]040号</a></li>
+    <li><label>增值电信业务经营许可证：浙B2-20080224-1</label></li>
+    <li><label>信息网络传播视听节目许可证：1109364号</label></li>
+</ul>
+<div class="w"><img src="img/wj.gif" alt=""></div>
+
+</body>
+<script src="myJquery-1.5.js"></script>
+<script src="ShoppingCar.js"></script>
+</html>

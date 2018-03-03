@@ -1,0 +1,454 @@
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:15px; margin:0; }
+textarea { resize:none; }
+img {border:0;	vertical-align:middle;}
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#3C3C3C;
+    background:#fff
+}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a{color:#3C3C3C; text-decoration:none; }
+a:hover{color:#ff4400;}
+h1,h2,h3,h4,h5,h6{text-decoration:none;font-weight:normal;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-orange{color: #F22E00!important;}
+
+/*公共类*/
+.w{
+    width: 1100px!important;margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+
+/*顶部logo和搜索框部分*/
+
+ .logo{
+    height: 90px;
+    width: 200px;
+}
+.logo h1{
+    width: 110px;
+}
+.logo h2{
+    font: 22px/70px "";
+    color: black;
+}
+.logo h1 a{
+    display: block;
+    width: 110px;
+    height: 50px;
+    background: url("../img/icon.png")-108px 6px;
+    text-indent: -999px;
+    margin-top: 10px;
+}
+
+.search{
+    width: 515px;
+    height: 30px;
+    border: 3px solid #FF5500;
+    margin: 10px;
+}
+.search span{
+    height: 30px;
+    width: 76px;
+    background: #F5F5F5;
+    color: #6B6B6B;
+    text-align: center;
+    line-height: 24px;
+    border-right:1px solid #D1D1D1;
+}
+
+.search .icon-sousuo{
+    line-height: 30px;
+    color: #D1D1D1;
+}
+.search .search-input{
+    width: 330px;
+    height: 30px;
+
+}
+.search .search-button{
+    width: 92px;
+    height: 30px;
+    background: #FF4400;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.Advertisement{
+    height: 200px;
+    width: 200px;
+    position: fixed;
+    right: 0;
+    top: 40px;
+}
+.Advertisement img{
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: width .2s ease-in-out;
+    z-index: -1;
+}
+.Advertisement #img2{
+    width: 103px;
+    height: 103px;
+}
+/*页头导航nav部分*/
+.nav-box{
+    height: 60px;
+    border-bottom: 2px solid #E6E6E6;
+}
+.nav li {
+    width: 124px;
+    height: 10px;
+    float: left;
+    padding: 20px 0 30px 20px;
+}
+.nav li a{
+    font:bold 20px "";
+    color: black;
+}
+.nav li span{
+    font-size: 16px;
+    margin-left: 5px;
+}
+.nav li:first-child{
+    border-bottom: 2px solid #FF4400;
+}
+.nav li:first-child a{
+    color: #FF4400;
+}
+.nav li:last-child a{
+    border-right: none;
+}
+.nav-fr{
+    margin-top: 20px;
+}
+.nav-fr span{
+    margin:5px 10px;
+}
+.nav-fr span:first-child{
+    font-size: 14px;
+    color: black;
+}
+.nav-fr .pay{
+    width: 55px;
+    height: 25px;
+    background: #AAAAAA;
+    color: white;
+    cursor: not-allowed;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 25px;
+}
+
+/*购物车主要部分开始*/
+/*购物车标题部分*/
+.title ul{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.title ul li{
+    float: left;
+    color: black;
+}
+.select-all{
+    display: block;
+    width: 15px;
+    height: 15px;
+    float: left;
+    background: url("../img/shopcar_icon.png");
+}
+.title .fl li{
+    margin-left: 20px;
+}
+.title .fl li:nth-child(2){
+    margin-left: 90px;
+}
+.title .fr li{
+    margin-right: 90px;
+}
+
+/*商家部分*/
+.shop-box{
+    margin-top: 30px;
+}
+.shop-inf{
+    color: black;
+    height: 30px;
+}
+.shop-inf a{
+    color: black;
+}
+.shop-inf .shop{
+    width: 15px;
+    height: 15px;
+    background: url("../img/shopcar_icon.png");
+    margin-left: 20px;
+    margin-top: 2px;
+}
+.shop-inf .shop-pic{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    background: url("../img/shopcar_icon.png") -18px -123px;
+}
+.shop-inf .shop-name{
+    margin-left: 10px;
+}
+.shop-inf .shop-name:hover{
+    text-decoration: underline;
+}
+.shop-inf .custom{
+    width: 19px;
+    height: 19px;
+    background: url("../img/shopcar_custom.gif")-341px 238px;
+    background-size: 130px;
+    margin-left: 10px;
+}
+.shop-inf .coupon{
+    width: 75px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    margin-left: 10px;
+    margin-top: -3px;
+    color: red;
+    background: url("../img/shopcar_icon.png")-20px -75px;
+}
+
+/*商品部分*/
+.good-box{
+    height: 120px;
+    border: 1px solid #CCCCCC;
+    background: #FCFCFC;
+}
+.good-box li{
+    float: left;
+    height: 96px;
+    margin-top: 1px;
+    padding-top:20px;
+    margin-right: 10px;
+}
+.good-box li:nth-child(3){
+    width: 182px;
+}
+.good-box li:nth-child(3) span{
+    width: 15px;
+    height: 15px;
+    margin-top: 25px;
+    margin-right: 5px;
+}
+.good-box li:nth-child(4){
+    width: 172px;
+    margin-left: 50px;
+    border: 1px dashed transparent;
+}
+.good-box li:nth-child(4):hover{
+    border:1px dashed  #ff6600;
+}
+.good-box li:nth-child(5){
+    margin-left: 70px;
+    width: 50px;
+}
+.good-box li:nth-child(5) .price-old{
+    text-decoration: line-through;
+}
+.good-box li:nth-child(5) .price{
+    font-weight: bold;
+    color: black;
+}
+.good-box li:nth-child(6) a{
+    display: block;
+    background: lightgrey;
+    width: 20px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+}
+.good-box li:nth-child(6) input{
+    width: 40px;
+    height: 23px;
+    border:1px solid #AAAAAA;
+    text-align: center;
+}
+.good-box li:nth-child(6){
+    width:130px;
+    margin-left: 30px;
+    position: relative;
+}
+.good-box li:nth-child(6) span{
+    width: 83px;
+    height: 25px;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    color: orangered;
+    text-align: center;
+    line-height: 25px;
+    background: pink;
+}
+.good-box li:nth-child(7){
+    font-weight: bold;
+}
+.good-box li:last-child{
+    width: 72px;
+    float: right;
+    margin-right: 50px;
+}
+.good-box .good{
+    width: 15px;
+    height: 15px;
+    margin-left: 20px;
+    background: url("../img/shopcar_icon.png");
+}
+
+/*结算部分*/
+.counter{
+    height: 50px;
+    background: #E5E5E5;
+}
+.counter ul li{
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.counter ul li a{
+    color: black;
+}
+.counter-fr{
+    height: 50px;
+    color: black;
+    line-height: 50px;
+}
+.counter-fr .totle-money,.totle-num{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.counter-fr .pay{
+    width: 120px;
+    height: 50px;
+    background: #B0B0B0;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 2px;
+    font-size: 23px;
+    cursor: not-allowed;
+}
+/*滚动时出现的结算模块*/
+.follow{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#tips-store{
+    width: 200px;
+    height: 100px;
+    border-radius: 5px;
+    background: black;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -50px;
+    opacity: 0;
+    display: none;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-size: 15px;
+}
+
+#tips-del{
+    height: 100px;
+    background: white;
+    border: 3px solid  #aeaeae;
+    padding: 20px 20px 20px 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    display: none;
+}
+#tips-del div{
+    margin-bottom: 20px;
+    display: none;
+}
+#tips-del div:first-child{
+    color: #666666;
+    font:bold 18px '宋体';
+}
+#tips-del div .del-close{
+    width: 18px;
+    height:18px;
+    border: 1px solid transparent;
+    cursor: default;
+}
+#tips-del div .del-close:hover{
+    border: 1px solid grey;
+}
+#tips-del div:nth-child(2){
+    color: black;
+}
+#tips-del div:last-child a{
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    border: 1px solid #d9d9d9;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+#tips-del div:last-child a:hover{
+    text-decoration: underline;
+}
+#tips-del div:last-child a:first-child{
+    background: #52a0e5;
+    color: white;
+}
+#select-only{
+    width: 100%;
+    height: 100%;
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+    display: none;
+}
