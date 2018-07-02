@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/myreset.css">
+    <link rel="stylesheet" href="css/details.css">
+</head>
+<body>
+<div class="head" id="top">
+    <img src="img/head.png" alt="">
+    <img src="img/head1.png" alt="">
+</div>
+
+<div class="wrap clearfix">
+<div class="imgdiv">
+    <ul class="bigUl">
+        <li>
+            <div class="small">
+                <img src="img/small1.jpg" alt="">
+                <div class="mask"></div>
+            </div>
+            <div class="big">
+                <img src="img/big1.jpg" alt="">
+            </div>
+        </li>
+        <li>
+            <div class="small">
+                <img src="img/small2.jpg" alt="">
+                <div class="mask"></div>
+            </div>
+            <div class="big">
+                <img src="img/big2.jpg" alt="">
+            </div>
+        </li>
+        <li>
+            <div class="small">
+                <img src="img/small3.jpg" alt="">
+                <div class="mask"></div>
+            </div>
+            <div class="big">
+                <img src="img/big3.jpg" alt="">
+            </div>
+        </li>
+        <li>
+            <div class="small">
+                <img src="img/small4.jpg" alt="">
+                <div class="mask"></div>
+            </div>
+            <div class="big">
+                <img src="img/big4.jpg" alt="">
+            </div>
+        </li>
+        <li>
+            <div class="small">
+                <img src="img/small5.jpg" alt="">
+                <div class="mask"></div>
+            </div>
+            <div class="big">
+                <img src="img/big5.jpg" alt="">
+            </div>
+        </li>
+    </ul>
+    <ul class="smallUl">
+        <li class="now"><img src="img/small1.jpg" alt=""></li>
+        <li><img src="img/small2.jpg" alt=""></li>
+        <li><img src="img/small3.jpg" alt=""></li>
+        <li><img src="img/small4.jpg" alt=""></li>
+        <li><img src="img/small5.jpg" alt=""></li>
+    </ul>
+</div>
+    <div class="conLeft">
+        <img src="img/conleft.png" alt="">
+    </div>
+</div><!--main end-->
+<div class="topNav">
+    <a href="javascript:;">
+        <i></i>
+    </a>
+</div><!--topNav end-->
+<div class="fixNav">
+    <a href=""><i class="iOne"></i><span class="spanOne">我的 <br>订单</span></a>
+    <a href=""><i class="iTwo"></i><span class="spanTwo">我的 <br>地址</span></a>
+    <a href=""><i class="iThree clearfix"></i><span class="spanThree"></span></a>
+    <a href=""><i class="iFour"></i><span class="spanFour">咨询</span></a>
+</div><!--fixNav end-->
+<div style="height:2000px; width: 20px"></div><!--无意义，增加高度-->
+<script src="js/myQuery1.4.js"></script>
+<script src="js/details.js"></script>
+<script>
+        //右侧导航
+        var aArr=$('.fixNav')[0].children;
+        for(var arr=0;arr<aArr.length;arr++){
+            aArr[arr].onmouseover=function(){
+                this.style.backgroundColor='#F74A4A';
+                this.firstElementChild.style.display='none';
+
+                this.lastElementChild.style.display='block';
+            }
+            aArr[arr].onmouseout=function(){
+                this.style.backgroundColor='#F5F5F5';
+                this.firstElementChild.style.display='block';
+
+                this.lastElementChild.style.display='none';
+            }
+        }
+    var box = $('.bigUl')[0].children;
+    for(var i = 0; i < box.length; i++ ){
+        magnify(box[i]);
+    }
+        var  small=$('.smallUl')[0].children;
+    for(var s = 0; s <small .length; s++ ){
+        small[s].index=s;
+    small[s].onmouseover=function () {
+        for(var j = 0; j <small .length; j++ ){
+        box[j].style.display='none';
+        small[j].classList.remove('now');
+        }
+        box[this.index].style.display='block';
+        box[this.index].style.opacity='0';
+        animation(box[this.index],{opacity:1})
+        this.classList.add('now');
+
+    }
+    }
+    /*底部返回函数*/
+    var toTop=$('.topNav')[0];
+    window.onscroll=function(){
+        if(scroll().top>100){
+          toTop.style.display='block'
+          // animation(toTop,{opacity:1})
+    }else(
+        toTop.style.display='none'
+        // animation(toTop,{opacity:0})
+        //     animation(toTop,{opacity:0})
+    )};
+    //返回
+    window.onload = function () {
+        (toTop.onclick = function back(){
+            if (scroll().top > 0) {
+                window.requestAnimationFrame(back);//window 回调
+                window.scrollTo (0,scroll().top - (scroll().top/5));
+            }
+        })();}
+
+</script>
+</body>
+</html>
