@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>栅格系统</title>
+
+    <!-- Bootstrap -->
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .container{background-color:rgb(86, 201, 163);}
+    /* .row{height: 80px;background-color: red;} */
+    /* .col{width: 20px;background-color: blue;} */
+    /* p.col{display:inline-block} */
+    div.row div{
+      background-color: aqua;
+      border: 1px solid black;
+    }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-push-4">d</div>
+        <div class="col-lg-4 col-lg-pull-8">d</div>
+      </div>
+      <div class="row">
+        <h1>h1. Bootstrap heading</h1>
+<h2>h2. Bootstrap heading</h2>
+<h3>h3. Bootstrap heading</h3>
+<h4>h4. Bootstrap heading</h4>
+<h5>h5. Bootstrap heading</h5>
+<h6>h6. Bootstrap heading</h6>
+      </div>
+      <div class="row">
+        <p>
+          Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+
+Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+        </p>
+      </div>
+      <div class="row">
+        <p class="lead">
+          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.<small>This line of text is meant to be treated as fine print.</small>
+        </p>
+        You can use the mark tag to <mark>highlight</mark> text.
+        <del>This line of text is meant to be treated as deleted text.</del>
+        <s>This line of text is meant to be treated as no longer accurate.</s>
+        <ins>This line of text is meant to be treated as an addition to the document.</ins>
+        <u>This line of text will render as underlined</u>
+        
+      </div>
+      <div class="row">
+        <p class="text-left">Left aligned text.</p>
+<p class="text-center">Center aligned text.</p>
+<p class="text-right">Right aligned text.</p>
+<p class="text-justify">Justified text.</p>
+<p class="text-nowrap">No wrap text.</p>
+      </div>
+      <div class="row">
+        <p class="text-lowercase">Lowercased text.</p>
+<p class="text-uppercase">Uppercased text.</p>
+<p class="text-capitalize">Capitalized text.</p>
+      </div>
+      <div class="row">
+        <abbr title="attribute">attr</abbr>
+      </div>
+      <div class="row">
+        <blockquote>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </blockquote>
+      </div>
+      <div class="row">
+        <ul class="list-unstyled">
+          <li class=""></li>
+          <li class=""></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="row active">
+          <address>
+              <strong>Twitter, Inc.</strong><br>
+              1355 Market Street, Suite 900<br>
+              San Francisco, CA 94103<br>
+              <abbr title="Phone">P:</abbr> (123) 456-7890
+            </address>
+            
+            <address class="danger">
+              <strong>Full Name</strong><br>
+              <a href="mailto:#" class="danger">first.last@example.com</a>
+            </address>
+      </div>
+      For example, <code>section</code> should be wrapped as inline.
+      For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+      To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
+      To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>
+      <kbd><kbd>alt + ,</kbd>
+      <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+      <var>y</var>
+      <samp>GitHub Token: b59bdda196914d59aa71b2bbc55c7e398d045512
+          GitHub Gist: 9c9eddc8d19b31772025726cb17a30ad
+          GitHub Gist Type: Secret</samp>
+    </div>
+    <table>
+      <!-- On rows -->
+<tr class="active">...</tr>
+<tr class="success">...</tr>
+<tr class="warning">...</tr>
+<tr class="danger">...</tr>
+<tr class="info">...</tr>
+
+<!-- On cells (`td` or `th`) -->
+<tr>
+  <td class="active">...</td>
+  <td class="success">...</td>
+  <td class="warning">...</td>
+  <td class="danger">...</td>
+  <td class="info">...</td>
+</tr>
+    </table>
+
+
+    <div >
+        <form class="form-inline">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputFile">File input</label>
+              <input type="file" id="exampleInputFile">
+              <p class="help-block">Example block-level help text here.</p>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Check me out
+              </label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+    </div>
+    <div class="checkbox checkbox-inline">
+        <label>
+          <input type="checkbox" value="">
+          Option one is this and that&mdash;be sure to include why it's great
+        </label>
+      </div>
+      <div class="checkbox disabled">
+        <label>
+          <input type="checkbox" value="" disabled>
+          Option two is disabled
+        </label>
+      </div>
+      
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+          Option one is this and that&mdash;be sure to include why it's great
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          Option two can be something else and selecting it will deselect option one
+        </label>
+      </div>
+      <div class="radio disabled">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+          Option three is disabled
+        </label>
+      </div>
+      <form class="form-inline">
+          <div class="form-group">
+            <label for="exampleInputName2">Name</label>
+            <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail2">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+          </div>
+          <button type="submit" class="btn btn-default">Send invitation</button>
+        </form>
+
+
+        <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+          </label>
+          
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+          </label>
+
+          <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>添加disabled属性  禁用输入
+
+          <div class="form-group has-success">
+              <label class="control-label" for="inputSuccess1">Input with success</label>
+              <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
+              <span id="helpBlock2" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+            </div>
+            <div class="form-group has-warning">
+              <label class="control-label" for="inputWarning1">Input with warning</label>
+              <input type="text" class="form-control" id="inputWarning1">
+            </div>
+            <div class="form-group has-error">
+              <label class="control-label" for="inputError1">Input with error</label>
+              <input type="text" class="form-control" id="inputError1">
+            </div>
+            <div class="has-success">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="checkboxSuccess" value="option1">
+                  Checkbox with success
+                </label>
+              </div>
+            </div>
+            <div class="has-warning">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="checkboxWarning" value="option1">
+                  Checkbox with warning
+                </label>
+              </div>
+            </div>
+            <div class="has-error">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="checkboxError" value="option1">
+                  Checkbox with error
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group has-success has-feedback">
+                <label class="control-label" for="inputSuccess2">Input with success</label>
+                <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span id="inputSuccess2Status" class="sr-only">(success)</span>
+              </div>
+              <div class="form-group has-warning has-feedback">
+                <label class="control-label" for="inputWarning2">Input with warning</label>
+                <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+                <span id="inputWarning2Status" class="sr-only">(warning)</span>
+              </div>
+              <div class="form-group has-error has-feedback">
+                <label class="control-label" for="inputError2">Input with error</label>
+                <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                <span id="inputError2Status" class="sr-only">(error)</span>
+              </div>
+              <div class="form-group has-success has-feedback">
+                <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+                <div class="input-group">
+                  <span class="input-group-addon">@</span>
+                  <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+                </div>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+              </div>
+              <p>
+                  <button type="button" class="btn btn-primary btn-lg">（大按钮）Large button</button>
+                  <button type="button" class="btn btn-default btn-lg">（大按钮）Large button</button>
+                </p>
+                <p></p>
+                  <button type="button" class="btn btn-primary">（默认尺寸）Default button</button>
+                  <button type="button" class="btn btn-default">（默认尺寸）Default button</button>
+                </p>
+                <p>
+                  <button type="button" class="btn btn-primary btn-sm">（小按钮）Small button</button>
+                  <button type="button" class="btn btn-default btn-sm">（小按钮）Small button</button>
+                </p>
+                <p>
+                  <button type="button" class="btn btn-primary btn-xs">（超小尺寸）Extra small button</button>
+                  <button type="button" class="btn btn-default btn-xs">（超小尺寸）Extra small button</button>
+                </p>
+htm
+            <p class="text-muted">..hello how are you.</p>
+            <p class="text-primary">.hello how are you..</p>
+            <p class="text-success">.hello how are you..</p>
+            <p class="text-info">..hello how are you.</p>
+            <p class="text-warning">.hello how are you..</p>
+            <p class="text-danger">.hello how are you..</p>
+
+            <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

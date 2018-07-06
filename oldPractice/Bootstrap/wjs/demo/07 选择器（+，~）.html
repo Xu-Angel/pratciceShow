@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            font-size: 40px;
+        }
+       /* li{
+            color: red;
+        }*/
+        /*+选择器   先找到 选择器的元素  然后找这个元素的 紧邻的下一个元素*/
+       /* li + li{
+            color: green;
+        }*/
+        /*~选择器   先找到 选择器的元素  然后找这个元素的  后面所有统计的元素li*/
+        li ~ li{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li id="four">3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,337 @@
+     <!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+     <!-- Bootstrap -->
+     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav > li {
+  position: relative;
+  display: block;
+}
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.nav > li.disabled > a {
+  color: #777;
+}
+.nav > li.disabled > a:hover,
+.nav > li.disabled > a:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background-color: #eee;
+  border-color: #337ab7;
+}
+.nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.nav > li > a > img {
+  max-width: none;
+}
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+.nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+.nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.nav-tabs > li > a:hover {
+  border-color: #eee #eee #ddd;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+.nav-tabs.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+.nav-tabs.nav-justified > li {
+  float: none;
+}
+.nav-tabs.nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+.nav-tabs.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-tabs.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.nav-tabs.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+  border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li > a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .nav-tabs.nav-justified > .active > a,
+  .nav-tabs.nav-justified > .active > a:hover,
+  .nav-tabs.nav-justified > .active > a:focus {
+    border-bottom-color: #fff;
+  }
+}
+    </style>
+  </head>
+  <body>
+        <ul class="nav nav-tabs col-lg-1">
+                <li role="presentation" class="active"><a href="#">Home</a></li>
+                <li role="presentation"><a href="#">Profile</a></li>
+                <li role="presentation"><a href="#">Messages</a></li>
+        </ul>
+        <div class="well well-lg">...</div>
+
+
+        <div class="alert alert-success" role="alert">...</div>
+<div class="alert alert-info" role="alert">...</div>
+<div class="alert alert-warning" role="alert">...</div>
+<div class="alert alert-danger" role="alert">...</div>
+
+<div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+      </div>
+
+      <div class="alert alert-success" role="alert">
+            <a href="#" class="alert-link">...</a>
+          </div>
+          <div class="alert alert-info" role="alert">
+            <a href="#" class="alert-link">...</a>
+          </div>
+          <div class="alert alert-warning" role="alert">
+            <a href="#" class="alert-link">...</a>
+          </div>
+          <div class="alert alert-danger" role="alert">
+            <a href="#" class="alert-link">...</a>
+          </div>
+
+
+          <div class="jumbotron">
+                <h1>Hello, world!</h1>
+                <p>...</p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+              </div>
+
+
+              <div class="row">
+                    <div class="col-xs-6 col-md-3">
+                      <a href="#" class="thumbnail">
+                        <img src="..." alt="...">
+                      </a>
+                    </div>
+                    ...
+                  </div>
+
+                  <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+                          <span class="">60% Complete</span>
+                        </div>
+                      </div>
+
+                      <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                              <span class="sr-only">40% Complete (success)</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                              <span class="sr-only">20% Complete</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                              <span class="sr-only">60% Complete (warning)</span>
+                            </div>
+                          </div>
+                          <div class="progress ">
+                            <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              <span class="sr-only">80% Complete (danger)</span>
+                            </div>
+                          </div>
+
+
+                          <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                  <span class="sr-only">45% Complete</span>
+                                </div>
+                              </div>
+
+                              <div class="progress">
+                                    <div class="progress-bar progress-bar-success" style="width: 35%">
+                                      <span class="sr-only">35% Complete (success)</span>
+                                    </div>
+                                    <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+                                      <span class="sr-only">20% Complete (warning)</span>
+                                    </div>
+                                    <div class="progress-bar progress-bar-danger" style="width: 10%">
+                                      <span class="sr-only">10% Complete (danger)</span>
+                                    </div>
+                                  </div>
+
+
+
+                                  <div class="media">
+                                        <div class="media-left">
+                                          <a href="#">
+                                            <img class="media-object" src="../Mall/mall.qq/img/shaooping1.jpg" alt="...">
+                                          </a>
+                                        </div>
+                                        <div class="media-body">
+                                          <h4 class="media-heading">Media heading</h4>
+                                          ...
+                                        </div>
+                                      </div>
+
+
+                                      <div class="media">
+                                            <div class="media-left media-middle">
+                                              <a href="#">
+                                                <img class="media-object" src="..." alt="...">
+                                              </a>
+                                            </div>
+                                            <div class="media-body">
+                                              <h4 class="media-heading">Middle aligned media</h4>
+                                              ...dasadsadsdasdasdasdasdasdasdas
+                                            </div>
+                                          </div>
+
+                                          <ul class="list-group">
+                                                <li class="list-group-item">Cras justo odio</li>
+                                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                                <li class="list-group-item">Morbi leo risus</li>
+                                                <li class="list-group-item">Porta ac consectetur ac</li>
+                                                <li class="list-group-item">Vestibulum at eros</li>
+                                              </ul>
+
+
+                                              <div class="badge">60</div>
+
+<!-- TODO:a标签链接组    list-group   list-group-item -->
+<!-- TODO:同理按钮也是这样   list-group  list-group-item -->
+                                              <div class="list-group">
+                                                    <a href="#" class="list-group-item active disabled">
+                                                      Cras justo odio
+                                                    </a>
+                                                    <a href="#" class="list-group-item" aria-disabled="true">Dapibus ac facilisis in</a>
+                                                    <a href="#" class="list-group-item" disabled>Morbi leo risus</a>
+                                                    <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                                                    <a href="#" class="list-group-item">Vestibulum at eros</a>
+                                                  </div>
+
+                                                  <div class="list-group">
+                                                        <button type="button" class="list-group-item">Cras justo odio</button>
+                                                        <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
+                                                        <button type="button" class="list-group-item">Morbi leo risus</button>
+                                                        <button type="button" class="list-group-item">Porta ac consectetur ac</button>
+                                                        <button type="button" class="list-group-item active" >Vestibulum at eros</button>
+                                                      </div>
+
+
+                                                      <ul class="list-group">
+                                                            <li class="list-group-item list-group-item-success">Dapibus ac facilisis in</li>
+                                                            <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
+                                                            <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
+                                                            <li class="list-group-item list-group-item-danger">Vestibulum at eros</li>
+                                                          </ul>
+                                                          <div class="list-group">
+                                                            <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
+                                                            <a href="#" class="list-group-item list-group-item-info">Cras sit amet nibh libero</a>
+                                                            <a href="#" class="list-group-item list-group-item-warning">Porta ac consectetur ac</a>
+                                                            <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+                                                          </div>
+
+
+                                                          <!-- 面板组件 -->
+                                                          <div class="panel panel-default">
+                                                                <div class="panel-body">
+                                                                  Basic panel example
+                                                                </div>
+                                                              </div>
+                                                              <div class="panel">dsfdsfdsfdsf</div>
+
+
+                                                              <!-- 面板注脚 -->
+                                                              <div class="panel panel-default">
+                                                                    <div class="panel-body">
+                                                                      Panel content
+                                                                      <ul class="table">
+                                                                          <li>1</li>
+                                                                          <li>2</li>
+                                                                          <li>.</li>
+                                                                          <li>4</li>
+                                                                          <li>5</li>
+                                                                      </ul>
+                                                                    </div>
+                                                                    <div class="panel-footer">Panel footer</div>
+                                                                  </div>
+
+                                                                  <div class="dropup">
+                                                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                          Dropdown
+                                                                          <span class="caret"></span>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                                                          <li class="disabled"><a href="#">Action</a></li>
+                                                                          <li><a href="#">Another action</a></li>
+                                                                          <li class="divider"><a href="#">Something else here</a></li>
+                                                                          <li role="separator" class="divider"></li>
+                                                                          <li><a href="#">Separated link</a></li>
+                                                                        </ul>
+                                                                      </div>
+
+                                                                  
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>collapse</title>
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!--需求:一个按钮能控制某一块区块的显示和隐藏-->
+<!--
+ data-toggle="collapse"  申明组件  折叠组件
+ data-target="选择器"     设置目标控制元素  通过选择器
+ 如果是a元素也可以通过href来设置目标控制元素  选择器
+-->
+<button data-toggle="collapse" data-target="#box">按钮</button>
+<a href=".box" data-toggle="collapse">连接</a>
+<div class="btn" data-toggle="collapse" data-target="#box">divBtn</div>
+
+<!--被控制的区域-->
+<div id="box" class="box">
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+</div>
+
+
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

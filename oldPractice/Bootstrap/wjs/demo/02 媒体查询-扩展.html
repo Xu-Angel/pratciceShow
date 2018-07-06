@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>媒体查询</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            width: 1200px;
+            height: 1200px;
+            background: red;
+            margin: 0 auto;
+        }
+
+        /*超小屏设备 768px以下 */
+        /*版心容器  宽变成 100%  背景颜色  紫色*/
+        .container{
+            width: 100%;
+            background: purple;
+        }
+
+        /*小屏设备  768px-992px */
+        /*版心容器  宽变成 750px  背景颜色 蓝色*/
+        @media (min-width: 768px) {
+            .container{
+                width: 768px;
+                background: blue;
+            }
+        }
+
+        /*中屏设备  992px-1200px */
+        /*版心容器  宽变成 970px  背景颜色 绿色*/
+        @media (min-width: 992px){
+            .container{
+                width: 970px;
+                background: green;
+            }
+        }
+
+        /*大屏设备  1200px以上 */
+        /*版心容器  宽变成 1170px  背景颜色 黄色*/
+        @media (min-width: 1200px){
+            .container{
+                width: 1170px;
+                background: yellow;
+            }
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <!--响应式布局容器-->
+    <div class="container"></div>
+</body>
+</html>

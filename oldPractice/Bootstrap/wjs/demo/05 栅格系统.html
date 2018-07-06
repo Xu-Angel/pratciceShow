@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>栅格系统</title>
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .container{
+            height: 200px;
+            background: yellowgreen;
+        }
+
+        .container > .row{
+            height: 50px;
+            background: red;
+        }
+        .container > .row > div{
+            height: 50px;
+            border: 1px solid #ccc;
+        }
+        .container > .row > div > .row > div{
+            height: 30px;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+<!--响应式容器-->
+<div class="container">
+    <!--栅格系统-->
+    <!-- 行 row 可以清除父容器的左右15px内边距  -->
+    <div class="row">
+        <!--列 -->
+        <!--需求：三列平均分配一行的宽度-->
+        <!--1.可嵌套-->
+        <div class="col-xs-4">
+            <div class="row">
+                <div class="col-xs-6"></div>
+                <div class="col-xs-6"></div>
+            </div>
+        </div>
+        <!--2.偏移（Offsets）-->
+        <div class="col-xs-4">
+            <div class="row">
+                <div class="col-xs-2 col-xs-offset-4"></div>
+                <div class="col-xs-6"></div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="row">
+                <div class="col-xs-3 col-xs-push-9">3</div>
+                <div class="col-xs-9 col-xs-pull-3">9</div>
+            </div>
+        </div>
+        <!--需求：四列平均分配一行的宽度-->
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3"></div>
+    </div>
+</div>
+
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

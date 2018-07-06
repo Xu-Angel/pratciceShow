@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>container</title>
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.min.js"></script>
+    <![endif]-->
+    <!--<style>
+        .container{
+            height: 200px;
+            background: yellowgreen;
+        }
+
+        /*1.在大屏设备  显示  头  内容   脚*/
+        @media screen and (min-width: 1200px) {
+
+        }
+
+        /*2.在中屏设备  显示  内容   脚*/
+        @media screen and (min-width: 992px) and (max-width: 1200px) {
+            header{
+                display: none;
+            }
+        }
+        /*3.在小屏设备  显示  脚*/
+        @media screen and (min-width: 768px) and (max-width: 992px) {
+            header{
+                display: none;
+            }
+            section{
+                display: none;
+            }
+        }
+        /*4.在超小屏设备   显示*/
+        @media screen and (max-width: 768px) {
+            header{
+                display: none;
+            }
+            section{
+                display: none;
+            }
+            footer{
+                display: none;
+            }
+        }
+    </style>-->
+</head>
+<body>
+<!--
+1.在大屏设备  显示  头  内容   脚
+2.在中屏设备  显示  内容   脚
+3.在小屏设备  显示  脚
+4.在超小屏设备   显示
+-->
+<!--响应式工具类-->
+<div class="container">
+    <header class="hidden-md hidden-sm hidden-xs">头</header>
+    <section class="hidden-xs hidden-sm">内容</section>
+    <footer class="hidden-xs">脚</footer>
+</div>
+
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

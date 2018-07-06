@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>container</title>
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--导航条 默认样式的导航条-->
+<nav class="navbar navbar-default">
+    <!--响应式容器-->
+    <div class="container">
+        <!-- 商标区域 和 切换按钮 在移动端才会完全显示出来-->
+        <div class="navbar-header">
+            <!--切换按钮-->
+            <!--
+                data-toggle="collapse" 申明折叠组件
+                data-target="#bs-example-navbar-collapse-1"  控制ID叫。。。一个div
+
+
+                屏幕阅读器  辅助性的阅读设备
+                aria-expanded="false"
+                aria-  都是给屏幕阅读器用的
+                <span class="sr-only">Toggle navigation</span>
+                sr-only ==>>  screen read only  屏幕阅读器
+                role="button" 屏幕阅读器  作用是什么是什么角色
+
+            -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--商标区域-->
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <!--可以切换的区域 包含了 连接 表单 和 其他内容-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

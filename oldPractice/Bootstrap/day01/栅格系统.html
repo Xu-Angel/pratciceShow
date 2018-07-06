@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>栅格系统</title>
+  <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries "-->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// "-->
+  <!--[if lt IE 9]">
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script >
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+    div {
+      background-color: gold;
+      height: 40px;
+      border: 2px solid white;
+    }
+
+    p {
+      background-color: rebeccapurple;
+      height: 40px;
+      border: 2px solid black;
+    }
+
+    ul {
+      background-color: green;
+      height: 40px;
+      border: 2px solid wheat;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- 三等份 -->
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4"></div>
+  <!-- 三份不等 -->
+  <p class="col-lg-3"></p>
+  <p class="col-lg-6"></p>
+  <p class="col-lg-3"></p>
+  <!-- 两等份 -->
+  <ul class="col-lg-4"></ul>
+  <ul class="col-lg-8"></ul>
+  <!-- 混合两等份 -->
+  <!-- 达到该区间时候会生效 -->
+  <ul class="col-lg-4 col-xs-2"></ul>
+  <ul class="col-lg-4 col-xs-6"></ul>
+  <ul class="col-lg-4 col-xs-2"></ul>
+  <!-- 偏移 -->
+  <ul class="col-lg-4 col-lg-offset-0"></ul>
+  <ul class="col-lg-4 col-lg-offset-4"></ul>
+  <!-- 拉扯 -->
+  <ul class="col-lg-4 col-lg-pull-2">pull拉 方向向左👈 四份的宽度 被拉了两份 最后显示两份</ul>
+  <ul class="col-lg-4 col-lg-push-4">push推 方向向右👉</ul>
+  <!-- 标准实例 -->
+  <div class="row">
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">.col-md-8</div>
+    <div class="col-md-4">.col-md-4</div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-8">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">.col-md-6</div>
+    <div class="col-md-6">.col-md-6</div>
+  </div>
+  如果在一个 .row 内包含的列（column）大于12个，包含多余列（column）的元素将作为一个整体单元被另起一行排列。
+  <!-- 混合 -->
+  <div class="row">
+    <div class="col-xs-0 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+    <!-- Optional: clear the XS cols if their content doesn't match in height -->
+    <div class="clearfix visible-xs-block"></div>
+    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) "-->
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

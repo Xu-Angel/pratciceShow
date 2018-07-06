@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <title>container</title>
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!-- carousel  这是轮播图模块 -->
+<!-- slide     控制是否有动画 -->
+<!-- data-ride="carousel" 申明是一个轮播图组件-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- 点盒子 -->
+    <ol class="carousel-indicators">
+        <!--
+        data-target="#carousel-example-generic" 控制那个轮播图
+        data-slide-to="0"   控制轮播图索引为0的图片盒子
+        class="active" 当前对应的点
+        -->
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    </ol>
+
+    <!-- 图片盒子 -->
+    <div class="carousel-inner" >
+        <!--图片-->
+        <div class="item active">
+            <img src="../images/slide_01_2000x410.jpg" >
+        </div>
+        <div class="item">
+            <img src="../images/slide_02_2000x410.jpg">
+        </div>
+        <div class="item">
+            <img src="../images/slide_03_2000x410.jpg">
+        </div>
+        <div class="item">
+            <img src="../images/slide_04_2000x410.jpg">
+        </div>
+    </div>
+
+    <!-- 控制 -->
+    <!-- 上一张 -->
+    <!-- data-slide="prev"  切换上一张 -->
+    <a class="left carousel-control" href="#carousel-example-generic"  data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" ></span>
+    </a>
+    <!-- 下一张 -->
+    <!-- data-slide="next" 切换下一张 -->
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" ></span>
+    </a>
+</div>
+
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

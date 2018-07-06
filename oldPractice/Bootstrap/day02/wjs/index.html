@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>微金所</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <!--顶部通栏    -->
+  <header class="wjs_topBar hidden-sm hidden-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <a href="javascript:;" class="wjs_app">
+            <span class="wjs_icon wjs_icon_phone"></span>
+            <span>手机微金所</span>
+            <span class="glyphicon glyphicon-chevron-down"></span>
+            <img src="images/code.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <span class="wjs_icon wjs_icon_tel"></span>
+          <span>4006-89-4006（服务时间：9:00~21:00） 联系在线客服</span>
+        </div>
+        <div class="col-md-3">
+          <span>常见问题</span>
+          <span class="m_l">财富问答</span>
+        </div>
+        <div class="col-md-2">
+          <a href="javascript:;" class="btn btn-danger btn-xs wjs_register">免费注册</a>
+          <a href="javascript:;" class="m_l">登录</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--导航栏-->
+  <nav class="navbar wjs_nav">
+    <div class="container">
+      <!-- 移动端显示较好 -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <span class="wjs_icon wjs_icon_logo"></span>
+          <span class="wjs_icon wjs_icon_word"></span>
+        </a>
+      </div>
+
+      <!-- 导航菜单 -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="#">平台介绍</a>
+          </li>
+          <li>
+            <a href="#">平台介绍</a>
+          </li>
+          <li>
+            <a href="#">平台介绍</a>
+          </li>
+          <li>
+            <a href="#">平台介绍</a>
+          </li>
+          <li>
+            <a href="#">平台介绍</a>
+          </li>
+          <li>
+            <a href="#">平台介绍</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">Link</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--轮播图-->
+  <div id="carousel-example-generic" class="carousel slide wjs_banner" data-ride="carousel">
+    <!-- 小圆点 -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    </ol>
+
+    <!-- 轮播的内容 -->
+    <div class="carousel-inner" role="listbox" id="inner">
+
+    </div>
+
+    <!-- 左右箭头 -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    </a>
+  </div>
+  <!--交易信息-->
+  <div class="wjs_info hidden-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <a href="javascript:;">
+            <div class="media">
+              <span class="media-left wjs_icon wjs_icon_e903"></span>
+              <div class="media-body">
+                <h4 class="media-heading">支付交易保障</h4>
+                <p>银联支付全程保障资金安全</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--预约信息-->
+  <div class="wjs_book">
+
+  </div>
+  <!--产品信息-->
+  <div class="wjs_product">
+
+  </div>
+  <!--新闻-->
+  <div class="wjs_news">
+
+  </div>
+  <!--合作伙伴-->
+  <div class="wjs_partner">
+
+  </div>
+
+  <!--轮播图的模板-->
+  <script type="text/template" id="slider">
+    <%for(var i=0;i<json.length;i++){%>
+      <div class="<%=(i==0?'item active':'item')%>">
+        <%if(isMobile){%>
+          <a href="javascript" class="small">
+            <img src="<%=json[i].img%>">
+          </a>
+          <%}else{%>
+            <a href="javascript:;" style="background-image: <%=json[i].bac%>" class="big"></a>
+            <%}%>
+      </div>
+      <%}%>
+  </script>
+  <script src="lib/jquery.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="lib/template-native.js"></script>
+  <script src="js/index.js"></script>
+  <script>
+  document.documentElement.scrollLeft||document.body.scrollLeft;
+  window.onscroll
+  </script>
+</body>
+
+</html>
