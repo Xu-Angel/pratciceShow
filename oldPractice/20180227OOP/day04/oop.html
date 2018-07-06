@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function extend(P,C){
+            var p=P.prototype;
+            var c=C.prototype;
+            for(var i in p){
+                  c[i]=p[i];
+            }
+            c.cprototype=p;
+
+        }
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        function Children(fav){
+  this.fav=fav;
+  this.run=function(){}
+        }
+        var pp=new Person(18,20);
+        var cc=new Children();
+        // console.log()
+        // console.log(pp.prototype)
+        extend(Person,Children)
+     console.dir(Children)
+
+     /* 
+     为初始化 
+     载入请求
+     载入完成
+     请求交互
+     请求完成
+
+
+
+     未初始化
+     载入请求
+     载入完成
+     请求交互
+     请求完成
+
+
+     未初始化
+     载入请求
+     载入完成
+     请求交互
+     请求完成
+
+
+    未初始化
+    载入请求
+    载入完成
+    请求交互
+    请求完成
+      */
+    </script>
+</body>
+</html>

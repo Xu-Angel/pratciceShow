@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="yyy">dd></div>
+    <script>
+         function Changecolor(yy){
+             this.btn=document.getElementById(yy);
+             t=this.btn
+         }  
+         Changecolor.prototype.change=function(t){
+          t.onclick=function(){
+
+                 console.log('dd')
+           }
+             
+         }
+         var hh=new Changecolor('yyy')
+         hh.change(this)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Tiger (weight,heigth,age){
+            this.weight=weight;
+            this.height=heigth;
+            this.age=age;
+            this.run=function(){
+                alert('I can run')
+                console.log(age,heigth,weight)
+                console.log(this.weight)
+            }
+        }
+        var a=new Tiger('200','100','10')
+        // console.log(a);
+        // a.run;
+        // a.run();
+        function Car(color,brand,price){
+   this.color=color;
+   this.brand=brand;
+   this.price=price;
+   this.run=function(){
+       console.log(brand)
+   }
+        }
+        var c=new Car('red','BMW','100')
+        console.log(c)
+        console.log(c.run)
+        c.run();
+        console.log(c.run())
+        
+    </script>
+</body>
+</html>
