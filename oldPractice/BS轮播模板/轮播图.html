@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>轮播图</title>
+  <link href="./lib/css/bootstrap.min.css" rel="stylesheet ">
+  <style>
+  /*banner-img:轮播图开始*/
+.banner-img .big{
+	display: block;
+	height: 410px;	
+	background-repeat:no-repeat ;
+	background-size:cover;
+	background-position:center center;	
+}
+.banner-img .small{
+	display: block;
+	width: 100%;
+}
+.banner-img .small img{
+	width: 100%;
+}
+/*banner-img:轮播图结束*/
+p {
+  color: black;
+}
+p i{
+color:red;
+}
+#ModalBTN{
+  margin-top: 50px;
+  background-color: red;
+  outline: none;
+}
+  </style>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries "-->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// "-->
+  <!--[if lt IE 9]">
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script >
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+
+    <!-- Button trigger modal -->
+<button type="button"  id="ModalBTN" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    查看徐天仕的疑惑
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">疑惑的小猪</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <p>在进行AJXA请求的时候，突然不知道怎么模拟数据，之前都是用接口，还没想过这个问题<i class="glyphicon glyphicon-remove"></i></p>
+                <p>写了一个JSON文件，获取回来的数据是字符串,尝试用了JSON的pares，stringify和老旧的evl方法，无果</p>
+                <p>算是温习了jQuery使用AJAX和原生的AJAX,考完试后要仔细研究下，允悲😵,后面回头搞明白了，交卷了</p>
+                <p>本次考试===卒</p>
+                </div>
+        </div>
+        <div class="modal-footer" >
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary" style="display:none;">返回</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 模态框结束 -->
+
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="    position: absolute;
+  top: 68px;
+  right: 50px;
+  margin-bottom: 50px;">
+    UI是啥
+  </button>
+  <div class="collapse" id="collapseExample">
+    <div class="well" style="    text-align: right;margin-top:10px">
+      <p>考试要求：整个网站是红白主题色，美观大方</p>
+      <p>花了一些时间弄完AJAX，很确定这个才是最痛苦的</p>
+      <p>应该一开始就先构思网页先，而不是先弄轮播图</p>
+      <p>允悲🐠</p>
+    </div>
+  </div>
+ <!-- other end -->
+  </div>
+
+
+  <div class=".container">
+       	<!--轮播图-->
+         <div id="carousel-example-generic" class="carousel slide banner-img" data-ride="carousel" style="width: 80%;
+         margin: 100px 10%;">
+          <!-- 小圆点 -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+          </ol>		
+          <!-- 轮播的内容 -->
+          <div class="carousel-inner" role="listbox" id="inner">
+            
+          </div>
+    
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>   
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+  <!--轮播图的内容的模板-->
+  <script type="text/template" id="slide">
+    <%for(var i=0;i<imgInfo.length;i++){%>
+      <div class="<%=(i==0?'item active':'item')%>">
+        <%if(isMobile){%>
+          <a href="javascript:;" class="small">
+           <img src="<%=imgInfo[i].img%>" />
+          </a>
+        <%}else{%>
+          <a href="javascript:;" class="big" style="background-image:<%=imgInfo[i].bac%>">	     	
+         </a>	
+        <%}%>            
+       
+     </div>
+    <%}%>
+      
+   
+  </script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) "-->
+  <script src="./lib/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<script>
+
+	/*($.ajax(
+			{ 
+				type:'get',
+				url:'./imgInfo.json',
+				dataType:'json',
+				success:function(e){
+						 imgInfo=e.responseText;
+				},
+				error:function(e){
+					 imgInfo=e.responseText;
+           console.log(imgInfo);
+           console.log(imgInfo.trim())
+                    console.log(imgInfo.split(','));
+                   imgInfo= imgInfo.split(',')
+           console.log(typeof imgInfo);
+          //  console.log(imgInfo.lenght);
+          //  console.log(JSON.parse(e.responseText))
+
+				}
+	 
+		 }
+     ));*/
+  
+
+</script>
+
+  <script src="./lib/js/bootstrap.min.js"></script>
+  
+  <script src="./lib/template-web.js"></script>
+  <script src="./index.js"></script>
+  <script>
+  
+  </script>
+</body>
+</html>
