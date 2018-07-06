@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+    /*
+    绘制图片：
+    ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h);
+
+    绘制阴影：
+    Ø shadowColor  ：   设置或返回用于阴影的颜色
+    Ø shadowBlur   ：   设置或返回用于阴影的模糊级别,大于1的正整数，数值越高，模糊程度越大
+    Ø shadowOffsetX：   设置或返回阴影距形状的水平距离
+    Ø shadowOffsetY：   设置或返回阴影距形状的垂直距离
+
+    绘制渐变：
+    ctx.createLinearGradient(x0,y0,x1,y1);
+    x0:起点的横坐标
+    y0:起点的纵坐标
+    x1:结束点的横坐标
+    y1:结束点的纵坐标
+    grd.addColorStop(0,"black");  //添加一个渐变颜色，第一个参数介于 0.0 与 1.0 之间的值，表示渐变中开始与结束之间的位置。
+    grd.addColorStop(1,"white");  //添加一个渐变颜色
+    ctx.fillStyle =grd;           //关键点，把渐变设置到 填充的样式
+    ctx.fill();
+
+    绘制背景图：
+    var bg = ctx.createPattern(img,"repeat")；
+    ctx.fillStyle = bg;
+    ctx.fill();
+
+    变形：
+    scale，translate，rotate ，ctx.save(),ctx.restore();
+
+    canvas转base64:
+    canvas.toDataURL
+
+    作业：
+    上下左右走动；
+    项目（1遍）；
+     */
+    </script>
+    </body>
+</html>

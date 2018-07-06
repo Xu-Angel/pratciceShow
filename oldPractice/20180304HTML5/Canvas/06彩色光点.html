@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            div{
+
+                width: 500px;
+                margin:50px auto;
+            }
+        </style>
+    </head>
+    <body>
+    <div>
+        <canvas id="canvas">
+        您的浏览器不支持canvas
+        </canvas>
+    </div>
+    <script type="text/javascript">
+        var canvas = document.getElementById('canvas');
+        canvas.width=500;
+        canvas.height=500;
+        var ctx = canvas.getContext("2d");
+        /*        
+        如果我鼠标在（x,y）,
+        小光点圆心：（[x-50]+Math.random()*100,[y-50]+Math.random()*100）,
+        小光点半径：Math.random()*15
+        小光点颜色：rgba(Math.random()*255,Math.random()*255,0,0-1);
+        小光点个数：Math.random()*15+10
+        */
+        canvas.onclick=function(e){
+            canvas.width=500;
+            canvas.height=500;
+            var num = Math.ceil(Math.random()*15+10);
+            var x = e.clientX-canvas.offsetLeft;
+            var y = e.clientY-canvas.offsetTop;
+            for(var i=0;i<num;i++){
+                ctx.beginPath();
+                ctx.arc((x-50)+Math.random()*100,(y-50)+Math.random()*100,Math.random()*15,0,2*Math.PI);
+                ctx.fillStyle = 'rgba('+Math.ceil(Math.random()*255)+','+Math.ceil(Math.random()*255)+',0,'+Math.random()+')';
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+    </script>
+    </body>
+</html>

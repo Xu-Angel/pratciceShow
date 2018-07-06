@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义播放器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0px;
+        }
+        p{
+            cursor: pointer;
+        }
+        .container{
+            min-width: 600px;
+            width: fit-content;
+            height: 400px;
+            background: #000;
+            margin:50px auto;
+            padding:5px;
+            color:white;
+            font-size:12px;
+        }
+        .mainContainer{
+            float: left;
+            width: 495px;
+            /* width: fit-content; */
+            height: 400px;
+            margin-right:5px;
+            background: gray;
+
+        }
+        .mainContainer video{
+            width: 100%;
+        }
+        .listContainer{
+            float: left;
+            min-width: 100px;
+            height: 400px;
+            width: fit-content;
+        }
+        .videoContainer{
+            height: 340px;
+            text-align: center;
+            max-width:495px;
+        }
+        video{
+            height: 300px;
+            margin-top:20px;
+        }
+        .processContainer{
+            height: 10px;
+            background: lightblue;
+            border-radius: 5px;
+            position: relative;
+        }
+        .passContainer{
+            width: 0px;
+            height: 10px;
+            border-radius: 5px;
+            background: darkorange;
+        }
+        .controlsContainer{
+            height: 26px;
+            padding-top:13px;
+        }
+        .point{
+            width: 14px;
+            height: 10px;
+            border-radius: 5px;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        ul li{
+            float: left;
+            margin:5px;
+        }
+        label,.play,.sound,.time,.full{
+            height: 25px;
+            padding:0 10px;
+            line-height: 25px;
+            text-align: center;
+            display: block;
+            border-radius: 5px;
+            background: darkorange;
+            cursor: pointer;
+        }
+        input[type="file"]{
+            display: none;
+        }
+        .now{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mainContainer">
+            <div class="videoContainer">
+                <video src="" poster="./1520354264.jpg"></video>
+            </div>
+            <div class="processContainer">
+                <div class="passContainer"></div>
+                <div class="point"></div>
+            </div>
+            <div class="controlsContainer">
+                <ul>
+                    <li>
+                        <label for="open" class="open">打开</label>
+                        <input type="file" id="open">
+                    </li>
+                    <li>
+                        <span class="play">播放</span>
+                    </li>
+                    <li>
+                        <span class="sound">静音</span>
+                    </li>
+                    <li>
+                        <span class="time">00:00/0:0</span>
+                    </li>
+                    <li>
+                        <span class="full">全屏</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="listContainer">
+  <p>播放列表：</p>
+        </div>
+    </div>
+<script>
+    /*
+    * 需求分析：
+    * 1、打开视频（input type=“file”/拖拽）
+    * 2、播放列表（通过点击播放列表可以播放视频）
+    * 3、播放/暂停
+    * 4、进度条（点击/拖拽）
+    * 5、静音/声音调节
+    * 6、全屏
+    * 7、下一个/上一次
+    * 8、当前播放的时间/总时长
+    * */
+    //0、获取DOM元素
+    const openBtn = document.querySelector("input[type='file']");
+    const playBtn = document.querySelector(".play");
+    const soundBtn = document.querySelector(".sound");
+    const video = document.querySelector("video");
+    const timeBtn = document.querySelector(".time");
+    const processContainer = document.querySelector(".processContainer");
+    const fullBtn = document.querySelector(".full");
+    const point = document.querySelector(".point");
+    let totalWidth = processContainer.offsetWidth-point.offsetWidth;//进度条的总长度
+    const passContainer = document.querySelector(".passContainer");
+    let listContainer=document.querySelector('.listContainer');
+    let videoArr=[];
+    let fileArr=[];
+    //1、打开视频（input type=“file”/拖拽）
+    openBtn.onchange=function(){
+        console.log('hi',openBtn.files.length)
+            const fr = new FileReader();
+        const file = openBtn.files[0];
+        fr.readAsDataURL(file);
+        fr.onloadend = function(){
+            // console.log(fr.result)
+            videoArr.push(fr);
+            fileArr.push(file)
+            video.src=fr.result;//默认最后一个播放
+        let child= document.createElement('p');
+        child.innerHTML=file.name;
+            listContainer.appendChild(child)
+            child.addEventListener('click',toggleVideo)
+             child.addEventListener('click',clearClass)
+        
+        }
+        
+     
+    }
+    function toggleVideo(){//视频列表切换视频
+                for(let i=0;i<fileArr.length;i++){
+                   if(this.innerText==fileArr[i]['name']) {
+                       video.src=videoArr[i].result;
+                       video.play();
+                   }
+                }
+            }
+            function clearClass(){
+                const pArr=document.querySelectorAll('p');
+                for(let i=0;i<fileArr.length+1;i++){
+                         pArr[i].classList.remove('now');
+                }
+                this.classList.add('now')
+            }
+    video.oncanplay=function(){
+
+        //3、播放/暂停
+        playBtn.onclick=function(){
+            console.log(video.src)
+            clickToggle('toggle');
+            if(video.paused){
+                video.play()
+                playBtn.innerHTML = "暂停";
+            }else{
+                video.pause();
+                playBtn.innerHTML = "播放"
+            }
+
+        }
+        function clickToggle(to){
+            let src=video.src;
+            let tmpName;
+            for(let i=0;i<videoArr.length;i++){
+               if(src==videoArr[i]['result']){
+                          tmpName=   fileArr[i]['name']
+               }
+            }
+           const  pArr=document.querySelectorAll('p');
+           for(let i=0;i<videoArr.length+1;i++){
+                   if(pArr[i].innerText==tmpName){
+                           'toggle'==to?     pArr[i].classList.toggle('now'):   pArr[i].classList.add('now')
+                   }
+           }
+        }
+        //4、点击进度条
+        processContainer.onclick=function(e){
+            const processContainer = document.querySelector(".processContainer");
+            let passWidth = e.clientX - processContainer.offsetLeft;
+            //小圆点定位到你点击的位置
+            let percent = passWidth>totalWidth?1:passWidth/totalWidth;
+            point.style.left = percent*totalWidth+"px";
+            //pass的宽度发生变化
+            passContainer.style.width = percent*totalWidth+"px";
+            //视频进度要切换到相应位置
+            video.currentTime = video.duration*percent;
+            video.play();
+            clickToggle('add');
+        }
+        //5、静音，切换类名
+        soundBtn.onclick=function(){
+            if(video.muted){
+                video.muted = false;
+                soundBtn.innerHTML = "静音"
+            }else{
+                video.muted = true;
+                soundBtn.innerHTML = "有声"
+            }
+        }
+        //6、全屏:requestFullScreen() 开启全屏显示   cancelFullScreen()关闭全屏显示
+        //webkitRequestFullScreen(),mozRequestFullScreen()
+        fullBtn.onclick=()=>{
+            if(video.webkitRequestFullScreen){
+                video.webkitRequestFullScreen();
+            }else if(video.mozRequestFullScreen){
+                video.mozRequestFullScreen();
+            }else{
+                video.requestFullScreen();
+            }
+
+        }
+        //8、当前播放的时间/总时长
+        video.ontimeupdate = function(){
+            //获取总时长
+            const total = parseInt(video.duration);
+            let totalMinute ;
+            let totalSecond ;
+            if(isNaN(total)){
+                totalMinute=0;
+                totalSecond=0;
+            }else{
+                 totalMinute = parseInt(total/60)<10?"0"+parseInt(total/60):parseInt(total/60);
+             totalSecond = total%60;
+            totalSecond<10?"0"+totalSecond:totalSecond
+            }
+           
+            //获取当前播放时长
+            const pass = parseInt(video.currentTime);
+            let percent=pass/total;
+            point.style.left = percent*totalWidth+"px";
+            //pass的宽度发生变化
+            passContainer.style.width = percent*totalWidth+"px";
+            let passMinute = parseInt(pass/60);
+            passMinute=(passMinute<10?"0"+passMinute:passMinute);
+            let passSecond = pass%60;
+            passSecond=(passSecond<10?"0"+passSecond:passSecond);
+            timeBtn.innerHTML = passMinute+":"+passSecond+"/"+totalMinute+":"+totalSecond
+        }
+
+
+
+    }
+
+</script>
+</body>
+</html>

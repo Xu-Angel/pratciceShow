@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>擦除效果</title>
+    <style type="text/css">
+        *{
+                margin: 0;
+                padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        div{
+
+                width: 500px;
+                margin:0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <canvas id="canvas">
+        您的浏览器不支持canvas
+        </canvas>
+    </div>
+<script type="text/javascript">
+    var canvas = document.getElementById('canvas');
+    canvas.width = 500;
+    canvas.height = 500;
+    var ctx = canvas.getContext('2d');
+    /*
+    ctx.createLinearGradient(x0,y0,x1,y1);
+    x0:起点的横坐标
+    y0:起点的纵坐标
+    x1:结束点的横坐标
+    y1:结束点的纵坐标
+    grd.addColorStop(0,"black");  //添加一个渐变颜色，第一个参数介于 0.0 与 1.0 之间的值，表示渐变中开始与结束之间的位置。
+    grd.addColorStop(1,"white");  //添加一个渐变颜色
+    ctx.fillStyle =grd;           //关键点，把渐变设置到 填充的样式
+    */
+    var grd = ctx.createLinearGradient(100,100,400,400);
+    grd.addColorStop(0,'red');
+    grd.addColorStop(0.5,'purple');
+    grd.addColorStop(1,'yellow');
+    ctx.fillStyle = grd;
+    ctx.font = "200px '微软雅黑'";
+    ctx.textBaseline = 'top';
+    ctx.fillText('abc',100,100);
+
+</script>
+</body>
+</html>

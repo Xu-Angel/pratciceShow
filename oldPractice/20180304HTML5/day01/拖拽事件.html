@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .from,.to{
+            width: 300px;
+            height: 300px;
+            background: lightyellow;
+            float: left;
+            margin:50px;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            font-size:24px/40px "微软雅黑";
+            cursor: pointer;
+            background: deeppink;
+        }
+    </style>
+</head>
+<body>
+<!--开启拖拽：draggable=“true”-->
+    <div class="from">
+        <ul>
+            <li draggable="true">1</li>
+            <li draggable="true">2</li>
+            <li draggable="true">3</li>
+            <li draggable="true">4</li>
+            <li draggable="true">5</li>
+        </ul>
+    </div>
+    <div class="to">
+        <ul></ul>
+    </div>
+</body>
+<script>
+    /* draggable="true" */
+    // (源事件)拖拽元素：ondragstart，ondrag(类似onmousemove)，ondragend（拖拽操作结束）
+    // （）目标元素：ondragenter（鼠标指针第一次进入）,ondragover（当对象拖动到目标对象式触发）,ondrop（当拖动操作目标元素中执行投放时）,ondragleave（被拖动对象离开目标对象）
+    // 选定li标签
+    const liArr = document.querySelectorAll('li');
+    //选定目标元素
+    const target = document.querySelector(".to");
+    let tmp=null;
+   /*  li.ondragstart=function(){
+        console.log("dragstart")
+    };
+   */
+    for(let i=0;i<liArr.length;i++){
+        liArr[i].ondrag=function(){
+         tmp=this;
+    };
+    }
+/*     li.ondragend=function(){
+        console.log("dragend")
+    }; */
+    target.ondragenter=function(e){
+        // e.preventDefault();
+        console.log('dragenter')
+    };
+    target.ondragover=function(e){   /* 要在里面的时候禁止默认事件 */
+        e.preventDefault();
+        console.log("dragover")
+    };
+    target.ondragleave=function(e){
+        // e.preventDefault();
+        console.log("dragleave")
+    };
+    target.ondrop=function(e){
+        // e.preventDefault();
+        this.children[0].appendChild(tmp)
+    
+        console.log('drop')
+    }
+</script>
+</html>

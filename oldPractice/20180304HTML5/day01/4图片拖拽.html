@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片拖拽</title>
+    <style>
+        .from,.to{
+            width: 300px;
+            height:300px;
+            background: powderblue;
+            float: left;
+        }
+       .to{
+           float: right;
+       }
+    </style>
+</head>
+<body>
+    <!-- 图片从一个地方拖拽到另一个地方，也可以拖动回去 -->
+    <div class="from">
+    <img src="./shaooping1.jpg" alt="" draggable="true">
+        
+    </div>
+    <div class="to"></div>
+    <script>
+        const imgOld=document.querySelector('img');
+        const target=document.querySelector('.to');
+        const from=document.querySelector('.from');
+        //临时
+        let tmp=null;
+        imgOld.addEventListener('drag',function(){
+            tmp=this;
+        })
+        target.addEventListener('dragover',function(e){
+            e.preventDefault();
+            
+        })
+        from.addEventListener('dragover',function(e){
+            e.preventDefault();
+        })
+        target.addEventListener('drop',function(e){
+            this.appendChild(tmp);
+        })
+        from.addEventListener('drop',function(e){
+            this.appendChild(tmp);
+        })
+       
+    </script>
+</body>
+</html>

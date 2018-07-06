@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas>
+
+    </canvas>
+    <script>
+    const  canvas=document.querySelector('canvas'),
+           cxt=canvas.getContext('2d');//得到canvas的上下文对象getContext（‘2d/wedgl’）
+//坐标 最左上角（0，0） 向右X增大，向下y增大
+//绘制起点
+canvas.width=400;canvas.heigth=400;
+
+
+//画
+cxt.beginPath();
+cxt.moveTo(50,50);
+cxt.lineTo(350,50);
+cxt.lineTo(350,350);
+cxt.lineTo(50,350);
+cxt.lineTo(50,50);
+cxt.closePath()
+/* cxt.moveTo(50,50);
+cxt.lineTo(50,350);
+cxt.moveTo(50,250);
+cxt.lineTo(350,350); */
+cxt.fill.Style='red';
+cxt.fill();
+
+cxt.stroke();
+
+
+
+    </script>
+
+</body>
+</html>

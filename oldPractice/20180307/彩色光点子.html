@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>彩色光点子</title>
+    <style>
+    canvas{
+    background: cornsilk;
+    }
+    </style>
+</head>
+<body>
+        <canvas id="canvas" width="1000px" height="600px"></canvas>
+<script>
+        //
+        const canvas=document.querySelector('canvas');
+        const canWidth=canvas.width,canHeight=canvas.height;
+        const context=canvas.getContext('2d');
+        //生成彩色圆  
+        canvas.onmousedown=function(){
+            canvas.onmousemove=creCircle
+
+        };
+        document.onmouseup=function(){
+            canvas.onmousemove=null;
+        }
+        
+        canvas.onclick=creCircle;
+
+        
+        function creCircle(){
+        let x=event.clientX,y=event.clientY;
+            //清空画布
+            context.clearRect(0,0,1000,600)
+            //遍历生成彩色光点
+     for(let i=0;i<7;i++){
+    //随机颜色
+    let r=Math.floor(Math.random()*255),
+        g=Math.floor(Math.random()*255),
+        b=Math.floor(Math.random()*255);
+        a=Math.random();
+        //随机半径
+        let radius=Math.floor(Math.random()*30);
+        //随机起始点
+        let docX=Math.floor(Math.random()*155)
+        let docY=Math.floor(Math.random()*155)
+        //获取鼠标位置
+        context.beginPath();
+           context.arc(x+docX,y+docY,radius,0,2*Math.PI,true);
+           context.fillStyle="rgba("+r+","+g+","+b+","+a+")";
+           context.closePath();
+           context.fill();
+     }
+            }
+</script>
+</body>
+</html>

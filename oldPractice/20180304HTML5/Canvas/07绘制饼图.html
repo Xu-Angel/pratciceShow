@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            div{
+
+                width: 500px;
+                margin:50px auto;
+            }
+    </style>
+</head>
+<body>
+<div>
+    <canvas id="canvas">
+        您的浏览器不支持canvas
+    </canvas>
+</div>
+<script type="text/javascript">
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = 500;
+    canvas.height = 500;
+    var one = 1/180*Math.PI;
+    var data = [
+        {
+            value:0.2,
+            color:"red",
+            text:"小学生"
+        },{
+            value:0.1,
+            color:"yellow",
+            text:"初中生"
+        },{
+            value:0.3,
+            color:"blue",
+            text:"高中生"
+        },{
+            value:0.4,
+            color:"pink",
+            text:"大学生"
+        }
+    ];
+    var s = 0;//开始弧度为0;
+    var e = s + 2*Math.PI*data[0].value;//结束弧度为0;
+    var i=0;//记录当前是数组中的第几个
+    // for(var i=0;i<data.length;i++){
+    //     end = start + 2*Math.PI*data[i].value;
+    //     ctx.beginPath();
+    //     ctx.moveTo(250,250);
+    //     ctx.arc(250,250,200,start,end);
+    //     ctx.closePath();
+    //     ctx.fillStyle = data[i].color;
+    //     ctx.fill();
+    //     start = end;
+    // }
+    function animate(obj,start,end){
+        var num =0;
+        console.log(end)
+        obj.timer = setInterval(function(){
+            if(start+(++num)*one>end){
+                clearInterval(obj.timer);
+                if(++i<data.length){
+                    s=e;
+                    e=s+2*Math.PI*data[i].value;
+                    animate(data[i],s,e);
+                }else{
+                    return;
+                }
+            }
+            ctx.beginPath();
+            ctx.moveTo(250,250);
+            ctx.arc(250,250,200,start,start+one*num);
+            ctx.closePath();
+            ctx.fillStyle = obj.color;
+            ctx.fill();
+        }, 1000/60)
+    }
+    // for(var i=0;i<data.length;i++){
+    //     e = s + 2*Math.PI*data[i].value;
+    //     animate(data[i],s,e);
+    //     s = e;
+    // }
+    animate(data[0],s,e);
+</script>
+</body>
+</html>
