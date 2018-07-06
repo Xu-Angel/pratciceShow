@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font-family: '黑体';
+        }
+    </style>
+</head>
+<body>
+<script>
+    for(var i=0;i<7;i++){
+        for(var k=0;k<7-i-1;k++){
+            document.write('&nbsp;')
+        }
+        for(var j=0;j<2*i+1;j++){
+            document.write('*')
+        }
+        document.write('<br/>')
+    }
+    for(var i=1;i<=9;i++){
+        for( var j=1;j<=i;j++){
+            document.write(i + 'x' + j + '=' + i*j);
+            document.write(' ')
+        }
+        document.write('<br/>')
+    }
+</script>
+</body>
+</html>

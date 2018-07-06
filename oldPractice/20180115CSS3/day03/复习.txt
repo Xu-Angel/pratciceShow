@@ -1,0 +1,105 @@
+选择器
+    基本
+        *
+        元素(标签)
+        #
+        .class
+        元素1, 元素2(群组)
+    层次
+        E F
+        E>F
+        E+F
+        E~F
+    伪类
+        动态
+            E:link
+            E:visited
+            E:hover
+            E:focus
+            E:active
+        目标
+            E:target
+        语言
+            :lang(zh)
+        form元素状态
+            E:checked
+            E:enabled
+            E:disabled
+        否定
+            E:not(:hover)
+        结构
+            E:first-child
+            E:last-child
+            E:first-type-of
+            E:last-type-of
+            E F:nth-child
+            E F:nth-last-child
+            E F:nth-type-of
+            E F:nth-last-type-of
+            E:only-child
+            E:not-of-type
+            E:empty
+            html:root
+    属性
+        E[attribute]
+        E[attribute=val]
+        E[attribute|=val]
+        E[attribute~=val]
+        E[attribute*=val]
+        E[attribute^=val]
+        E[attribute$=val]
+    伪元素
+        E::first-letter
+        E::first-line
+        E::selection
+        E::before
+        E::after
+
+边框
+    border-width
+    border-color
+    border-style
+        none
+        hidden
+        dotted*
+        dashed*
+        double*
+        groove
+        ridge
+        inset
+        outset
+        solid*
+    兼容
+        -webkit
+        -ms
+        -o
+        -moz
+    -moz-border-top-colors
+    -moz-border-right-colors
+    -moz-border-bottom-colors
+    -moz-border-left-colors
+
+    border-image:rul [number|percentage]{1,4} [round|repeat|stretch]
+        border-image-source:url()
+        border-image-slice:[number|percentage]{1,4}
+        border-image-repeat:[round|repeat|stretch]
+    border-radius: none|[number]{1,4}|[number]{1,4}/[number]{1,4}
+    box-shadow:[inset] x y blur-radius [spread-radius] color
+背景
+    background-color
+    background-image
+    background-repeat
+    background-position
+    background-origin:padding-box|content-box|border-box
+    background-clip:border-box|padding-box|content-box
+    background-size:auto|[number|percentage]{1,2}|cover|contain
+
+
+
+
+
+
+
+
+
+

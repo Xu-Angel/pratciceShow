@@ -1,0 +1,5 @@
+body {
+  counter-reset: revert;
+  color: red;
+  background: red;
+}

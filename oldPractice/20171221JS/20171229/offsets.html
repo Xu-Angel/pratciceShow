@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+#box3{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 200px;
+    background-color: #666666;
+}
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<div id="b0x2"></div>
+<div id="box3"></div>
+<script>
+var box=document.getElementById('box3');
+var i=0;
+setInterval(function () {
+    /*if(box.offsetLeft>500){
+        i-=3;
+    }else{
+        i+=3;
+    }*/
+    box.offsetLeft>500?i-=3:i+=3;
+    box.style.left= box.offsetLeft+ i + 'px';
+},100)
+    /**
+    *@param:
+    *@author:Angel
+    *@function:
+    *@arguments：
+    */
+</script>
+</body>
+</html>

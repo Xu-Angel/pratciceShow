@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <li class="line">10</li>
+    <li class="line">2</li>
+    <li class="line">3</li>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    var lis=$('.line');/* jQuery对象 */
+    lis.click(function(){/* jQuery方法 */
+        console.log("dd")
+    });
+   /*  lis.addEventlistener('click',function () {
+        console.log("you click me")
+    }) */
+    console.log(lis);
+    console.log(lis.eq(0))
+    var lisDom=lis[0];/* DOM对象 */
+    lisDom.addEventListener('click',function(){/* JS原生方法 */
+        console.log("you click me")
+    })
+    console.log(lisDom)
+    console.log($("li:eq(2)"))/* 匹配下标 从零开始 */
+    console.log($("li:odd"))/* 匹配 基数 */
+    console.log($("li:even"))/* 匹配 偶数 */
+    console.log($('li').children())/* 该孩子（直接子元素）如找UL的儿子li */
+    console.log($('li').siblings())/* 查找所有兄弟元素，不包括自己 */
+    console.log($('li').eq(2))/* eq 方法 */
+
+    /* ---------------CSS操作 */
+    lis.eq(0).css('color','black');  
+    lis.eq(1).css({"color" : "red",'width':'90',})
+    /* ------获取样式 */
+   console.log( lis.eq(1).css('width'));/* 返回字符串带单位 */
+   console.log( lis.eq(1).css('fontSize'));/* 返回字符串带单位 */
+   /* ----------类名操作 */
+   lis.eq(1).addClass("itme")/* 添加类名 */
+   console.log(lis.eq(1))
+   console.log(lis.eq(1).hasClass("itme"))/* true */
+   lis.eq(1).removeClass("") /* 添加空的类名 无用功 */
+   console.log(lis.eq(1))
+   lis.eq(1).removeClass();/* 去除所有类名 */
+   console.log(lis.eq(1))
+   /* 判断是否包含该类（className） */
+   console.log(lis.eq(1).hasClass("yyy"))/* false */
+   console.log(lis.eq(1).hasClass(""))/* ture */
+   /* toggle 开关样式  */
+   lis.eq(1).toggleClass("litme");/* 加上类名 */
+   console.log(lis.eq(1))
+   lis.eq(1).toggleClass("litme"); /* 去除类名 */
+   console.log(lis.eq(1))
+   /*小总结
+   注意点：
+操作类样式的时候，所有的类名，都不带点（.）
+经验：
+1 操作的样式非常少，那么可以通过.css()这个 方法来操作
+2 操作的样式很多，那么要通过使用类的方式来操作
+3 如果考虑以后维护方便（把CSS从js中分离出来）的话，推荐使用类
+的方式来操作。类比CSS书写位置（把css从html中分离出来）
+    */
+   
+ 
+   
+    </script>
+</body>
+</html>

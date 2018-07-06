@@ -1,0 +1,256 @@
+.warp {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+  /*home-top end*/
+  /*nav end*/
+  /*gocenter-nav end*/
+  /*gocenter-intr end*/
+  /*gocenter-sp end*/
+}
+.warp .home-top {
+  width: 100%;
+  height: 0.9rem;
+  background: url("../img/index.png") 0 -7.15rem no-repeat;
+  background-size: 7.5rem;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+}
+.warp .home-top .logo-cont {
+  width: 3rem;
+  height: 0.6rem;
+  position: absolute;
+  top: 0.16rem;
+  left: 0.34rem;
+  padding-left: 0.8rem;
+}
+.warp .home-top .logo-cont .logo-img {
+  width: 0.6rem;
+  height: 0.6rem;
+  background: url(../img/index.png) 0 -6.16rem no-repeat;
+  background-size: 7.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.warp .home-top .logo-cont .logo-title h1 {
+  color: #fff;
+  font-size: 0.26rem;
+  line-height: 0.34rem;
+}
+.warp .home-top .logo-cont .logo-title p {
+  font-size: 0.16rem;
+  color: #666;
+}
+.warp .home-top .download {
+  width: 1.74rem;
+  height: 0.6rem;
+  position: absolute;
+  right: 0.34rem;
+  top: 0.16rem;
+}
+.warp .home-top .download .download-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-size: 7.5rem;
+}
+.warp .nav {
+  width: 100%;
+  height: 0.9rem;
+  line-height: 0.9rem;
+}
+.warp .nav ul {
+  width: 100%;
+}
+.warp .nav ul li {
+  float: left;
+  width: 33.33333%;
+  font-size: 0.26rem;
+  text-align: center;
+  background-color: #db9e3f;
+}
+.warp .nav ul li a {
+  color: #fff;
+}
+.warp .gocenter-nav {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  border-top: 1px solid #d3d3d4;
+  border-bottom: 1px solid #d3d3d4;
+}
+.warp .gocenter-nav ul {
+  height: 0.8rem;
+}
+.warp .gocenter-nav ul li {
+  float: left;
+  width: 30.125%;
+  height: 0.8rem;
+}
+.warp .gocenter-nav ul li:first-child {
+  width: 9.5%;
+  background: url("../img/backBg.png") no-repeat center center;
+  background-size: 25%;
+}
+.warp .gocenter-nav ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 0.26rem;
+  border-left: 1px solid red;
+  text-align: center;
+  color: #000;
+}
+.warp .gocenter-nav ul li a:first-child {
+  border-left: 0;
+}
+.warp .gocenter-nav ul li a.current {
+  width: 100%;
+  color: #fff;
+  background: url("../img/go_icon_02.png") no-repeat center center;
+  background-size: 7.5rem;
+}
+.warp .gocenter-intr {
+  height: 100%;
+  margin-top: 0.4rem;
+}
+.warp .gocenter-intr h1 {
+  height: 0.4rem;
+  line-height: 0.4rem;
+  padding-left: 0.3rem;
+  font-size: 0.3rem;
+  background: url("../img/go_icon_01.png") no-repeat left center;
+  background-size: 3.8%;
+  margin-left: 3%;
+}
+.warp .gocenter-intr .intr-con {
+  background-color: #fff;
+  padding: 3.171%;
+}
+.warp .gocenter-intr .intr-con h2 {
+  margin-top: 0.4rem;
+  font-size: 0.45rem;
+  color: #464646;
+}
+.warp .gocenter-intr .intr-con p {
+  color: #464646;
+  font-size: 0.35rem;
+  line-height: 0.45rem;
+  margin-top: 0.4rem;
+}
+.warp .gocenter-sp {
+  width: 100%;
+  height: 100%;
+  margin-top: 0.4rem;
+}
+.warp .gocenter-sp h1 {
+  height: 0.4rem;
+  line-height: 0.4rem;
+  padding-left: 0.3rem;
+  font-size: 0.3rem;
+  background: url("../img/go_icon_04.png") no-repeat left center;
+  background-size: 3.8%;
+  margin-left: 3%;
+}
+.warp .gocenter-sp .sp-con {
+  width: 93%;
+  background-color: #fff;
+  padding: 3.171%;
+  /*sp-game end*/
+}
+.warp .gocenter-sp .sp-con .sp-ct {
+  height: 0.4rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+.warp .gocenter-sp .sp-con .sp-ct .i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0.01rem;
+  background-color: #eaeaea;
+  border-radius: 1px;
+  border: 1px solid #ddd;
+  transform: translateY(-50%);
+}
+.warp .gocenter-sp .sp-con .sp-ct ul li {
+  float: left;
+  margin-right: 17%;
+}
+.warp .gocenter-sp .sp-con .sp-ct ul li:last-child {
+  margin-right: 0;
+}
+.warp .gocenter-sp .sp-con .sp-ct ul li.current span {
+  background: url("../img/go_icon_05.png") no-repeat center;
+  background-size: contain;
+}
+.warp .gocenter-sp .sp-con .sp-ct ul li.current i {
+  border: 1px solid #2784e0;
+  background-color: #2784e0;
+  color: #fff;
+}
+.warp .gocenter-sp .sp-con .sp-ct ul li.current i em {
+  background-color: #2784e0;
+  color: #fff;
+  border: none;
+}
+.warp .gocenter-sp .sp-con .sp-ct ul li span {
+  display: block;
+  width: 0.4rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  background: url("../img/go_icon_06.png") no-repeat center;
+  background-size: contain;
+  position: relative;
+  z-index: 3;
+  transition: all 1s ease;
+}
+.warp .gocenter-sp .sp-con .sp-ct ul li span i {
+  width: 1rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  text-align: center;
+  font-size: 0.26rem;
+  border: 1px solid #9fa0a0;
+  color: #9fa0a0;
+  background-color: #fff;
+  border-radius: 2px;
+  position: absolute;
+  top: -0.6rem;
+  left: -0.24rem;
+}
+.warp .gocenter-sp .sp-con .sp-ct ul li span i em {
+  width: 0.1rem;
+  height: 0.1rem;
+  position: absolute;
+  left: 50%;
+  bottom: -15%;
+  margin-left: -0.1rem;
+  border-left: 1px solid #9fa0a0;
+  border-bottom: 1px solid #9fa0a0;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+.warp .gocenter-sp .sp-con .sp-game {
+  width: 100%;
+}
+.warp .gocenter-sp .sp-con .sp-game .sp-gamecont {
+  width: 100%;
+}
+.warp .gocenter-sp .sp-con .sp-game .sp-gamecont h2 {
+  font-size: 0.3rem;
+  margin: 0.5rem 0;
+  color: #9fa0a0;
+}
+.warp .gocenter-sp .sp-con .sp-game .sp-gamecont p {
+  font-size: 0.25rem;
+  color: #9fa0a0;
+  margin: 0.1rem 0;
+}

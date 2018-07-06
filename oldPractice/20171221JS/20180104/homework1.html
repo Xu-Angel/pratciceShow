@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            display: block;
+            width: 50px;
+            height: 66px;
+            margin-bottom: 18px;
+            position: relative;
+        }
+        img{
+            width: 38px;
+            height: 38px;
+            display: block;
+            margin: 0 auto;
+        }
+        span{
+            display: block;
+            display: block;
+            text-align: center;
+            height: 22px;
+            line-height: 22px;
+            color: #999;
+        }
+        .menu{
+            position: absolute;
+            width: 210px;
+            border: 1px solid #c3ccd6;
+            left: 52px;
+            background-color: #fff;
+            top: 0px;
+            height: 64px;
+            display: none;
+        }
+        .menu span{
+            display: block;
+            font-size: 14px;
+            color: #4d4d4d;
+            line-height: 20px;
+            padding-top: 13px;
+        }
+        .menu img{
+            width: 77px;
+            height: 64px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        a{
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: url("img/arrow.png") no-repeat  0px -100px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .container{
+            width: 50px;
+            height: 539px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        a:hover{
+            background-position: 0 -50px;
+        }
+        .arro:hover{
+            background-position: 0 -150px;
+        }
+        ul{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<ul>
+    <li>
+        <img src="img/11.png" alt="">
+        <span>爽文</span>
+        <div class="menu">
+            <span>南城声名狼藉的男人</span>
+            <img src="img/22.jpg" alt="">
+        </div>
+    </li>
+    <li>
+        <img src="img/11.png" alt="">
+        <span>爽文</span>
+        <div class="menu">
+            <span>南城声名狼藉的男人</span>
+            <img src="img/22.jpg" alt="">
+        </div>
+    </li><li>
+    <img src="img/11.png" alt="">
+    <span>爽文</span>
+    <div class="menu">
+        <span>南城声名狼藉的男人</span>
+        <img src="img/22.jpg" alt="">
+    </div>
+</li><li>
+    <img src="img/11.png" alt="">
+    <span>爽文</span>
+    <div class="menu">
+        <span>南城声名狼藉的男人</span>
+        <img src="img/22.jpg" alt="">
+    </div>
+</li><li>
+    <img src="img/11.png" alt="">
+    <span>爽文</span>
+    <div class="menu">
+        <span>南城声名狼藉的男人</span>
+        <img src="img/22.jpg" alt="">
+    </div>
+</li>
+</ul>
+<a href="javascript:;" class="show"></a>
+</div>
+<script src="js/myQuery1.2.js"></script>
+<script>
+    var menus=$('.menu');
+    var lis=$('li');
+    for(var i = 0; i <lis .length; i++ ){
+        lis[i].index=i;
+           lis[i].onmouseover=function () {
+              menus[this.index].style.display='block';
+           }
+           lis[i].onmouseout=function () {
+               menus[this.index].style.display='none';
+           }
+    }
+    //缓动显示
+    var ul=$('ul')[0];
+    var a=$('a')[0];
+    a.onclick=function () {
+        if(ul.offsetLeft==0){
+            animation(ul,{top:0,left:-50})
+            a.style.backgroundPositionX=0 +"px";
+            // a.className='show';
+            a.style.backgroundPositionY=-50+'px'
+        }else if(ul.offsetLeft==-50){
+            animation(ul,{top:0,left:0})
+            a.style.backgroundPositionX=0 +'px';
+            a.style.backgroundPositionY=-100+'px'
+
+            // a.className='arro';
+        }
+
+    }
+</script>
+</body>
+</html>

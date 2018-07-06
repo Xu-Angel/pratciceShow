@@ -1,0 +1,38 @@
+html,body,div,p,ul,li,ol,form,input,select,option,textarea,a,span,img,h1,h2,h3,h4,h5,h6,dl,dt{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body{
+    font-size: 14px;
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #333333;
+}
+a{text-decoration: none; color: #333333;}
+ul, li{list-style: none;}
+img{vertical-align: middle;}
+input, textarea{
+    outline-style: none;
+    outline: none;
+    -webkit-appearance: none;
+    border: none;
+    resize: none;
+}
+
+.fl{float: left;}
+.fr{float: right;}
+.clearfix::before, .clearfix::after{
+    content: '';
+    clear: both;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+}
+[class^=icon]{
+    background-image: url('../img/sprites.png');
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+}

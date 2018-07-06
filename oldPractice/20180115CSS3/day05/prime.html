@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" placeholder="请输入数字">
+<script>
+    //1、非正则实现
+    function isPrime(num) {
+        // 不是数字或者数字小于2
+        if(typeof num !== "number" || !Number.isInteger(num)) {
+            // Number.isInterget 判断是否为整数
+            return false
+        }
+        //2是质数
+        if(num == 2) {
+            return true
+        } else if(num % 2 == 0) {  //排除偶数
+            return false
+        }
+        //依次判断是否能被奇数整除，最大循环为数值的开方
+        var squareRoot = Math.sqrt(num)
+        //因为2已经验证过，所以从3开始；且已经排除偶数，所以每次加2
+        for(var i = 3; i <= squareRoot; i += 2) {
+            if(num % i === 0) {
+                return false
+            }
+        }
+        return true
+    }
+    console.log(isPrime(19)) // true
+
+    //2、用正则实现：
+    function isPrime(num) {
+        console.log(Array(num + 1))
+        console.log(Array(num + 1).join('1'))
+        return !/^1?$|^(11+?)\1+$/.test(Array(num + 1).join('1'))
+    }
+    console.log(isPrime(19)) // true
+    console.log(isPrime(7)) // true
+    console.log(isPrime(8)) // true
+    /*编写程序实现：用户输入一个数字，
+    在控制台中输出这个数字的所有约数。比如用户输入48，
+    那么在控制台中输出1、2、3、4、6、8、12、16、24、48。
+    并弹出约数个数的总数。*/
+var inp=document.getElementsByTagName('input')[0];
+
+   inp.onchange=function () {
+       var num=inp.value;
+       var a=new Array();
+       for(var i=1;i<=num;i++)
+       {
+           if(num%i==0)
+           {
+               a.push(i);
+           }
+       }
+       console.log(a);//没有上下文，我只能通过控制台输出！
+       alert(num + '的约数为：'+ a.length + '个')
+   }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+html,
+body {
+  height: 100%;
+}
+.jd_box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  /*搜索栏开始*/
+  /*搜索栏结束*/
+  /*分类开始*/
+  /*分类结束*/
+}
+.jd_box .jd_topBar {
+  width: 100%;
+  height: 45px;
+  background: url('../img/header-bg.png') repeat-x;
+  border-bottom: 1px solid #CCCCCC;
+  position: absolute;
+  z-index: 100;
+}
+.jd_box .jd_topBar a[class^=icon] {
+  width: 40px;
+  height: 44px;
+  position: absolute;
+  top: 0;
+  padding: 12px 10px;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+.jd_box .jd_topBar .icon_back {
+  background-position: -20px 0;
+  left: 0;
+}
+.jd_box .jd_topBar .icon_menu {
+  background-position: -60px 0;
+  right: 0;
+}
+.jd_box .jd_topBar form {
+  width: 100%;
+  padding: 0 40px;
+}
+.jd_box .jd_topBar form input {
+  width: 100%;
+  padding: 0 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #E0E0E0;
+  height: 30px;
+  margin-top: 8px;
+}
+.jd_box .jd_category {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  padding-top: 45px;
+}
+.jd_box .jd_category .jd_cate_left {
+  width: 90px;
+  height: 100%;
+  overflow: hidden;
+  float: left;
+  /*左侧内容开始*/
+  /*左侧内容结束*/
+}
+.jd_box .jd_category .jd_cate_left ul {
+  width: 100%;
+}
+.jd_box .jd_category .jd_cate_left ul li {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-right: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+  background: #F3F4F5;
+}
+.jd_box .jd_category .jd_cate_left ul li.now {
+  border-right: none;
+  background: #FFFFFF;
+}
+.jd_box .jd_category .jd_cate_left ul li.now a {
+  color: #d8505c;
+}
+.jd_box .jd_category .jd_cate_left ul li a {
+  width: 100%;
+  height: 50px;
+  display: block;
+}
+.jd_box .jd_category .jd_cate_right {
+  height: 100%;
+  overflow: hidden;
+  /*右侧内容开始*/
+  /*右侧内容结束*/
+}
+.jd_box .jd_category .jd_cate_right .jd_cate_right_con {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+}
+.jd_box .jd_category .jd_cate_right .jd_cate_right_con .banner {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+.jd_box .jd_category .jd_cate_right .jd_cate_right_con .banner img {
+  display: block;
+  width: 100%;
+}
+.jd_box .jd_category .jd_cate_right .jd_cate_right_con .cate_product {
+  margin-top: 10px;
+  position: relative;
+  height: 100%;
+}
+.jd_box .jd_category .jd_cate_right .jd_cate_right_con .cate_product h3 {
+  font-size: 12px;
+}
+.jd_box .jd_category .jd_cate_right .jd_cate_right_con .cate_product .mask {
+  height: 100%;
+  overflow: hidden;
+}
+.jd_box .jd_category .jd_cate_right .jd_cate_right_con .cate_product ul {
+  width: 100%;
+}
+.jd_box .jd_category .jd_cate_right .jd_cate_right_con .cate_product ul li {
+  float: left;
+  width: 33.3333333%;
+  text-align: center;
+}
+.jd_box .jd_category .jd_cate_right .jd_cate_right_con .cate_product ul li a {
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+}
+.jd_box .jd_category .jd_cate_right .jd_cate_right_con .cate_product ul li a img {
+  width: 60px;
+  height: 60px;
+}

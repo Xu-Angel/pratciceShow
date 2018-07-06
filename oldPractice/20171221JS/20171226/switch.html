@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--/*
+ * @Author: Angel
+ * @Date: 2017-12-21 19:13:14
+ * @Last Modified by: 1049547382@qq.com
+ * @Last Modified time: 2017-12-21 19:22:17
+ */-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text">
+<script>
+var weather='阴天'
+    switch (weather){
+        case '阴天':
+            console.log('阴天');
+        break;   //break不写的话  会继续执行下面的case语句
+        case '晴天':
+            console.log('晴天');
+            break;
+        case '雨天':
+            console.log('雨天');
+        default: //默认，如果上面case都不符合
+            console.log('meiyou');
+    }
+    var fruit='西瓜';
+ switch(fruit){
+     case '苹果':
+         console.log('苹果7.99');
+         break;
+     case  '西瓜':
+         console.log('西瓜0.85');
+         break;
+     case '梨':
+         console.log('梨5.60');
+         break;
+     default:
+         console.log('暂无库存');
+ }
+
+</script>
+</body>
+</html>

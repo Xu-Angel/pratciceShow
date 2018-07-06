@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+          table, td{ 
+  font:100% '微软雅黑';  
+  } 
+  table{width:80%;border-collapse:collapse; margin:0 0 0 100px} 
+  th, td{text-align:center;border:1px solid #fff;} 
+  th{background:red} 
+  td{background:#e5f1f4;} 
+    </style>
+</head>
+<body> 
+        <a href="#" style="margin:100px" id="add_btn">新增</a> 
+        <input id="Ktext" type="text"> <a href="#" id="search_btn">  查询</a> 
+        <a href="#" style="margin:100px" id="back_btn">返回</a> 
+        <br> 
+       <table id="tb"> 
+         <tbody><tr id="trr"> 
+           <th style="width:100px">ID</th> 
+           <th style="width:100px">Name</th> 
+           <th style="width:100px">salary</th> 
+           <th style="width:100px">功能</th> 
+           
+         </tr> 
+         </tbody><tbody id="hide_tbody"> 
+         <tr style="display:none" id="trr"> 
+           <td style="width:100px" id="no_id"><input value="" type="text"></td> 
+           <td style="width:100px"><input value="" type="text"></td> 
+           <td style="width:100px"><input value="" type="text"></td> 
+           <td style="width:200px" id="a"><a href="#" id="save_btn">保存</a> 
+           <a href="#" id="edit_btn" style="display:none">修改</a> 
+           <a href="#" id="del_btn">删除</a></td> 
+         </tr> 
+         </tbody> 
+         <tbody id="show_tbody"> 
+         <tr id="trr"> 
+           <td style="width:100px" id="no_id">1</td> 
+           <td style="width:100px">小王</td> 
+           <td style="width:100px">3000</td> 
+           <td style="width:200px" id="a"><a href="#" id="save_btn" style="display:none">保存</a> 
+           <a href="#" id="edit_btn">修改</a> 
+           <a href="#" id="del_btn">删除</a></td> 
+         </tr> 
+         <tr id="trr"> 
+           <td style="width:100px" id="no_id">2</td> 
+           <td style="width:100px">小李</td> 
+           <td style="width:100px">4000</td> 
+           <td style="width:200px" id="a"><a href="#" id="save_btn" style="display:none">保存</a> 
+           <a href="#" id="edit_btn">修改</a> 
+           <a href="#" id="del_btn">删除</a></td> 
+         </tr> 
+         <tr id="trr"> 
+           <td style="width:100px" id="no_id">3</td> 
+           <td style="width:100px">小张</td> 
+           <td style="width:100px">5000</td> 
+           <td style="width:200px" id="a"><a href="#" id="save_btn" style="display:none">保存</a> 
+           <a href="#" id="edit_btn">修改</a> 
+           <a href="#" id="del_btn">删除</a></td> 
+         </tr> 
+         <tr id="trr"> 
+           <td style="width:100px" id="no_id">4</td> 
+           <td style="width:100px">小赵</td> 
+           <td style="width:100px">6000</td> 
+           <td style="width:200px" id="a"><a href="#" id="save_btn" style="display:none">保存</a> 
+           <a href="#" id="edit_btn">修改</a> 
+           <a href="#" id="del_btn">删除</a></td> 
+         </tr> 
+         </tbody> 
+       </table> 
+       <script src="../jquery.min-1.7.2.js"></script>
+       <script >
+           $(document).ready(function() {
+    var tb = $("#tb");
+
+    //添加 
+    $("#add_btn").click(function() {
+        var hideTr = $("#hide_tbody", tb).children().first();
+        var newTr = hideTr.clone().show();
+        $("#show_tbody", tb).append(newTr);
+    });
+
+    //保存 
+    $("#save_btn", tb).die('click').live('click',
+    function() {
+        var tr = $(this).parent().parent();
+        $("input[type='text']", tr).each(function(i, el) {
+            el = $(el);
+            el.parent().text(el.val());
+            el.remove();
+        });
+        $("#save_btn", tr).hide();
+        $("#edit_btn", tr).show();
+    });
+
+    //修改 
+    $("#edit_btn", tb).die('click').live('click',
+    function() {
+        var tr = $(this).parent().parent();
+        $("td:not('#a')", tr).each(function(i, el) {
+            el = $(el);
+            var html = "<input value='" + el.text() + "' type='text'>";
+            el.html(html);
+        });
+        $("#edit_btn", tr).hide();
+        $("#save_btn", tr).show();
+    });
+
+    //删除 
+    $("#del_btn", tb).die('click').live('click',
+    function() {
+        $(this).parent().parent().remove();
+    });
+
+    //查询 
+    $("#search_btn").click(function() {
+        var key = $("#Ktext").val();
+        var sbody = $("#show_tbody");
+        var trr = $("#trr", sbody);
+        var keyword = $("#no_id", sbody).text();
+        for (var i = 0; i < keyword.length; i++) {
+            if (keyword[i] == key[0]) {
+                trr.eq(i).show();
+            } else {
+                trr.eq(i).hide();
+            }
+        }
+    });
+    //返回 
+    $("#back_btn").click(function() {
+        var sbody = $("#show_tbody");
+        $("#trr", sbody).show();
+
+    });
+});
+       </script>
+</body> 
+</html>

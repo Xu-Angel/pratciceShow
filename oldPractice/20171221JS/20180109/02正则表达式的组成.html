@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    有一些普通字符和元字符组成，普通字符就是字母和数字，
+    元字符具有特殊意义的字符
+    匹配腾讯QQ号：[1-9][0-9]{4,}
+    评注：腾讯QQ号从10000开始
+    比如  \d
+    预定义类: 表示数字   [0-9]
+    test() 方法
+        正则对象方法，检测测试字符串是否符合该规则，返回true和false
+        使用语法：
+        Boolean = 表达式.test("要验证的内容");
+     */
+    console.log(/[1-9]/.test(1));
+</script>
+</html>

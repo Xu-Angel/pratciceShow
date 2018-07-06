@@ -1,0 +1,30 @@
+/* CSS Document */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;word-wrap:break-word;}
+body,button,input,select,textarea{font-family:"Helvetica Neue",Helvetica,STHeiTi,'\5FAE\8F6F\96C5\9ED1',sans-serif;color:#000;}
+th{text-align:inherit;}
+ol,ul{list-style:none;}
+fieldset,img{border:0;vertical-align:middle;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+ins,a{color:#000;text-decoration:none;}
+a,img{-webkit-touch-callout:none;}
+table{border-collapse:collapse;}
+i{font-style:normal;}
+*{padding:0;margin:0;}
+.clearfix{*zoom:1}
+.clearfix:after{content:'\20';display:block;height:0;line-height:0;visibility:hidden;clear:both}
+body{min-width:320px;height:100%;width:100%;background:url("../img/bg.jpg");}
+img{width:100%;display:block}
+.clearfloat{clear:both;}
+.fl{float:left;}
+.fr{float:right;}
+.videoContline{width:100%;height:0.333rem;background:url("../img/bg.jpg")}
+.warp{width:100%;background:url("../img/bg.jpg");overflow-x:hidden;}
+.clearfix{*zoom:1}
+.clearfix:after{content:'';display:block;height:0;line-height:0;visibility:hidden;clear:both}
+
+

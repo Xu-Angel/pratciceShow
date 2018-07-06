@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+<script>
+    //标准JSON数据格式
+    var student={
+        "name":"李白",
+        "age":"1300",
+        "age":1300, //number,bollean可以不加双引号
+        "inckname":"诗仙"
+    }
+    //兼容写法
+    var student1={
+        "name":"李白",
+        "age":"1300",
+        "age":1300, //number,bollean可以不加双引号
+        'inckname':'诗仙'
+    }
+    //获取数据
+    //通过.
+    var name=student.name;
+    //通过[] 里面为字符串
+    var age=student['age'];
+     //迭代  for    临时保存JSON或者数组的某个数据（键）（属性 ）  in   JSON对象或者数组
+    for(var key in student){
+        console.log(key );
+        console.log(student[key])
+    }
+    var arr=[1,2,3,4];
+    for (var vv in  arr){
+        console.log(vv)
+        console.log(arr[vv])
+    }
+
+</script>
+</body>
+</html>

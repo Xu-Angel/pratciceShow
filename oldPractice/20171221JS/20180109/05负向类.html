@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    负向类：不能是其中的整体或者一部分
+    不够和正好返回返回false，多了或没有返回true
+     */
+    console.log(/[^hello]/.test('o'));  // false
+    console.log(/[^hello]/.test('o123'));
+    console.log(/[^hello]/.test('123o'));
+    console.log(/[^hello]/.test('hello')); // false
+    console.log(/[^hello]/.test('ahc'));
+    console.log(/[^hello]/.test('hell'));  // false
+    console.log(/[^hello]/.test('llo'));   // false
+
+</script>
+</html>

@@ -1,0 +1,246 @@
+body {
+  background: #F5F5F5;
+}
+.jd_layout {
+  margin: 0 auto;
+  width: 100%;
+  min-width: 320px;
+  max-width: 640px;
+}
+/*搜索栏开始*/
+.jd_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 100;
+}
+.jd_header .jd_header_box {
+  width: 100%;
+  height: 40px;
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+  background: rgba(201, 21, 35, 0);
+  position: relative;
+}
+.jd_header .jd_header_box .icon_logo {
+  position: absolute;
+  top: 4px;
+  left: 15px;
+  width: 60px;
+  height: 36px;
+  background-position: 0 -103px;
+}
+.jd_header .jd_header_box .login {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.jd_header .jd_header_box form {
+  width: 100%;
+  padding: 0 50px 0 80px;
+  position: relative;
+}
+.jd_header .jd_header_box form input {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  padding-left: 30px;
+  margin-top: 4px;
+}
+.jd_header .jd_header_box form .icon_search {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-position: -60px -109px;
+  top: 10px;
+  left: 87px;
+}
+/*搜索栏结束*/
+/*广告栏开始*/
+.jd_banner {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.jd_banner ul {
+  width: 1000%;
+}
+.jd_banner ul li {
+  float: left;
+  width: 10%;
+}
+.jd_banner ul li a {
+  display: block;
+  width: 100%;
+}
+.jd_banner ul li a img {
+  width: 100%;
+  display: block;
+}
+.jd_banner ul:last-child {
+  width: 118px;
+  height: 6px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -59px;
+}
+.jd_banner ul:last-child li {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid #FFFFFF;
+  float: left;
+  margin-left: 10px;
+}
+.jd_banner ul:last-child li:first-child {
+  margin-left: 0;
+}
+.jd_banner ul:last-child li.active {
+  background: #FFFFFF;
+}
+/*广告栏结束*/
+/*导航栏开始*/
+.jd_nav {
+  width: 100%;
+}
+.jd_nav ul {
+  width: 100%;
+}
+.jd_nav ul li {
+  float: left;
+  width: 25%;
+  padding-top: 20px;
+}
+.jd_nav ul li a {
+  display: block;
+  width: 100%;
+}
+.jd_nav ul li a img {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+}
+.jd_nav ul li a p {
+  text-align: center;
+  padding-top: 10px;
+}
+/*导航栏结束*/
+/*商品栏开始*/
+.product_box {
+  background: #FFFFFF;
+  margin-top: 10px;
+  box-shadow: 0 0 2px 0 #E0E0E0;
+  /*秒杀开始*/
+  /*秒杀结束*/
+}
+.product_box .product_tit {
+  height: 32px;
+  line-height: 32px;
+}
+.product_box .product_tit h3 {
+  font-size: 15px;
+  padding-left: 15px;
+  font-weight: normal;
+  color: #666;
+  position: relative;
+}
+.product_box .product_tit h3::before {
+  content: '';
+  background: #d8505c;
+  width: 3px;
+  height: 12px;
+  position: absolute;
+  top: 10px;
+  left: 8px;
+}
+.product_box .product_con div {
+  width: 50%;
+}
+.product_box .product_con div a {
+  display: block;
+  width: 100%;
+}
+.product_box .product_con div a img {
+  display: block;
+  width: 100%;
+}
+.product_box .product_con div.b_b {
+  border-bottom: 1px solid #666666;
+}
+.product_box .product_con div.r_b {
+  border-right: 1px solid #666666;
+}
+.product_box .sk_icon {
+  background: url("../img/seckill-icon.png") no-repeat;
+  background-size: 16px 20px;
+  width: 16px;
+  height: 20px;
+  float: left;
+  margin: 6px 0 0 6px;
+}
+.product_box .sk_word {
+  color: #d8505c;
+  float: left;
+  font-size: 15px;
+  padding: 0 5px;
+}
+.product_box .sk_time {
+  float: left;
+}
+.product_box .sk_time span {
+  width: 15px;
+  height: 15px;
+  line-height: 18px;
+  background: #333333;
+  color: #FFFFFF;
+  display: block;
+  float: left;
+  text-align: center;
+  margin: 9px 3px 0 0;
+}
+.product_box .sk_time span:nth-child(3n) {
+  background: #FFFFFF;
+  color: #333333;
+  width: 5px;
+}
+.product_box .sk_more {
+  padding-right: 6px;
+}
+.product_box .product_con .sk_product {
+  width: 100%;
+  padding: 10px 0;
+}
+.product_box .product_con .sk_product li {
+  float: left;
+  width: 33.3333333%;
+  font-size: 12px;
+  text-align: center;
+}
+.product_box .product_con .sk_product li a {
+  display: block;
+  width: 100%;
+  border-right: 1px solid #E0E0E0;
+}
+.product_box .product_con .sk_product li a img {
+  width: 60%;
+}
+.product_box .product_con .sk_product li:last-child a {
+  border: none;
+}
+.product_box .product_con .sk_product li .new_price {
+  margin: 10px 0;
+  color: #F15353;
+}
+.product_box .product_con .sk_product li .old_price {
+  text-decoration: line-through;
+}
+/*商品栏结束*/

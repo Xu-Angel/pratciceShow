@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 520px;
+            height: 280px;
+            margin:100px auto;
+            position: relative;
+            box-shadow: 0 0 10px 2px #ccc;
+            overflow: hidden;
+        }
+        ul.img{
+            width: 1000%;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        ul.img li{
+            list-style: none;
+            float: left;
+        }
+        ul.point{
+            position:absolute;
+            left:50%;
+            bottom:10px;
+            margin-left:-75px;
+        }
+        ul.point li{
+            float: left;
+            margin:0 5px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            background: pink;
+            list-style: none;
+            cursor:pointer;
+        }
+        ul.point li.now{
+            background: red;
+            color:#fff;
+        }
+        .arrow{
+            position: absolute;
+            left:0;
+            width: 100%;
+            top:50%;
+            margin-top:-25px;
+        }
+        .arrow li{
+            list-style: none;
+            width: 35px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            background: rgba(0,0,0,.2);
+            cursor: pointer;
+        }
+        .left{
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+    </style>
+    <script src="myQuery.js"></script>
+    <script src="carouse1.0.js"></script>
+</head>
+<body>
+<div class="container">
+    <ul class="img">
+        <li><img src="img/1.jpg"></li>
+        <li><img src="img/2.jpg"></li>
+        <li><img src="img/3.jpg"></li>
+        <li><img src="img/4.jpg"></li>
+        <li><img src="img/5.jpg"></li>
+    </ul>
+    <ul class="point"></ul>
+    <ul class="arrow">
+        <li class="left"><</li>
+        <li class="right">></li>
+    </ul>
+</div>
+<script>
+var box = document.getElementsByClassName('container')[0];//轮播图容器
+console.log(box);
+var arrow = document.getElementsByClassName('arrow')[0];//左右箭头所在的ul
+console.log(arrow)
+var pointStyle='now';
+carousel(box,arrow,pointStyle,2000,20);
+</script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; }
+img {border:0;	vertical-align:middle;}
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6 清除浮动兼容*/
+}
+a{color:#666; text-decoration:none; }
+a:hover{color:#C81623;}
+h1,h2,h3,h4,h5,h6{text-decoration:none;font-weight:normal;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #C81623!important;}
+
+/*公共类*/
+.w{
+    width: 1210px;margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+
+/*界面上方弹出的搜索框*/
+.tp-s{
+    width: 100%;
+    height: 45px;
+    border-bottom: 2px solid #f10214;
+    background: white;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    display: none;
+}
+.tp-search .s-logo{
+    width: 125px;
+    height: 40px;
+    float: left;
+    background: url("../img/jd_logo.png");
+    text-indent: -999px;
+}
+.search-box{
+    width: 550px;
+    height: 35px;
+    background: #efefef;
+    position: relative;
+    top: 5px;
+}
+.search-box input{
+    float: left;
+    width: 490px;
+    height: 35px;
+    background:#efefef;
+    margin-left: 10px;
+    font-size: 13px;
+    color: #999999;
+}
+.search-box #xiangji{
+    position: absolute;
+    right: 60px;
+    top: 10px;
+    font-size: 30px;
+}
+.search-box .s-button{
+    width: 50px;
+    height: 35px;
+    background: #f10215;
+    text-align: center;
+    line-height: 35px;
+    color: white;
+    float: left;
+}
+.s-button i{
+
+    font-size: 25px;
+}
+.search-box #hotword{
+    color: #999999;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.search-box .hotword{
+    width: 498px;
+    background: white;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    border: 1px solid #cccccc;
+    display: none;
+}
+.search-box .hw-list{
+    width: 498px;
+    height: 28px;
+    border-bottom:1px solid #efefef;
+    line-height: 28px;
+    position: relative;
+}
+.search-box .hw-list .hw-hw{
+    color: #999999;
+    margin-left: 10px;
+    float: left;
+}
+.search-box .hw-list .hw-history{
+    color: #999999;
+    margin-right: 10px;
+    float: right;
+}
+.search-box div .hw-delete{
+    float: right;
+    margin-right: 10px;
+    color: #005aa0;
+}
+/*顶部小导航开始*/
+.tp-nav{
+    height: 30px;
+    background: #f1f1f1;
+}
+.tp-nav-l{
+    line-height: 30px;
+    margin-left: 10px;
+}
+.tp-nav ul li{
+    float: left;
+    margin-right:10px;
+    line-height: 30px;
+}
+.tp-nav ul li a{
+    padding-right:10px;
+    border-right: 2px solid #ddd;
+}
+.tp-nav ul .first{
+    border-right: none;
+}
+.tp-nav ul .last{
+    border-right: none;
+}
+/*页面顶部小广告开始*/
+.tp-banner{
+    height: 80px;
+    background: #8A25C6;
+}
+.tp-banner-mid{
+    height: 80px;
+    background: url("../img/topbanner.jpg");
+}
+.tp-banner span{
+    float: right;
+    background: black;
+    position: relative;
+    top: -80px;
+    right: 50px;
+    opacity: 0.4;
+}
+.tp-banner span:hover{
+    opacity: 1;
+}
+/*logo搜索部分*/
+.logo{
+    width: 360px;
+    height: 75px;
+    margin-top: 25px;
+    position: relative;
+}
+.logo .dong{
+    position: absolute;
+    top: -15px;
+    right: 15px;
+}
+.search{
+    width: 538px;
+    height: 36px;
+    padding-top: 25px;
+    line-height: 36px;
+    position: relative;
+}
+.search input{
+    width: 448px;
+    height: 32px;
+    border: 2px solid #b61d1d;
+    padding-left: 6px;
+    font: 14px "微软雅黑";
+    color: #666666;
+}
+.search button{
+    background: #b61d1d;
+    width: 80px;
+    height: 36px;
+    /*border: 2px solid #b61d1d;*/
+    text-align: center;
+    color: #fff;
+    margin-top: 1px;
+    line-height: 36px;
+}
+
+.search .icon-xiangji{
+    position: absolute;
+    top: 27px;
+    right: 84px;
+    font-size: 30px;
+}
+.shoppingcar{
+    width: 140px;
+    height: 35px;
+    border: 1px solid #666;
+    line-height: 35px;
+    border-radius: 5px;
+    position: relative;
+    top:25px;
+    left: -50px;
+}
+.shoppingcar .icon-cart{
+    color: #CA202D;
+    margin-left: 20px;
+}
+.shoppingcar .icon-you{
+    font-size: 12px;
+}
+.shoppingcar #num{
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50% 50% 50% 0;
+    background: #D23E49;
+    color: white;
+}
+.hotword2 li{
+    float: left;
+}
+.hotword2 li a{
+    width: 34px;
+    margin-left: 15px;
+    line-height: 34px;
+}
+/*导航部分*/
+.nav{
+    height: 50px;
+    border-bottom: 2px solid #b1191a;
+}
+.sidebar{
+}
+.dt a{
+    display: block;
+    width: 190px;
+    height:50px;
+    background: #b1191a;
+    color: white;
+    padding-left: 20px;
+    font: 15px/50px "微软雅黑";
+}
+.dd ul li{
+    width: 190px;
+    height:31px;
+    background: #C81623;
+    line-height: 30px;
+    color: white;
+    padding-left: 20px;
+}
+.dd ul li .icon-you{
+    float: right;
+    margin-right: 20px;
+    font-size: 13px;
+}
+.dd ul li a{
+    color: white;
+    font: 15px/30px "微软雅黑";
+}
+.mainnav{
+    height: 44px;
+    font:bold 14px/44px "微软雅黑" ;
+}
+.mainnav ul li{
+    float: left;
+    width: 72px ;
+    height: 44px;
+    text-align: center;
+}
+.mainnav ul li a{
+    color: black;
+}
+.bike{
+    float: right;
+}
+
+/*右下角固定块开始*/
+.index{
+    position: fixed;
+    bottom: 50px;
+    right: 0px;
+}
+.index li{
+    width: 51px;
+    height: 57px;
+    margin-top: -1px;
+    border: 1px solid #e1e1e1;
+    text-align: center;
+    line-height: 57px;
+    position: relative;
+    cursor: pointer;
+}
+.index li i{
+    font-size: 30px;
+    color: #999999;
+}
+.index li:hover .fuction{
+    display: block;
+}
+.fuction{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ff4400;
+    width: 51px;
+    height: 57px;
+    color: white;
+    font-size: 12px;
+    display: none;
+}
+
+.triangle{
+    position: absolute;
+}

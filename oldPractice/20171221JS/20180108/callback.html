@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top:0;
+            left:0;
+            background:pink;
+        }
+
+    </style>
+    <script src="js/myJquery1.3.js"></script>
+</head>
+<body>
+<div></div>
+<script>
+    var div = document.getElementsByTagName('div')[0];
+    //思路写三遍
+    function animation(obj,json,fn) {
+        obj.timer=setInterval(function () {
+            var flag=true;
+         for(var key in json){
+             var target=parseInt(json[key]);
+             var speed=(target-parseInt(getStyle(obj,key)))/10;
+             speed=speed>0?Math.ceil(speed):Math.floor(speed);
+             obj.style[key]=parseInt(getStyle(obj,key)) + speed + 'px';
+             if(obj.style[key]!=target){
+                 flag=false;
+             }
+         }
+         if(flag){
+             clearInterval(obj.timer)
+             if(fn){
+                 fn();
+             }
+         }
+        },20)
+    }
+    //思路写两遍
+    function animation(obj,json,fn) {
+        obj.timer=setInterval(function () {
+            //接受属性
+            var flag=true;
+       for(var key in json){
+           var target=parseInt(json[key]);
+           var speed=(target-parseInt(getStyle(obj,key)))/10;
+           speed=speed>0?Math.ceil(speed):Math.floor(speed);
+           obj.style[key]=parseInt(getStyle(obj,key)) + speed +'px';
+           if(obj.style[key]!=target){
+               flag=false;
+           }
+
+       }
+       //循环完成后
+            if(flag){
+                clearInterval(obj.timer);
+                if(fn){
+                    fn();
+                }
+            }
+            //遍历属性
+            //完成每个属性（1，获取差值，补差值，）
+            //判断全部属性完成
+            //清空定时器
+            //执行回调
+        },20)
+
+    }
+
+    //思路写一遍
+    function animation(obj,json,fn) {
+        obj.timer=setInterval(function () {
+            //接受运动属性
+            //遍历运动
+            var flag=true;
+            for(var key in json){
+                var target=parseInt(json[key]);
+                var speed=(target-parseInt(getStyle(obj,key)))/10;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                obj.style[key]=parseInt(getStyle(obj,key)) +speed +'px';
+                if(parseInt(getStyle(obj,key))!=target){
+                    flag=false;
+                }
+
+            }
+            if(flag){
+                clearInterval(obj.timer);
+                if(fn){
+                    fn();
+                }
+            }
+        },20)
+    }
+
+
+
+
+
+
+    var attrJson = {
+        "width": "800px",
+        "height": "50px",
+        "top":"300px",
+        "left":"400px",
+    };
+    function animation(obj,json,fn){
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+            var flag = true;
+            //json里面有几个属性就要执行几次
+            for(var key in json){
+                var target = parseInt(json[key]);
+                var speed = (target - parseInt(getStyle(obj,key)))/10;
+                speed = speed>0?Math.ceil(speed):Math.floor(speed);
+                obj.style[key] = parseInt(getStyle(obj,key)) +speed+"px";
+                if(parseInt(getStyle(obj,key))!=target){
+                    flag = false;
+                }
+            }
+            if(flag){
+                clearInterval(obj.timer);
+                if(fn){
+                    fn();
+                }
+            }
+        },20)
+    }
+    animation(div,attrJson,function(){
+        alert(1)
+    });
+</script>
+</body>
+</html>

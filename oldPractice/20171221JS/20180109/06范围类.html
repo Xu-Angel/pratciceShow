@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    范围类：匹配的东西太多，类型相同，可以在中间使用横线
+    [0-9][a-z]
+    组合类：有多组的东西，属于不同范围
+    [0-9A-F]
+     */
+    console.log(/[0-9A-F]/.test('a'));
+    console.log(/[0-9A-F]/.test('A'));
+</script>
+</html>

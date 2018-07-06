@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--/*
+ * @Author: Angel
+ * @Date: 2017-12-21 19:13:14
+ * @Last Modified by: 1049547382@qq.com
+ * @Last Modified time: 2017-12-21 19:22:17
+ */-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div></div>
+<script>
+    function time() {
+        var now=new  Date();
+        var hour=now.getHours();
+        var min=now.getMinutes();
+        var sec=now.getSeconds();
+        var arr=[hour,min,sec];
+        for(var i=0;i<arr.length;i++){
+          arr[i]>=10?arr[i]:arr[i]='0'+arr[i];
+        }
+        var txt='现在的时间为'+ arr[0] +':'+ arr[1] + ':' + arr[2] + '';
+        var div=document.getElementsByTagName('div')[0];
+        div.innerText=txt;
+    }
+    time();
+    setInterval(time,1000);
+</script>
+</body>
+</html>

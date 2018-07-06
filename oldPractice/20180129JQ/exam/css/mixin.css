@@ -1,0 +1,28 @@
+/*定义混合函数*/
+.fr {
+  float: right;
+}
+.fl {
+  float: left;
+}
+.mixin {
+  float: left;
+  float: right;
+}
+.yy {
+  float: left;
+  border: 1px solid red;
+  background: red;
+}
+.tag {
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+/*less导入功能   模块化思想  解耦   高内聚低耦合*/
+/*内置函数运算*/
+.oo {
+  width: 8.33333333%;
+}

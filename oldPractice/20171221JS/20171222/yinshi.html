@@ -1,0 +1,125 @@
+<!--
+<!DOCTYPE html>
+&lt;!&ndash;/*
+ * @Author: Angel
+ * @Date: 2017-12-21 19:13:14
+ * @Last Modified by: 1049547382@qq.com
+ * @Last Modified time: 2017-12-21 19:22:17
+ */&ndash;&gt;
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+ /*function xx(a,b) {
+     console.log(a+b);
+     console.log(typeof b)
+ }
+xx(1);    //NaN undefined
+ xx(1,2)//3   number
+ xx(1,2,3) //3  number
+ var a=1;
+ var b=2;
+ var c='1';
+ var c=++c;
+ var c=&#45;&#45;c;
+ a+=a;
+ console.log(a)
+ console.log(a>b);
+ console.log(a===c);
+ console.log(a==c);
+ console.log(a!=b);*/
+ // var a;
+ // a=1;
+ // console.log(typeof a);
+/*
+    var a=10;b=20;c=30;
+    a++;
+    alert(a);
+    ++b;
+    e=++a + (++b) + (c++) + (++a);
+    a&#45;&#45;;
+    b&#45;&#45;;
+    e=++a + (++b) + (c++)
+    alert(e);*/
+/*yy();
+alert(window.yyy);
+function yy() {
+    var yyy='555';
+}*/
+/*var tt='hy\'iop';
+console.log(tt[2]);*/
+/*if(){
+
+}else if(){
+
+}else{
+
+}*/
+/*Angel={name:'Anel',age:18,height:'188cm'}
+for(x in Angel){
+     var txt='';
+    txt= txt+ Angel[x];
+    console.log(txt);
+
+}
+people=['Angel','Bill','Cat','mat','lat']
+
+    // while (people[i]){
+    // console.log(people[i])
+    //     i=i+2;
+    // }
+    for( var i=0;i<people.length;i=i+2){
+                      console.log(people[i])
+        }*/
+/*   for (i=0;i<10;i++)
+ {
+     if (i==3) break;
+       console.log(i);
+           }*/
+console.log('(3.14)'.constructor);
+var str='iHaveadogiHaveadogiHaveadogiHaveadog';
+console.log(str.search(/have/g))
+    console.log(str.search(/d/g))
+    console.log(str.search(/i/i))
+    console.log(str.search('i'))
+    console.log(str.replace('i','11111'))
+    console.log(str)
+/*    try {
+    // debugger;
+  if(a='0') throw 'nishizhuma';
+    }
+    catch(e){
+    alert(e);
+    }*/
+    (function () {
+        var x = "Hello!!";      // 我将调用自己
+    })();
+// alert(ii(1,2));
+//  alert(xx(1,2));
+</script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>W3Cschool教程(w3cschool.cn)</title>
+</head>
+<body>
+
+<p> arguments.length 属性返回函数接收到参数的个数：</p>
+<p id="demo"></p>
+<script>
+    function myFunction(a, b) {
+        return arguments.length;
+    }
+    document.getElementById("demo").innerHTML = myFunction(4);    //1
+    document.getElementById("demo").innerHTML = myFunction(4,2);//2
+    document.getElementById("demo").innerHTML = myFunction(4,2,3);//3
+</script>
+
+</body>
+</html>

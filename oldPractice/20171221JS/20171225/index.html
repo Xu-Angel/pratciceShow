@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--/*
+ * @Author: Angel
+ * @Date: 2017-12-21 19:13:14
+ * @Last Modified by: 1049547382@qq.com
+ * @Last Modified time: 2017-12-21 19:22:17
+ */-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="显示/隐藏"> </input>
+<div>dasdasd</div>
+</body>
+<script>
+function setName(obj) {
+    obj.name='YY';
+    obj=new Object();
+    obj.name='SS';
+}
+var person =new Object();
+setName(person);
+console.log(person.name);
+document.write(1?'✔':'✖');
+document.write(0?'y':'x')
+document.write(null?'y':'x')
+document.write(undefined?'y':'x')
+var score=59;
+    if (score>=90){
+        document.write('A');
+    }else if(score>=80){
+        document.write('B')
+    }else  if(score>=70){
+        document.write('C')
+    }
+    else if(score>=60){
+        document.write('D')
+    }else {
+        document.write('oshhh')
+    }
+var ipt=document.getElementsByTagName('input')[0];
+    var div=document.getElementsByTagName('div')[0];
+    var tag=0;
+    ipt.onclick=function () {
+        if(tag%2!=0){
+            div.style.display='none';
+            ipt.value='显示';
+        }else{
+            div.style.display='block';
+            ipt.value='隐藏'
+        }
+        tag++;
+        console.log(tag);
+    }
+</script>
+</html>

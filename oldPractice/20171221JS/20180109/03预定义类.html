@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    /*
+    预定义类
+    \d  [0-9]           数字类型(字符串或数学上的数字)
+    \D  [^0-9]          非数字类型
+    \s  [\n\r\t\f\x0B]  空白字符(输出时看不到内容)
+    \S  [^\n\r\t\f\x0B] 非空白字符
+    \w  [a-zA-Z_0-9]    单字字符
+    \W  [^a-zA-Z_0-9]   非单字字符
+    .   [^\n\r]         除了换行和回车以外的其它字符，''或""结果是false
+     */
+    console.log(/\w/.test('2'));
+    console.log(/\w/.test('A'));
+    console.log(/\w/.test('$'));
+    console.log(/./.test('%'));
+    console.log(/./.test(''));
+</script>
+</html>

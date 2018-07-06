@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            height: 100px;
+            width: 300px;
+            padding: 20px;
+            border: 1px;
+        }
+    </style>
+</head>
+<body>
+<div style="height: 30px;"></div>
+<script>
+    var div=document.getElementsByTagName('div')[0];
+    console.log(div.style.height);
+    console.log(div.style['height']);
+    console.log(div.offsetWidth)
+    console.log(window.getComputedStyle(div,null).width)
+    console.log(window.getComputedStyle(div,null)['width'])
+    console.log(div.currentStyle.height)    //ie
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="applicable-device" content="mobile">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,maximum-scale=1" />
+    <title></title>
+</head>
+<body>
+<script>
+    (function() {
+        console.log(document.doctype)
+        console.log(document.URL)
+        console.log(document.hidden)
+        console.log(document.firstChild)
+        console.log(document.firstElementChild)
+        console.log(document.lastStyleSheetSet)
+        console.log(document.activeElement)
+        console.log(document.childElementCount)
+        console.log(document.dir)
+        console.log(document.domain)
+        console.log(document.lastModified)
+        console.log(document.open())
+        console.log(document.getSelection())
+        console.log(document.elementFromPoint(100,100))
+        console.log(document.childElementCount)
+
+
+        var newRem = function() {
+            var html = document.documentElement;
+            if(getClientHeight()>getClientWidth()){
+                html.style.fontSize = html.getBoundingClientRect().width /750*100 + 'px';
+            }else{
+                html.style.fontSize = html.getBoundingClientRect().width /1334*100 + 'px';
+            }
+        };
+        newRem();
+
+        // 取窗口可视范围的高度
+        function getClientHeight()
+        {
+            var clientHeight=0;
+            if(document.body.clientHeight&&document.documentElement.clientHeight)
+            {
+                var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+            }
+            else
+            {
+                var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+            }
+            return clientHeight;
+        }
+
+        // 取窗口可视范围的宽度
+        function getClientWidth()
+        {
+            var clientWidth=0;
+            if(document.body.clientWidth&&document.documentElement.clientWidth)
+            {
+                var clientWidth = (document.documentElement.clientWidth<document.body.clientWidth)?document.body.clientWidth:document.documentElement.clientWidth;
+            }
+            else
+            {
+                var clientWidth = (document.documentElement.clientWidth>document.body.clientWidth)?document.body.clientWidth:document.documentElement.clientWidth;
+            }
+            return clientWidth;
+        }
+    })()
+
+</script>
+</body>
+</html>

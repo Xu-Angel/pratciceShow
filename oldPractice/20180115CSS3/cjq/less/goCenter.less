@@ -1,0 +1,260 @@
+@r:100rem;
+.warp{
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+.home-top{
+  width: 100%;
+  height: 90/@r;
+  background: url("../img/index.png") 0 -715/@r no-repeat;
+  background-size: 750/@r;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  .logo-cont{
+    width: 300/@r;
+    height: 60/@r;
+    position: absolute;
+    top: 16/@r;
+    left: 34/@r;
+    padding-left: 80/@r;
+    .logo-img{
+      width: 60/@r;
+      height: 60/@r;
+      background: url(../img/index.png) 0 -616/@r no-repeat;
+      background-size: 750/@r;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .logo-title{
+      h1{
+        color: #fff;
+        font-size: 26/@r;
+        line-height: 34/@r;
+      }
+      p{
+        font-size: 16/@r;
+        color: #666;
+      }
+    }
+  }
+  .download{
+    width: 174/@r;
+    height: 60/@r;
+    position: absolute;
+    right: 34/@r;
+    top: 16/@r;
+    .download-img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      background-size: 750/@r;
+    }
+  }
+} /*home-top end*/
+.nav{
+  width: 100%;
+  height: 90/@r;
+  line-height: 90/@r;
+  ul{
+    width: 100%;
+    li{
+      float: left;
+      width: 33.33333%;
+      font-size: 26/@r;
+      text-align: center;
+      background-color: #db9e3f;
+      a{
+        color: #fff;
+      }
+    }
+  }
+} /*nav end*/
+
+  .gocenter-nav{
+    height: 80/@r;
+    line-height: 80/@r;
+    border-top: 1px solid #d3d3d4;
+    border-bottom: 1px solid #d3d3d4;
+    ul{
+      height: 80/@r;
+      li{
+        float: left;
+        width: 30.125%;
+        height: 80/@r;
+        &:first-child{
+          width: 9.5%;
+          background: url("../img/backBg.png") no-repeat center center;
+          background-size: 25%;
+        }
+        a{
+          display: block;
+          width: 100%;
+          height: 100%;
+          font-size: 26/@r;
+          border-left: 1px solid red;
+          text-align: center;
+          color: #000;
+
+          &:first-child{
+            border-left: 0;
+          }
+          &.current{
+            width: 100%;
+            color: #fff;
+            background: url("../img/go_icon_02.png") no-repeat center center;
+            background-size: 750/@r;
+          }
+        }
+      }
+    }
+  }/*gocenter-nav end*/
+  .gocenter-intr{
+    height: 100%;
+    margin-top: 40/@r;
+      h1{
+        height: 40/@r;
+        line-height: 40/@r;
+        padding-left: 30/@r;
+        font-size: 30/@r;
+        background: url("../img/go_icon_01.png") no-repeat left center;
+        background-size: 3.8%;
+        margin-left: 3%;
+    }
+    .intr-con{
+      background-color: #fff;
+      padding: 3.171%;
+      img{
+
+      }
+      h2{
+        margin-top: 40/@r;
+        font-size: 45/@r;
+        color: #464646;
+      }
+      p{
+        color: #464646;
+        font-size: 35/@r;
+        line-height: 45/@r;
+        margin-top: 40/@r;
+      }
+    }
+  } /*gocenter-intr end*/
+  .gocenter-sp{
+    width: 100%;
+    height: 100%;
+    margin-top: 40/@r;
+      h1{
+        height: 40/@r;
+        line-height: 40/@r;
+        padding-left: 30/@r;
+        font-size: 30/@r;
+        background: url("../img/go_icon_04.png") no-repeat left center;
+        background-size: 3.8%;
+        margin-left: 3%;
+      }
+    .sp-con{
+      width: 93%;
+      background-color: #fff;
+      padding: 3.171%;
+      .sp-ct{
+        height: 40/@r;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 80/@r;
+        margin-bottom: 80/@r;
+        position: relative;
+        .i{
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          height: 1/@r;
+          background-color: #eaeaea;
+          border-radius: 1px;
+          border: 1px solid #ddd;
+          transform: translateY(-50%);
+        }
+        ul{
+          li{
+            float: left;
+            margin-right: 17%;
+            &:last-child{
+              margin-right: 0;
+            }
+            &.current span{
+              background: url("../img/go_icon_05.png") no-repeat center;
+              background-size: contain;
+            }
+            &.current i{
+               border: 1px solid #2784e0;
+               background-color: #2784e0;
+               color: #fff;
+             }
+            &.current i em{
+              background-color: #2784e0;
+              color: #fff;
+              border: none;
+            }
+            span{
+              display: block;
+              width: 40/@r;
+              height: 40/@r;
+              line-height: 40/@r;
+              background: url("../img/go_icon_06.png") no-repeat center;
+              background-size: contain;
+              position: relative;
+              z-index: 3;
+              transition: all 1s ease;
+              i{
+                width: 100/@r;
+                height: 40/@r;
+                line-height: 40/@r;
+                text-align: center;
+                font-size: 26/@r;
+                border: 1px solid #9fa0a0;
+                color: #9fa0a0;
+                background-color: #fff;
+                border-radius: 2px;
+                position: absolute;
+                top: -60/@r;
+                left: -24/@r;
+                em{
+                  width: 10/@r;
+                  height: 10/@r;
+                  position: absolute;
+                  left: 50%;
+                  bottom: -15%;
+                  margin-left: -10/@r;
+                  border-left: 1px solid #9fa0a0;
+                  border-bottom: 1px solid #9fa0a0;
+                  background-color: #fff;
+                  transform: rotate(-45deg);
+                }
+              }
+            }
+          }
+        }
+      }
+      .sp-game{
+        width: 100%;
+        .sp-gamecont{
+          width: 100%;
+          h2{
+            font-size: 30/@r;
+            margin: 50/@r 0;
+            color: #9fa0a0;
+          }
+          p{
+            font-size: 25/@r;
+            color: #9fa0a0;
+            margin: 10/@r 0;
+          }
+        }
+      }/*sp-game end*/
+    }
+  }/*gocenter-sp end*/
+}

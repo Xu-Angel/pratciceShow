@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--/*
+ * @Author: Angel
+ * @Date: 2017-12-21 19:13:14
+ * @Last Modified by: 1049547382@qq.com
+ * @Last Modified time: 2017-12-21 19:22:17
+ */-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <input type="button" value="全选">
+    <input type="button" value="反选">
+</div>
+<div>
+    <input type="checkbox" >1
+    <input type="checkbox" >2
+    <input type="checkbox" >3
+    <input type="checkbox" >4
+    <input type="checkbox" >5
+    <input type="checkbox" >6
+
+</div>
+<script>
+    var inputs=document.getElementsByTagName('input');
+    var firstBtn=inputs[0];
+    var secondBtn=inputs[1];
+    var num=1;
+    firstBtn.onclick=function () {
+            for(var i=2;i<inputs.length;i++){
+                if(num%2!=0){
+                    inputs[i].checked='checked';
+                }else{
+                    inputs[i].checked =false;
+                }
+            }
+        firstBtn.value=num%2!=0? ' 取消所有' :'全选';
+        num++;
+        }
+    secondBtn.onclick=function () {
+        firstBtn.value='全选';
+        for(var i=2;i<inputs.length;i++){
+         inputs[i].checked=!inputs[i].checked;     //inputs[i].checked=!inputs[i].checked;
+             }
+        }
+for(var i=2;i<inputs.length;i++){
+        inputs[i].onclick=function () {
+            var flag=0;//局部
+            if(!this.checked){
+            firstBtn.value='全选'
+                console.log(11)
+            }
+            for( var k=2;k<inputs.length;k++){
+                if( inputs[k].checked){
+                    flag++;
+                }
+        }
+            if(flag==6){
+                firstBtn.value='取消全选';
+                flag=0;
+            }
+    }
+
+
+
+}
+</script>
+</body>
+</html>

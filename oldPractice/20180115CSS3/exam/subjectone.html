@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{
+            width: 500px;
+            height: 550px;
+            border:1px solid #ccc;
+            margin:100px auto;
+        }
+        li{
+            list-style: none;
+            height: 50px;
+            line-height: 50px;
+            padding-left:10px;
+        }
+        li:nth-child(odd){
+            background: #ccc;
+        }
+        .now{
+            background: red;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>这项极端重要工作怎么干？习近平给你划重点</li>
+    <li>习近平对九寨沟地震作出指示 李克强批示</li>
+    <li>地震台网：菲律宾发生6.3级地震 震源深度180千米</li>
+    <li>中国空军司令员:日本海不是日本的海 空军必出海</li>
+    <li>小官巨贪!黑龙江一村支书贪2亿多 挪用公款8520万</li>
+    <li>西汉高速陕西段发生重大交通事故致36死13伤</li>
+    <li>九寨沟地震救援人员捞出2具遗体:1名女孩1名男性</li>
+    <li>微信微博贴吧被立案调查 涉违反《网络安全法》</li>
+    <li>秦岭隧道特大事故涉事客车未超载 死者含2名儿童</li>
+    <li>你是哪国首相?安倍在长崎被受害者质问后无言以对</li>
+    <li>温度 | 90后女生拾金不昧 失主"送"她房被拒</li>
+</ul>
+<script>
+    /*功能一：鼠标经过某一行，该行背景变成红色，文字变成白色
+功能二：鼠标移除某一行，该行变化初始样式
+*/
+    var lis=document.getElementsByTagName('li');
+    for(var i = 0; i < lis.length; i++ ){
+    lis[i].addEventListener('mouseover',function () {
+        this.className='now';
+    })
+        lis[i].addEventListener('mouseout',function () {
+            this.className='';
+        })
+    }
+</script>
+</body>
+</html>

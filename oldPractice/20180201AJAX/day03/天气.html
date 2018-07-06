@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" placeholder="请输入要查询天气的城市"><input type="button" value="查询">
+        <p id='changeCity'>您当前城市天气:</p>
+        <p id='day'></p>
+        <p id='night'></p>
+        <p id=now></p>
+        <p id='shushidu'></p>
+        <p id='chuanyi'></p>
+        <p id='ganmao'></p>
+        <p id='ziwaixian'></p>
+        <p id='daisan'></p>
+    <script src="jquery.min-1.12.4.js"></script>
+    <script>
+        con('%E5%B9%BF%E5%B7%9E');  //默认广州
+   
+        $('input[type="button"]').on('click',function(){
+            var sss=document.getElementsByTagName('input')[0].value;   //查询城市
+            var cityEn=encodeURIComponent(sss)
+            $('#changeCity').html(sss+'天气预报如下')
+            con(cityEn)
+        })
+        function con(cityEncode){
+       $.ajax(
+           {
+               url:'http://op.juhe.cn/onebox/weather/query?cityname='+cityEncode+'&key=95992736b780a04aaf4042abf1133da7',
+               type:'get',
+               success:function(data){
+                    var da=data.result;
+                    console.log(da)
+                    var chuanyi=(da.data.life.info.chuanyi).join('')   //穿衣指数
+                    var ganmao=(da.data.life.info.ganmao).join('')       //感冒指数
+                    var ziwaixian=(da.data.life.info.ziwaixian).join('')    //紫外线
+                    var shushidu=(da.data.life.info.shushidu).join('')   //舒适度
+                    var daisan=(da.data.life.info.daisan).join('')        //带伞
+                    var ti=da.data.realtime.time                    //发布时间
+                    var uu=da.data.realtime.weather.temperature    //最新发布温度
+                    var hu=da.data.realtime.weather.humidity       //最新湿度
+                    var we=da.data.realtime.weather.info            //最新阴晴
+                    var direct=da.data.realtime.wind.direct     //风向
+                    var power=da.data.realtime.wind.power    //风力
+                    var wind=(da.data.realtime.wind)
+                    var todayWeather=da.data.weather[0].info
+                    var dayWeather=todayWeather.day
+                    var htmp=dayWeather[2]          //白天最高温度
+                    var dayDirect=dayWeather[3]     //白天风向
+                    var dayPower=dayWeather[4]         //白天风力
+                    var nightWeather=todayWeather.night
+                    var ltmp=nightWeather[2]       //夜晚最低温度
+                    var nightDirect=nightWeather[3]   //夜晚风向
+                    var nightPower=nightWeather[4]      //夜晚风力
+                    //更新
+                    $('#day').html('白天天气：最高温度'+htmp+'℃，吹'+dayDirect+'，风力'+dayPower)
+                    $('#night').html('夜晚天气：最低温度'+ltmp+'℃，吹'+nightDirect+',风力'+nightPower)
+                    $('#now').html('当前天气: '+uu+'℃,'+we+' ,&nbsp;湿度百分比：'+hu+'％，吹'+direct+'风力,'+power)
+                    $('#chuanyi').html('穿衣指数：'+chuanyi)
+                    $('#ganmao').html('感冒指数：'+ganmao)
+                    $('#ziwaixian').html('紫外线指数：'+ziwaixian)
+                    $('#daisan').html('带伞指数：'+daisan)
+                    $('#shushidu').html('舒适度：'+shushidu)
+               },
+               dataType:'jsonp',
+           }
+       )
+    
+        }
+    </script>
+
+</body>
+</html>

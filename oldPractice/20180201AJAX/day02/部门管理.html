@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding:0;}
+        .container{
+            width: 500px;margin: 0 auto;
+        }
+        table{width: 350px;margin:0 auto;border-collapse: collapse}
+        th,td{border: 1px solid black;text-align: center;font-size: 14px}
+    
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr><th>部门号</th><th>部门名称</th><th>部门位置</th></tr>
+            <tbody></tbody>
+        </thead>
+    </table>
+    <script>
+        var dod=document.body;
+        console.log(dod)
+        var html='';
+    for(var j=0;j<20;j++){
+
+html+='<tr>'+ j+'<td>woshizhutou</td>'+ j+'</tr>';
+    }
+    dod.innerHTML=html;
+      var pageSize = 5 ;
+      var currentPage = 1 ;
+      var tbbody = document.querySelector('tbody');
+      updateTable();
+        /* 更新表格数据 */
+        function updateTable(){
+                var url = 'fsd' ;
+                get(url,function(e){
+                   var data=e.data;
+                   var html = '';
+                   for(var i=0;i<e.length;i++){
+                    html += '<tr><td>' +
+                     data[i].deptno +
+                     '</td><td>' + 
+                     data[i].dname +'</td><td>' + data[i].loc +'</td><td><a href="#">编辑</a><a href="#">删除</a></td></tr>'
+                    html+='<tr><td>'+data[i].deptno+'</td>'+ data[i].dname+'<td>'+ data[i].loc+'<td><a href="#">编辑</a></td><td><a href="#">删除</a></td></td><tr>'
+                   }
+                })
+        }
+        /* ajax 请求函数
+        @param  method
+        @param  url
+        @param  params
+        @param callback
+         */
+        function ajax(method,url,params,callback){
+             var xhr=new XMLHttpRequest();
+             xhr.open(method,url,true);
+             xhr.send();
+             xhr.onreadystatechang=function(){
+                if(xhr.readyState==4 && xhr.status== 200){
+                      if(callback){
+                          callback(JSON.parse(xhr.responseText))
+                      }
+                }
+             }    
+        }
+
+        /*  get请求方式的AJAX*/
+        function get(url,callback){
+ ajax('get',url,null,callback);
+        }
+        /* post请求方式的AJAX */
+        function post(url,params,callback){
+    ajax('post',url,params,callback);
+        }
+    </script>
+
+</body>
+</html>

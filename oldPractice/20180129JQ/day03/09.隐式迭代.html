@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>line one</li>
+    <li>line two</li>
+    <li>line three</li>
+</ul>
+</body>
+<script src="../jquery.min-1.12.4.js"></script>
+<script>
+    // 这里进行了隐式的迭代
+    /*$('li').on('click', function(e){
+        console.log(e.target);
+    })*/
+var arr=$('li')
+    for(var i=0;i++;i<arr.length){
+        $(arr[i]).on('click',function(){
+
+        })
+    }
+    // 上面的代码底层实现类似
+    /*var arr = $('li');
+    for (var i=0;i<arr.length;i++){
+        $(arr[i]).on('click', function(e){
+           console.log(e.target);
+        });
+    }*/
+
+
+    // each     是一个简化了的for循环
+    $('li').each(function(index, element){
+        //console.log(index, element);
+        $(element).on('click', function(){
+           if (index == 0){
+               console.log('下雪了');
+           } else if(index == 1){
+               console.log('下冰雹');
+           } else if(index == 2){
+               console.log('下雨了')
+           } else{
+               console.log('回家了')
+           }
+        });
+    });
+    $('li').each(function(index,element){
+             $(element).on('click',function(){
+                 if(index==0){
+                     conslole.log(0)
+                 }else if(index==1){
+                     console.log(1)
+                 }else if(index==2){
+console.log(2)
+                 }
+             })
+    })
+    // 上面代码类似于以下的for循环
+    /*var arr = $('li');
+    for (var i=0;i<arr.length;i++){
+        (function(index){
+            var element = arr[index];
+            // $(element).on('click', function(){// 实现代码})
+        })(i);
+    }*/
+for(var i=0;i<arr.length;i++){
+     (function(index){
+         console.log(i,'ooo')
+     }
+
+     )(i)
+}
+    function each(callback){
+        var arr = $('li');
+        for (var i=0;i<arr.length;i++){
+            (function(index){
+                var element = arr[index];
+                callback(index, element);
+            })(i);
+        }
+    }
+</script>
+</html>

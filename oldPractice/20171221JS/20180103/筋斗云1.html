@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width: 800px;
+            height: 42px;
+            margin:200px auto;
+            border-radius:12px;
+            position: relative;
+        }
+        ul{
+            list-style: none;
+            position: absolute;
+            left:0;
+            top:0;
+
+        }
+        ul li{
+            float: left;
+            width: 83px;
+            height: 42px;
+            text-align: center;
+            line-height: 42px;
+            cursor:pointer;
+        }
+        span{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 83px;
+            height: 42px;
+           border-bottom: 2px solid red;
+            background: url("img/cloud.gif");
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <span></span>
+    <ul>
+        <li>首页新闻</li>
+        <li>师资力量</li>
+        <li>活动策划</li>
+        <li>企业文化</li>
+        <li>首页新闻</li>
+        <li>师资力量</li>
+        <li>活动策划</li>
+        <li>企业文化</li>
+    </ul>
+</div>
+<script>
+    var liS = document.getElementsByTagName('li');
+    var cloud = document.getElementsByTagName('span')[0];
+    var ul = document.getElementsByTagName('ul')[0];
+    var current = 0;
+    for(var i=0;i<liS.length;i++){
+        liS[i].index = i;
+        liS[i].onmouseover = function(){
+            cloud.style.left = this.offsetLeft+"px";
+        }
+        liS[i].onclick =function(){
+            current = this.index;
+        }
+    }
+    ul.onmouseout = function(){
+        cloud.style.left = cloud.offsetWidth*current+"px";
+    }
+</script>
+</body>
+</html>

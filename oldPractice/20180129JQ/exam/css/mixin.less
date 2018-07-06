@@ -1,0 +1,43 @@
+/*定义混合函数*/
+//样式混合函数
+.fr{
+  float: right;
+}
+.fl{
+  float: left;
+}
+.mixin{
+  .fl();
+  .fr();
+}
+//less函数，类名后加（）；
+.f(){
+  float: left;
+  border: 1px solid red;
+  background: red;
+}
+.yy{
+  .f
+}
+//定义一个可以传参的函数   参数要有默认值,增强健壮性
+.cauncan(@tt:left){
+border-@{tt}:1px solid red;
+}
+//圆角方法
+.borderRadius(@width:10px){
+border-radius: @width;
+-webkit-border-radius: @width;
+-moz-border-radius: @width;
+  -ms-border-radius: @width;
+-o-border-radius: @width;
+
+}
+.tag{
+  .borderRadius(50px)
+}
+/*less导入功能   模块化思想  解耦   高内聚低耦合*/
+//@import "index.less";
+/*内置函数运算*/
+.oo{
+  width: 100/12%;
+ }

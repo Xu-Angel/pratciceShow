@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 500px;
+            height: 300px;
+            border: 30px solid rgba(104, 104, 142, 0.5);
+            padding: 20px;
+            background:url("img/bg-tl.png") no-repeat,
+                url("img/bg-tr.png") no-repeat top right,
+                url("img/bg-bl.png") no-repeat bottom left,
+                url("img/bg-br.png") no-repeat bottom right,
+                url("img/bg-repeat.png");
+            /*注意：需要设置图片后再修改background-origin，否则背景还是使用padding-box*/
+            background-origin: border-box;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

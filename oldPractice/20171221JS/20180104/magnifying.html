@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width: 900px;
+            height: 430px;
+            margin:50px 100px;
+            position: relative;
+        }
+        img{
+            display: block;
+        }
+        .small{
+            float: left;
+        }
+        div.mask{
+            width: 184px;
+            height: 184px;
+            background: lightyellow;
+            opacity: 0.3;
+            filter:alpha(opacity=30);
+            display: none;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .big{
+            border:1px solid #ccc;
+            overflow: hidden;
+            width: 430px;
+            height: 430px;
+            float: left;
+            margin-left:20px;
+
+        }
+        .big img{
+            margin-top:0px;
+            margin-left:0px;
+        }
+    </style>
+    <script src="js/myQuery1.2.js"></script>
+</head>
+<body>
+<div class="box">
+    <div class="small">
+        <img src="img/small.jpg" alt="" />
+        <div class="mask"></div>
+    </div>
+    <div class="big">
+        <img src="img/big.jpg" alt="" />
+    </div>
+</div>
+<script>
+    var box=$('.box')[0];
+    var small=$('.small')[0];
+    var mask=$('.mask')[0];
+    var big=$('.big')[0].getElementsByTagName('img')[0];
+    small.onmousemove=function (ev) {
+        mask.style.display='block';
+
+        var ev=ev||window.event;
+        var x=ev.clientX+scroll().left-box.offsetLeft-mask.offsetLeft/2;
+        var y=ev.clientY+scroll().top-box.offsetTop-mask.offsetTop/2;
+
+        if(x<0){
+            x=0
+        }else if(x>small.offsetWidth-mask.offsetWidth){
+            x=small.offsetWidth-mask.offsetWidth;
+        }
+        if(y<0){
+            y=0
+        }else if(y>small.offsetHeight-mask.offsetHeight){
+            y=small.offsetHeight-mask.offsetHeight;
+        }
+        mask.style.left=x+'px';
+        mask.style.top=y+'px';
+        //图片放大
+        var percentX=x/small.offsetWidth;
+        var percentY=y/small.offsetHeight;
+        big.style.marginTop=-percentY*big.offsetHeight + 'px';
+        big.style.marginLeft=-percentX*big.offsetWidth + 'px';
+
+  /*      var left=-percentX*big.offsetWidth;
+        var top=-percentY*big.offsetHeight
+        big.style.top=top +'px';*/
+
+  //优化        进行优化判断x,y极值   父定位的盒子宽度-移动盒子的宽度  //
+
+
+    }
+    small.onmouseleave=function () {
+        mask.style.display='none';
+    }
+
+</script>
+</body>
+</html>

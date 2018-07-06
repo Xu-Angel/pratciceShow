@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 简单类就是在//中什么特殊符号都不写
+    // 1. /string/.test('string')，必须完整匹配，内容只多不能少，只要完整含内容就可以
+    console.log(/lucy/.test('lucy'));
+    console.log(/lucy/.test('lucylv'));
+    console.log(/lucy/.test('lu')); // false
+    console.log(/lucy/.test('lvlucy'));
+    console.log(/lucy/.test('lvlu')); // false
+
+    console.log('---------------------------------');
+    // 2. /[string]/.test(string)，只要包含[]里任意一个就可以
+    console.log(/[lucy]/.test('lucy'));
+    console.log(/[lucy]/.test('lucylv'));
+    console.log(/[lucy]/.test('lu'));
+    console.log(/[lucy]/.test('ablucy'));
+    console.log(/[lucy]/.test('ablu'));
+    console.log(/[lucy]/.test('123'));
+    console.log(/[lucy]/.test('www'));
+    console.log(/[lucy]/.test('ss'));
+</script>
+</html>

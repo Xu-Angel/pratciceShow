@@ -1,0 +1,84 @@
+.con{
+    width: 1180px;
+    height: 370px;
+    background: #3DCF98;
+    margin: 20px auto;
+}
+.con-l,
+.con-m,
+.con-r{
+    position: relative;
+    width:370px;
+    height: 345px;
+    background-color: white;
+    float: left;
+    margin-top: 13px;
+    margin-left: 17px;
+}
+.con h{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.con  i{
+    position: absolute;
+    bottom: 52px;
+    left: 77px;
+    font-size: 20px;
+    color: #A89595;
+}
+.con p{    background-color: #1E100B;
+    width: 337px;
+    position: absolute;
+    top: 179px;
+    left: 17px;
+    font-size: 20px;
+    color: white;
+    height: 50px;
+}
+.con span{
+    position: absolute;
+    bottom: 48px;
+    left: 12px;
+    font-size: 28px;
+    color: #FF7466;
+}
+.con img{
+
+    display: block;
+    margin: 0 auto;
+    margin-top: 35px;
+    height: 147px;
+    width: 337px;
+}
+
+.con a{
+    position: absolute;
+    bottom: 50px;;
+    left: 270px;
+    display:block;
+    float: right;
+    width: 85px;
+    height: 31px;
+    font-size: 20px;
+    color: white;
+    background-color: #FF7466; ;
+    border-radius: 10px;
+}
+.con h2{
+    text-align: center;
+    line-height: 35px;
+    border-top: 1px solid #ECECEC;
+    margin-left: -25px;
+    width: 100%;
+    position: absolute;
+    top: 310px;
+    left: 25px;
+    font-size: 15px;
+    height: 35px;
+    background-color: #F8F8F8;
+    /*color: white;*/
+}

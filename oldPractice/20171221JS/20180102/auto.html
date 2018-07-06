@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 520px;
+            height: 280px;
+            margin:100px auto;
+            position: relative;
+            box-shadow: 0 0 10px 2px #ccc;
+            overflow: hidden;
+        }
+        ul.img{
+            width: 1000%;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        ul.img li{
+            list-style: none;
+            float: left;
+        }
+        ul.point{
+            position:absolute;
+            left:50%;
+            bottom:10px;
+            margin-left:-75px;
+        }
+        ul.point li{
+            float: left;
+            margin:0 5px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            background: pink;
+            list-style: none;
+            cursor:pointer;
+        }
+        ul.point li.now{
+            background: red;
+            color:#fff;
+        }
+        .arrow{
+            position: absolute;
+            left:0;
+            width: 100%;
+            top:50%;
+            margin-top:-25px;
+        }
+        .arrow li{
+            list-style: none;
+            width: 35px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            background: rgba(0,0,0,.2);
+            cursor: pointer;
+        }
+        .left{
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+    </style>
+    <script src="Myjquery1.0.js"></script>
+</head>
+<body>
+<div>
+    <ul class="img">
+        <li><img src="img/1.jpg"></li>
+        <li><img src="img/2.jpg"></li>
+        <li><img src="img/3.jpg"></li>
+        <li><img src="img/4.jpg"></li>
+        <li><img src="img/5.jpg"></li>
+    </ul>
+    <ul class="point">
+    </ul>
+    <ul class="arrow">
+        <li class="left"><</li>
+        <li class="right">></li>
+    </ul>
+</div>
+<script>
+    //需求分析：
+    //1、在最后一幅图后面添加第一幅图
+    //2、我们必须动态添加小圆点，同时点亮第一个
+    //3、点击小圆点，ul移动到相应的图片
+    //4、同时点亮小圆点
+    //5、左右箭头切换图片
+    //6、添加自动轮播功能
+    //获取事件源
+    var box = document.getElementsByTagName('div')[0];//轮播图容器
+    var ul = box.children[0];//图片所在ul
+    var point = box.children[1];//小圆点所在的ul
+    var arrow = box.children[2];//左右箭头所在的ul
+    var left = arrow.children[0];//左箭头
+    var right = arrow.children[1];//右箭头
+    var index = 0;//记录当前切换到的图片的索引
+
+    //1、在最后一幅图后面添加第一幅图
+    var newLi = ul.children[0].cloneNode(true);
+    ul.appendChild(newLi);
+    var liS = ul.children;//所有图片的集合
+
+    //2、我们必须动态添加小圆点，同时点亮第一个
+    for(var i=1;i<liS.length;i++){
+        var li = document.createElement('li');
+        li.innerHTML = i;
+        point.appendChild(li);
+    }
+    var points = point.children;
+    light();
+    //light用于点亮索引是index的那个小圆点
+    function light() {
+        for(var i=0;i<points.length;i++){
+            points[i].className = ""
+        }
+        if(index>4){
+            points[0].className = "now";
+        }else{
+            points[index].className = "now";
+        }
+    };
+    //3、点击小圆点，ul移动到相应的图片
+    for(var j=0;j<points.length;j++){
+        points[j].index = j;
+        points[j].onclick = function () {
+            index = this.index;
+            animate(ul,-index*box.offsetWidth);
+            //4、同时点亮小圆点
+            light();
+        }
+    };
+    //5、左右箭头切换图片
+    right.onclick = autoplay;
+    //autoplay:看后一张
+    function autoplay(){
+        index++;
+        if(index>liS.length-1){
+            ul.style.left=0;
+            index = 1;
+        }
+        animate(ul,-index*box.offsetWidth);
+        light();
+    }
+    left.onclick = function () {
+        index--;
+        if(index<0){
+            ul.style.left=-(liS.length-1)*box.offsetWidth+"px";
+            index = liS.length-2;
+        }
+        animate(ul,-index*box.offsetWidth);
+        light();
+    };
+    //6、添加自动轮播功能
+    box.timer = setInterval(autoplay,2000);
+    box.onmouseover = function () {
+        clearInterval(box.timer);
+    };
+    box.onmouseout = function () {
+        clearInterval(box.timer);
+        box.timer = setInterval(autoplay,2000);
+    };
+
+</script>
+</body>
+</html>

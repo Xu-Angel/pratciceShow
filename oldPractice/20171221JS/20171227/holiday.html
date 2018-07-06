@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--/*
+ * @Author: Angel
+ * @Date: 2017-12-21 19:13:14
+ * @Last Modified by: 1049547382@qq.com
+ * @Last Modified time: 2017-12-21 19:22:17
+ */-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>距离元旦放假还有 <span></span></div>
+<script>
+    // var holiday=new Date('2018/01/01')
+    /*var now=new Date();
+    var re=parseInt((holiday.getTime()-now.getTime())/1000);   //倒计秒
+    var reDay=parseInt(re/(24*60*60));                  //倒计天
+    var reHour=parseInt((re%(24*60*60))/3600)               //倒计时
+    var reMin=parseInt(re%3600/60)             //倒计分
+        var reSec=re%60;             //倒计秒
+    var txt=reDay + '天'+ reHour +'时'+ reMin+ '分' +reSec + '秒';*/
+    // var span=document.getElementsByTagName('span')[0];
+
+
+    setInterval( function time() {
+        var holiday=new Date('2018/01/01')
+        var now=new Date();
+        var re=parseInt((holiday.getTime()-now.getTime())/1000);   //倒计秒
+        var reDay=parseInt(re/(24*60*60));                  //倒计天
+        var reHour=parseInt((re%(24*60*60))/3600)               //倒计时
+        var reMin=parseInt(re%3600/60)             //倒计分
+        var reSec=re%60;             //倒计秒
+        var txt=reDay + '天'+ reHour +'时'+ reMin+ '分' +reSec + '秒';
+        var span=document.getElementsByTagName('span')[0];
+        span.innerText=txt;
+    },1000);
+</script>
+</body>
+</html>

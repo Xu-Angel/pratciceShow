@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="全选"><input type="button" value="取消"><input type="button" value="反选">
+<ul>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+    <li><input type="checkbox"></li>
+</ul>
+<script>
+/*
+    功能一：点击全选按钮，复选框全部被选中
+    功能二：点击取消按钮，复选框全部没有选中
+    功能三：点击反选按钮，原来选中的变成没有选中，原来没有选中的变成选中*/
+
+
+var inpS=document.getElementsByTagName('input');
+    //第一个inpS[0]全选
+inpS[0].addEventListener('click',function () {
+    for(var i=3;i<inpS.length;i++){
+            inpS[i].checked='checked';
+    }
+})
+
+//第三个inpS[2]反选
+    inpS[2].addEventListener('click',function () {
+        for(var i=3;i<inpS.length;i++){
+            inpS[i].checked=!inpS[i].checked;
+        }
+    })
+//第二个inpS[1]清空
+inpS[1].addEventListener('click',function () {
+    for(var i=3;i<inpS.length;i++){
+        inpS[i].checked=false;
+    }
+});
+for(var i=3;i<inpS.length;i++){
+    inpS[i].onclick=function () {
+        var flag=0;//局部
+        for( var k=3;k<inpS.length;k++){
+            if( inpS[k].checked){
+                flag++;
+            }
+        }
+        if(flag==inpS.length-3){
+            flag=0;
+        }
+    }
+
+
+
+}
+</script>
+</body>
+</html>

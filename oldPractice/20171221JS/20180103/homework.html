@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+         .container{
+             width: 100%;
+             height: 200px;
+             margin: 0 auto;
+             position:fixed;top:0;overflow:hidden;
+         }
+        .nav{
+            width: 100%;
+           margin: 0 auto;
+            background-color: green;
+            position:absolute;height:100px;
+            top:-100px;
+        }
+        .no{
+            width: 100%;
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+<!--scrollTop>=100时，出现导航栏，导航栏的出需要从上往下移，出现后固定在顶部
+当scrollTop<100时，导航栏需要隐藏，隐藏的方式由下往上消失-->
+
+<div  class="container" style="">
+    <div class="nav" ></div>
+</div>
+<div class="no"></div>
+<script>
+    var nav=document.getElementsByClassName('nav')[0];
+    window.onscroll=function () {
+         //scrollTop>=100
+        if(!nav.flag&&scroll().top>100){
+            nav.flag=true;
+            console.log(11);
+            animationY(nav,0,100);
+
+
+        }else{
+            nav.flag=false;
+            console.log(22);
+            animationY(nav,-100,100);
+
+
+        }
+
+        function animationY(obj,target,alph){
+            clearInterval(obj.timer);
+            //透明度
+            var oAlpha=0;
+            obj.timer = setInterval(function(){
+                var speeds=(alph-oAlpha)/30;
+                speeds=speeds>0?Math.ceil(speeds):Math.floor(speeds);
+                oAlpha=oAlpha+speeds;
+                obj.style.opacity=oAlpha/100;
+                //非ie
+                obj.style.filter='alpha(opacity:'+oAlpha+')';
+                //动画
+                var speed = (target - obj.offsetTop)/10;
+                speed = speed>0?Math.ceil(speed):Math.floor(speed)
+                //缓动原理：物体的位置 = 物体原来的位置+（目标位置-物体原来位置）/10
+                obj.style.top = obj.offsetTop+speed+"px";
+                if(target ==  obj.offsetTop){
+                    clearInterval(obj.timer)
+                }
+            },30)
+        }
+        function scroll(){
+            return {
+                "top":document.body.scrollTop+document.documentElement.scrollTop,
+                "left":document.body.scrollLeft+document.documentElement.scrollLeft
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

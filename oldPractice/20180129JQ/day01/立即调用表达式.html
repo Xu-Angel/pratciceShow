@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+   
+</style>
+<script src="http://img.mukewang.com/down/540812440001e40e00000000.js" type="text/javascript"></script>
+<title>匿名函数</title>
+</head>
+
+<div id="target1">
+    点击测试1
+</div>
+
+<div id="target2">
+    点击测试2
+</div>
+
+<div id="target3">
+    点击测试3
+</div>
+
+<div id="target4">
+    点击测试4
+</div>
+
+<script>
+
+function oClick1(){
+    ajQuery1();
+    function ajQuery1(){
+       show('ajQuery1')
+    }
+    ajQuery1(); 
+}
+
+function oClick2(){
+    try{
+        ajQuery2();
+    }catch(e){
+        show('oClick2,ajQuery2会报错，未定义，命名函数表达式不会预先提升')
+    }
+    var ajQuery2 = function(){
+       show('ajQuery2')
+    }
+    ajQuery2(); 
+}
+
+function oClick3(){
+    ;(function(){
+        show('ajQuery3')
+    })()
+}
+
+function oClick4(){
+    var ajQuery4 = function(){
+        show('ajQuery4') 
+    }();
+}
+
+
+$("#target1").click(oClick1);
+$("#target2").click(oClick2);
+$("#target3").click(oClick3);
+$("#target4").click(oClick4);
+
+
+
+function show(data) {
+   $("body").append('<li>' + data + '</li>')
+}
+
+</script>
+</body>
+</html>
