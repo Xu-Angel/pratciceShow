@@ -1,0 +1,34 @@
+html,body,div,ul,li,ol,input,textarea,span,a,img,p,h1,h2,h3,h4,h5,h6,form,dl,dt{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-box-sizing:border-box;
+    }
+.clearfix::before,.clearfix::after{
+    content:"";
+    clear:both;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+}
+input,textarea{
+    outline-style: none;
+    outline:none;
+    -webtkit-appearance:none;
+    border:none;
+    resize:none;
+}
+ul,li{
+    list-style: none;
+}
+a{  
+    text-decoration: none;
+}
+body{
+    font-size:14px;
+    font-family: "microsoft YaHei","sans-serif"; 
+}
+img{
+    vertical-align: middle;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>星空文学</title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="stylesheet" href="css/login.css" />
+	</head>
+
+	<body>
+		<div class="top_div "></div>
+		<div class="shuru">
+			<div class="dongzuo">
+				<div class="tou"></div>
+				<div class="initial_left_hand" id="left_hand"></div>
+				<div class="initial_right_hand" id="right_hand"></div>
+			</div>
+			<p style="padding: 30px 0px 10px; position: relative;">
+				<span class="u_logo"></span>
+				<input class="ipt" type="text" placeholder="请输入用户名" value="">
+			</p>
+			<p style="position: relative;">
+				<span class="p_logo"></span>
+				<input class="ipt password" id="password" type="password" placeholder="请输入密码">
+			</p>
+			<p style="position: relative; margin-top: 10px;">
+				<span class="p_logo"></span>
+				<input class="ipt password" id="password2" type="password" placeholder="请再次输入密码">
+			</p>
+			<div class="dz">
+				<p style="margin: 0px 35px 20px 45px;">
+					                                                                                                     
+					<span style="float: right;">
+					<a class="resiger" href="#">注册</a>  
+              <a style="color: rgb(204, 204, 204); margin-right: 10px;" 
+href="login.html">登录</a> 
+           </span> </p>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				//得到焦点
+				$(".password").focus(function() {
+					$("#left_hand").animate({
+						left: "150",
+						top: " -38"
+					}, {
+						step: function() {
+							if(parseInt($("#left_hand").css("left")) > 140) {
+								$("#left_hand").attr("class", "left_hand");
+							}
+						}
+						
+						
+					}, 2000);
+					$("#right_hand").animate({
+						right: "-64",
+						top: "-38px"
+					}, {
+						step: function() {
+							if(parseInt($("#right_hand").css("right")) > -70) {
+								$("#right_hand").attr("class", "right_hand");
+							}
+						}
+					}, 2000);
+				});
+				//失去焦点
+				$(".password").blur(function() {
+					$("#left_hand").attr("class", "initial_left_hand");
+					$("#left_hand").attr("style", "left:100px;top:-12px;");
+					$("#right_hand").attr("class", "initial_right_hand");
+					$("#right_hand").attr("style", "right:-112px;top:-12px");
+					
+				});
+                 
+			});
+		</script>
+		<script>
+			//获取相关元素
+			var username = document.querySelector(".ipt");
+			var password = document.querySelector("#password");
+			var password2 = document.querySelector("#password2");
+			var resiger = document.querySelector(".resiger");
+			//获取相关数据
+			var newuserpass;
+            var userpass;
+			//绑定事件
+			resiger.onclick = function() {
+				userpass = window.localStorage.getItem("userpass") || "[]";
+				var user = {
+					"username": username.value,
+					"password": password.value
+				};
+				
+				newuserpass = JSON.parse(userpass)
+			
+				if(newuserpass.length==0){
+					newuserpass.push(user);
+					newuserpass = JSON.stringify(newuserpass);
+					window.localStorage.setItem("userpass", newuserpass);
+					alert("注册成功");
+					
+				}else{
+					
+					for(var i = 0; i < newuserpass.length; i++) {
+					if(user.username == newuserpass[i].username) {
+
+						alert("该用户名已被注册");
+						return;
+						
+					}
+					else if(user.username =="") {
+						alert("该用户名不能为空");
+						return;
+					}
+					else if(password.value =="") {
+						alert("密码不能为空");
+						return;
+						
+					}
+					else if(password2.value =="") {
+						alert("重复密码不能为空");
+						return;
+						
+					}
+					else if(password.value !=password2.value) {
+						alert("两次密码不一致");
+						return;
+						
+					}
+					
+					}
+					newuserpass.push(user);
+					newuserpass = JSON.stringify(newuserpass);
+					window.localStorage.setItem("userpass", newuserpass);
+					alert("注册成功")
+					
+				}
+				top.location="login.html"
+				
+
+			}
+		</script>
+	</body>
+
+</html>
