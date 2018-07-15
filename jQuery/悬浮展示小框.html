@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>点击用一个透明的框覆盖</title>
+		<style>
+			.box{
+				width: 146px;
+				height: 193px;
+				border: 1px solid gainsboro;
+				margin: 200px;
+				position: relative;
+				overflow: hidden;
+			}
+			.box:hover .box-show {
+						bottom:0;
+			}
+			.box-content{
+				width: 146px;
+				height: 193px;
+			}
+			.box-content img{
+				width: 146px;
+				height: 193px;
+			}
+			.box-show{
+				width: 146px;
+				height: 55px;
+				background-color: mediumvioletred;
+				opacity: 0.8;
+				position: absolute;
+				bottom: -55px;
+				left: 0px;
+				transition: bottom 0.5s;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<div class="box-content">
+				<img src="img/n.jpg" />
+			</div>
+			<div class="box-show"></div>
+		</div>
+	</body>
+</html>

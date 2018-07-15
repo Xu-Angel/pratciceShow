@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.scoll{
+				width: 720px;
+				height: 240px;
+				position: relative;
+				margin: 100px;
+			}
+			.box{
+				width: 720px;
+				height: 240px;
+				/*border: 1px solid red;*/
+				overflow: hidden;
+				position: relative;
+			}
+			.box ul{
+				list-style-type: none;
+			}
+			.box ul li{
+				width: 720px;
+				height: 240px;
+			    position: absolute;
+			    top: 0px;
+			    left: 0px;
+			}
+			.box ul li a{
+				width: 720px;
+				display: block;
+			}
+			.box ul li a img{
+				width: 720px;
+				height: 240px;
+			}
+		  .right,.left{
+				width: 80px;
+				height: 80px;
+				background-color: red;
+				color: white;
+				text-align: center;
+				line-height: 80px;
+				font-size: 40px;
+				cursor: pointer;
+			}
+			.direction .left{
+				position: absolute;
+				top: 100px;
+				left: 20px;
+			}
+			.direction .right{
+				position: absolute;
+				top: 100px;
+				right:20px ;
+				
+			}
+			.list{
+				width: 80px;
+				height: 30px;
+				border: 1px solid red;
+				border-radius: 10px;
+				background-color: white;
+				position: absolute;
+				bottom: 8px;
+				right: 142px;
+			}
+			.list ul{
+				list-style-type: none;
+				margin-top: 10px;
+				width: 60px;
+				margin-left: 10px;
+			}
+			.list ul li{
+				width:10px;
+				height:10px;
+				background-color: gainsboro;
+				font-size: 0px;
+				border-radius: 50%;
+				float: left;
+				margin-right: 5px;
+				
+			}
+			.list ul li.active{
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
+		<script>
+			$(function(){
+				var index=0;//当前显示的li的下标
+				var length=$(".box ul li").length;
+				var timer=null;
+				
+				function startMove(){
+					if(index==length-1){
+						index=-1;
+					}
+					index++;
+					$(".box ul li").eq(index).fadeIn().siblings().fadeOut();
+					$(".list ul li").eq(index).addClass("active").siblings().removeClass("active");
+				}
+				//启动定时器
+				timer=setInterval(startMove,1000);
+				// 给左右箭头添加事件
+				$(".left,.right").hover(function(){
+					//console.log("index:"+index);
+					clearInterval(timer);
+				},function(){
+					timer=setInterval(startMove,1000);
+				});
+				// 添加左边的点击
+				$(".left").click(function(){
+					index--;
+					if(index==-1){
+						index=length-1;
+					}
+					$(".box ul li").eq(index).fadeIn().siblings().fadeOut();
+					$(".list ul li").eq(index).addClass("active").siblings().removeClass("active");
+				});
+				
+				$(".right").click(function(){
+					startMove();
+				});
+				//给每一个li加事件
+				var tempIndex=0;
+				$(".list ul li").hover(function listThis(){
+					clearInterval(timer);
+					console.log("1111");
+					tempIndex=$(this).index();
+					console.log(tempIndex);
+					$(".list ul li").eq(tempIndex).addClass("active").siblings().removeClass("active");
+					$(".box ul li").eq(tempIndex).fadeIn().siblings().fadeOut();
+				},function(){
+					clearInterval(timer);
+					index=tempIndex;
+					timer=setInterval(startMove,1000);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="scoll">
+			<!--第一部分-->
+		<div class="box">
+			<ul>
+				<li>
+					<a href="#">
+						<img src="img/p1.jpg" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/p2.jpg" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/p3.jpg" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/p4.jpg" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 第二部分-->
+		<div class="direction">
+			<p class="left"><</p>
+		    <p class="right">></p>
+		</div>
+		<!--第三部分-->
+		<div class="list">
+			<ul> 
+				<li class="active">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+		</div>
+	</body>
+</html>
