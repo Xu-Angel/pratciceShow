@@ -30,6 +30,26 @@ var upload = tinyImgUpload('#upload', options);
 document.getElementsByClassName('submit')[0].onclick = function (e) {
     upload();
 }
+ // 渲染旧图片
+ /* const oldImgArr = data.images
+  imgArr = [...oldImgArr]
+
+  if (oldImgArr.length > 0) {
+    for (let i = 0; i < oldImgArr.length; i++) {
+      // 渲染一张图片
+      var oDiv = document.createElement('div')
+      oDiv.className = 'img-thumb img-item'
+      // 向图片容器里添加元素
+      oDiv.innerHTML = '<img class="thumb-icon" src="' + oldImgArr[i] + '" />' +
+        '<a href="javascript:void(0)" class="img-remove">x</a>'
+      $('#img-container').appendChild(oDiv)
+    }
+    // 给旧图片绑定删除
+    $('.img-remove', 'all').forEach((val, index, arr) => {
+      val.onclick = () => {
+        imgArr.splice(index, 1)
+      }
+    }) */
 </script>
 </body>
 </html>
