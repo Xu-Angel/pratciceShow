@@ -143,5 +143,33 @@
 
 	};
 	</script>
+	<script>
+	// 渲染搜索结果
+	search.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+      delIcon.style.opacity = '0'
+      searchIcon.style.opacity = '1'
+      set(search.value)
+      getAnswerList({
+        post: {
+          keyword: search.value
+        }
+      }).then(rs => {
+        const {result} = rs
+        console.log(result)
+        const compiled = require('./components/searchBox/searchBox.pug')
+        const html = compiled({
+          result
+        })
+        document.getElementById('search-box').innerHTML = html
+        // 给body定高 防止输入法顶起底部
+        $('body').style.height = $('body').clientHeight + 'px'
+	  })
+	  //！TODO: 移动端键盘收起，失去焦点
+      document.activeElement.blur()
+      search.blur()
+    }
+  }, false)
+	</script>
 </body>
 </html>
