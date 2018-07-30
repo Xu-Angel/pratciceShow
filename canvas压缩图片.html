@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>用canvas压缩图片</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+    <script src="./jquery-1.4.2.min.js"></script>
+</head>
+<body>
+
+
+<input type="file" id="tesImg" onchange="tes(this)" />
+<img      id="tesId">
+<img      id="tesId1">
+<img      id="tesId2">
+<script>
+    /*
+    var imgOb=new Image();
+    var imgDom=$("#tesId");
+    imgOb是图片对象，而imgDom是dom对象；
+    imgDom[0]是图片对象，与imgOb一样。
+    要想获取图片对象的宽与高
+    必须等图片对象加载后才能获取
+    imgOb.onload=function(e){
+        alert(imgOb.width);
+     alert(imgOb.width);
+    }
+   */
+    function tes(ob){
+        var file=ob.files[0];
+        var reader=new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload=function(e){
+            var imgObj=new Image();
+            imgObj.src=this.result;
+            imgObj.onload=function(a){
+                var canvas = document.createElement('canvas');
+                canvas.width = 100;
+                canvas.height = 100;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(imgObj, 0, 0, 100, 100);
+                $("#tesId").attr('src',canvas.toDataURL("image/jpeg", 0.9));
+                canvas.width = 200;
+                canvas.height = 200;
+                ctx.drawImage(imgObj, 0, 0, 200, 200);
+                $("#tesId1").attr('src',canvas.toDataURL("image/jpeg", 0.1));
+                canvas.width = 300;
+                canvas.height = 100;
+                ctx.drawImage(imgObj, 0, 0, 300, 100);
+                $("#tesId2").attr('src',canvas.toDataURL("image/jpeg", 0.6));
+            }
+        }
+    }
+</script>
+</body>
+</html>
