@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+
+    var storage=window.localStorage;
+    //写入a字段
+    storage["a"]=1;
+    //写入b字段
+    storage.a=1;
+    //写入c字段
+    storage.setItem("c",3);
+    console.log(storage.getItem('c'));
+    console.log(typeof storage["a"]);
+    console.log(typeof storage["b"]);
+    console.log(typeof storage["c"]);
+    console.log('change');
+    storage.setItem("c", 5)
+    console.log(storage.getItem('c'));
+
+</script>
+</body>
+</html>

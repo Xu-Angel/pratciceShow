@@ -86,6 +86,7 @@ function tinyImgUpload(ele, options) {
 
                 if(ele && ele.nodeType && ele.nodeType == 1) {
                     var oParent = ele.parentNode;
+                    console.log(ele.parentNode, 'node');
                     var oChilds = oParent.children;
                     for(var i = 0; i < oChilds.length; i++){
                         if(oChilds[i] == ele)

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/tinyImgUpload.css">
+</head>
+<body>
+  <div id="upload">dsads</div>
+  <div class="img-up-add  img-item">
+    <div class="img-add-icon">
+      <img src="" alt="">
+    </div>
+  </div>
+  <script src="./js/testUpload.js"></script>
+  <script>
+   var options = {
+    path: 'http://test.qidian-new.keywa.cc/image/uploadimg',
+    onSuccess: function (res, index) {
+       console.log(res,index);
+    },
+    onFailure: function (res) {
+        console.log(res)
+    }
+}
+var upload = ImgUpload('#upload', options)
+  </script>
+</body>
+</html>
