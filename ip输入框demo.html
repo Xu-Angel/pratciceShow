@@ -1,13 +1,14 @@
+
 <html>
 <style type="text/css">
 .m{border:1px solid #E3E9EF;display: inline-block;text-align: center;border-top-color: #ABADB3;}
 .ip{height:25px;width:30px;border:none;}
 </style>
 <script>
-//eÎª event oÎªinput¶ÔÏó i Îª µÚ¼¸¸öÊäÈë¿ò
+//eä¸º event oä¸ºinputå¯¹è±¡ i ä¸º ç¬¬å‡ ä¸ªè¾“å…¥æ¡†
 function ipVali(e,o,i)
 { //alert(e.keyCode)
-// 96-105 Ð¡¼üÅÌÊý×Ö¼ü 48-57´ó¼üÅÌÊý×Ö¼ü 8 ÍË¸ñ¼ü 46 del¼ü 16 shift¼ü 116 Ë¢ÐÂ 190 ´ó¼üÅÌµÄµã 110Ð¡¼üÅÌµÄµã 9 tab
+// 96-105 å°é”®ç›˜æ•°å­—é”® 48-57å¤§é”®ç›˜æ•°å­—é”® 8 é€€æ ¼é”® 46 delé”® 16 shifté”® 116 åˆ·æ–° 190 å¤§é”®ç›˜çš„ç‚¹ 110å°é”®ç›˜çš„ç‚¹ 9 tab
 var inputs = o.parentNode.getElementsByTagName("input");
 if(e.keyCode == 9 || (e.keyCode >= 96 && e.keyCode <= 105) ||(e.keyCode >= 48 && e.keyCode <= 57) || e.keyCode==8 || e.keyCode==46|| e.keyCode==116 || e.keyCode == 16)
 {
@@ -44,7 +45,7 @@ inputs[i+1].focus();
 }
 }
 }
-else if(190 == e.keyCode || 110 == e.keyCode) //ÊäÈëµÄÊÇµã
+else if(190 == e.keyCode || 110 == e.keyCode) //è¾“å…¥çš„æ˜¯ç‚¹
 {
 if(o.value == '')
 {
@@ -69,7 +70,7 @@ function ipVali2(o,i)
 {
 if(o.value != '')
 {
-if(i == 1) //ipµØÖ·µÄµÚÒ»¸ö×Ö¶Î
+if(i == 1) //ipåœ°å€çš„ç¬¬ä¸€ä¸ªå­—æ®µ
 {
 if(o.value > 223)
 {

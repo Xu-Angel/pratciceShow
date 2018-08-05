@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<!--/*
+ * @Author: Angel
+ * @Date: 2017-12-21 19:13:14
+ * @Last Modified by: 1049547382@qq.com
+ * @Last Modified time: 2017-12-21 19:22:17
+ */-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<select name="" id="sel" multiple="multiple">
+    <option value="PHP">PHP</option>
+    <option value="Java">Java</option>
+    <option value="mysql">mysql</option>
+</select>
+<input type="text" placeholder="qingshuchu">
+<button> dianji</button>
+<script>
+    var sel=document.getElementById('sel');
+    var opts=document.getElementsByTagName('option');
+    var btn=document.getElementsByTagName('button')[0];
+    btn.onclick=function () {
+        var arr=[];
+        var selOpt=sel.selectedOptions;//选中的选项
+        for(var i=0;i<selOpt.length;i++){
+             arr.push(selOpt[i].value);
+        }
+        console.log(arr.join());
+    }
+var input=document.getElementsByTagName('input')[0];
+    input.oninput=function () {
+        console.log('oninput');
+    }
+    input.onblur=function () {
+        console.log('onblur');
+    }
+    input.onchange=function () {
+        console.log('onchange');
+    }
+</script>
+</body>
+</html>
