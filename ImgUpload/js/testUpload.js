@@ -69,7 +69,7 @@ function ImgUpload(ele, options) {
                       var oDiv = document.createElement('div');
                       oDiv.className = 'img-thumb img-item';
                       // 向图片容器里添加元素
-                      oDiv.innerHTML = '<img class="thumb-icon" src="'+e.target.result+'" />'+
+                      oDiv.innerHTML = '<img class="thumb-icon" src="'+e.target.result+'" />'+ '<img class="gif" src="./loadm.gif"/>'+
                                       '<a href="javascript:void(0)" class="img-remove">x</a>'
                       //ele.insertBefore(oDiv, addBtn);
                       ele.appendChild(oDiv)
@@ -129,7 +129,6 @@ function ImgUpload(ele, options) {
 
   // 上传图片
   function uploadImg() {
-    console.log(ele.files);
       var xhr = new XMLHttpRequest();
       var formData = new FormData();
      //一次性文件数组上传
@@ -143,12 +142,22 @@ function ImgUpload(ele, options) {
               if(xhr.status == 200){
                   options.onSuccess(JSON.parse(xhr.responseText), index);
               }else {
-                  options.onFailure(JSON.parse(xhr.responseText));
+                document.querySelector('.gif').style.display = 'none'
+                  options.onFailure(xhr.responseText);
               }
           }
       }
 
       xhr.open('POST', options.path, true);
+      // 进度
+      xhr.onprogress = function(e) {
+        if (e.lengthComputable) {
+          let total = e.total;
+          let loaded = e.loaded;
+          let percentage = Math.floor(total/loaded);
+          console.log(percentage)
+        }
+      }
       xhr.send(formData);
 
   }

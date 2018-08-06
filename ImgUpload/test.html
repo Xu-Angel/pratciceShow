@@ -16,12 +16,20 @@
   </div>
   <script src="./js/testUpload.js"></script>
   <script>
+      let imgArr = []
    var options = {
     path: 'http://test.qidian-new.keywa.cc/image/uploadimg',
     onSuccess: function (res, index) {
-       console.log(res,index);
+      imgArr.push(res.result)
+      $('.img-remove', 'all').forEach((val, index, arr) => {
+        document.querySelectorAll('.gif')[index].style.display = 'none'
+        val.onclick = () => {
+            imgArr.splice(index, 1)
+          }
+        })
     },
     onFailure: function (res) {
+      document.querySelectorAll('.gif')[0].style.display = 'none'
         console.log(res)
     }
 }
