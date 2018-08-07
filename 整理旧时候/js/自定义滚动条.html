@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .content{
+            width: 500px;
+            height: 200px;
+            margin: 100px auto;
+            border: 1px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+        .content ul{
+            width: 485px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0 10px;
+            list-style: none;
+        }
+        .content ul li{
+            height: 30px;
+            line-height: 30px ;
+        }
+        .scroll-bary{
+            width: 15px;
+            height: 200px;
+            background: lightgray;
+            position: absolute;
+            right: 0;
+        }
+        .scroll-bary div.scroll-thumb{
+            width: 15px;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: lightblue;
+        }
+        .scroll-bary div.now{
+            background: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <ul>
+        <li>陈乔恩被指说谎 警官现场做实验</li>
+        <li>女儿奴！孙红雷宠女被赞好爸爸</li>
+        <li>格莱美公布嘉宾 Gaga第4年献唱</li>
+        <li>小苹果晒章子怡却意外曝光豪宅</li>
+        <li>赵丽颖低温下拍落水戏 陈学冬与绯闻女友唱K保持距离</li>
+        <li>杨丞琳行李丢失一件上衣穿三天 刘昊然禁欲系帅气写真</li>
+        <li>谢霆锋与粉丝一起玩乐 周冬雨素颜白嫩下巴疤痕未愈</li>
+        <li>孙杨为教练庆生傅园慧入镜 51岁温碧霞晒美照风韵犹存</li>
+        <li>张卫健证实二弟洗澡时昏倒暴毙 张俪不惧寒冷雪中露腿</li>
+        <li>鹿晗风格大变挑战脏辫嘻哈风 王丽坤低头甜笑展侧颜杀</li>
+        <li>图:黄圣依下衣失踪 吴昕晒婚纱照 徐帆养女亭亭玉立</li>
+        <li>韩庚对“前任”态度开放 奚梦瑶何猷君约会</li>
+        <li>看点 李小璐甘薇抱团垮？ 陈伟霆新女友是巴西女模特？</li>
+        <li>PGOne与好友K歌视频曝光</li>
+        <li>陈学冬恋情正式曝光</li>
+        <li>刘嘉玲晒《半生缘》剧照</li>
+        <li>奚梦瑶何猷君甜蜜约会</li>
+        <li>今日八卦| 福原爱江宏杰晒依偎照 周杰伦喂天鹅</li>
+        <li>今日头条| 言承旭好事将近？ 陈伟霆又添新恋情？</li>
+        <li>今日娱情| 宋慧乔聊宋仲基趣事 小S被赞女神</li>
+        <li>精品自制|【立个flag】刘昊然直男属性大测试</li>
+        <li>独家对话|独家对话《心理罪之城市之光》阮经天</li>
+        <li>预告片|《卧底巨星》 《妖猫传》 《捉妖记2》</li>
+        <li>预告片|《继承者计划》 《我的青春遇见你》</li>
+        <li>音乐MV|吴亦凡赵丽颖《想你》 刘若英《粉丝》</li>
+        <li>最美表演|雷佳音《人鱼王子》 黄轩正片《许愿》</li>
+    </ul>
+    <div class="scroll-bary">
+        <div class="scroll-thumb"></div>
+    </div>
+</div>
+</body>
+<script src="js/myQuery1.2.js"></script>
+<script>
+    var content = $('div')[0],
+        scrollBar = $('div')[1],
+        scrollThumb = $('div')[2],
+        ul = $('ul')[0];
+
+    // 当在scrollThumb上点击时记录点击状态并修改背景色
+    scrollThumb.onmousedown = function(){
+        scrollThumb.isMouseDown = true;
+        scrollThumb.className = 'scroll-thumb now';
+    };
+    window.onmousemove = function(ev){
+        if (scrollThumb.isMouseDown) {
+            var e = ev || window.event; // 兼容
+            var y = e.clientY + scroll().top -
+                    scrollBar.offsetTop -
+                    content.offsetTop -
+                    scrollThumb.offsetHeight / 2;
+
+            updateThumb(y);
+            /*if (y < 0){
+                y = 0;
+            }else if(y > scrollBar.offsetHeight - scrollThumb.offsetHeight){
+                y = scrollBar.offsetHeight - scrollThumb.offsetHeight;
+            }
+
+            scrollThumb.style.top = y + 'px';
+
+            // 计算thumb的top占整个scrollbar的比例
+            var percent = y / (scrollBar.offsetHeight - scrollThumb.offsetHeight);
+            // 根据计算出来的比例计算ul应该往上移动多少距离
+            var ulY = (ul.offsetHeight - content.offsetHeight) * percent;
+            ul.style.top = -ulY + 'px';*/
+
+            // 清除移动时被选中的文本
+            window.getSelection ?
+                window.getSelection().removeAllRanges() :
+                document.selection.empty();
+            //e.preventDefault();
+        }
+    };
+
+    // 添加鼠标滚轮滚动的事件
+    content.onmousewheel = function(ev){
+        var e = ev || window.event;
+        // 非firefox浏览器通过wheelDelta获取滚动状态，正数往上，负数往下
+        var speed = e.wheelDelta>0?-10:10;
+
+        var y = scrollThumb.offsetTop + speed;
+        updateThumb(y);
+    };
+    console.log(content.addEventListener)
+    if(content.addEventListener){
+
+
+        content.addEventListener('DOMMouseScroll',function (ev) {
+            var ev=ev||window.event;
+            var speed=ev.detail>0?10:-10;
+            console.log(content.addEventListener)
+
+            var y = scrollThumb.offsetTop + speed;
+            updateThumb(y);
+        })
+    }
+
+    // 当在任意位置松开鼠标时scrollThumb恢复没点击的状态并清除被选中的状态
+    window.onmouseup = function(){
+        scrollThumb.isMouseDown = false;
+        scrollThumb.className = 'scroll-thumb';
+    };
+
+    /**
+     * 调整thumb和内容的位置
+     * @param y         thumb的top
+     */
+    function updateThumb(y){
+        if (y < 0){
+            y = 0;
+        }else if(y > scrollBar.offsetHeight - scrollThumb.offsetHeight){
+            y = scrollBar.offsetHeight - scrollThumb.offsetHeight;
+        }
+
+        scrollThumb.style.top = y + 'px';
+
+        // 计算thumb的top占整个scrollbar的比例
+        var percent = y / (scrollBar.offsetHeight - scrollThumb.offsetHeight);
+        // 根据计算出来的比例计算ul应该往上移动多少距离
+        var ulY = (ul.offsetHeight - content.offsetHeight) * percent;
+        ul.style.top = -ulY + 'px';
+    }
+</script>
+</html>

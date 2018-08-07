@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      html{
+            height: 100%;
+        }
+      body{
+          height: 100%;
+      }
+        img{
+            width: 50px;
+            height: 50px;
+            display: block;
+        }
+        div{
+            position: absolute;}
+        
+    </style>
+</head>
+<body>
+<div>
+    <img src="img/mouse.jpg" alt="">
+</div>
+<script src="js/myQuery1.2.js"></script>
+<script>
+    var div=$('div')[0];
+window.onmousemove=function (ev) {
+    var ev=ev||window.event;
+    var x=ev.clientX +scroll().left-div.offsetWidth/2;
+    var y=ev.clientY + scroll().top -div.offsetHeight/2;
+
+   if(x<0){
+       x=0
+   }else if(x>document.body.clientWidth-div.offsetWidth){
+       x=document.body.clientWidth-div.offsetWidth;
+   }
+   if(y<0){
+       y=0
+   }else if(y>document.body.clientHeight-div.offsetHeight){
+       y=document.body.clientHeight-div.offsetHeight;
+   }
+    div.style.left=x +'px';
+    div.style.top=y +'px';
+}
+    window.onclick=function (ev) {
+        var ev=ev||window.event;
+        var x=ev.clientX +scroll().left-div.offsetWidth/2;
+        var y=ev.clientY + scroll().top -div.offsetHeight/2;
+
+        if(x<0){
+            x=0
+        }else if(x>document.body.clientWidth-div.offsetWidth){
+            x=document.body.clientWidth-div.offsetWidth;
+        }
+        if(y<0){
+            y=0
+        }else if(y>document.body.clientHeight-div.offsetHeight){
+            y=document.body.clientHeight-div.offsetHeight;
+        }
+        animation(div,{top:y,left:x});
+
+    }
+</script>
+</body>
+</html>
