@@ -44,5 +44,92 @@
     console.log(/[lucy]/.test('www'));
     console.log(/[lucy]/.test('ss'));
 </script>
+<script>
+    /*
+    负向类：不能是其中的整体或者一部分
+    不够和正好返回返回false，多了或没有返回true
+     */
+    console.log(/[^hello]/.test('o'));  // false
+    console.log(/[^hello]/.test('o123'));
+    console.log(/[^hello]/.test('123o'));
+    console.log(/[^hello]/.test('hello')); // false
+    console.log(/[^hello]/.test('ahc'));
+    console.log(/[^hello]/.test('hell'));  // false
+    console.log(/[^hello]/.test('llo'));   // false
+
+</script>
+<script>
+    /*
+    范围类：匹配的东西太多，类型相同，可以在中间使用横线
+    [0-9][a-z]
+    组合类：有多组的东西，属于不同范围
+    [0-9A-F]
+     */
+    console.log(/[0-9A-F]/.test('a'));
+    console.log(/[0-9A-F]/.test('A'));
+</script>
+<script>
+    /*
+    ^，会匹配行或者字符串的起始位置
+    $，会匹配行或者字符串结束的位置
+    如果^和$一起使用，表示必须就是这个内容
+     */
+    // true
+    console.log(/lily/.test('lilyname'));
+    console.log(/^lily/.test('lilyname'));
+    console.log(/lily$/.test('lilyname'));
+    console.log(/name$/.test('lilyname'));
+    console.log(/^lily$/.test('lilyname'));
+    console.log(/^lily$/.test('lily'));
+    // false
+    console.log(/^l\dy$/.test('l123y'));
+</script>
+<script>
+    /*
+    *   出现0次或多次
+    +   出现1次或多次
+    ?   出现0次或1次
+    {}  重复多少次
+        {n}     出现n次
+        {n,}    最少出现n次
+        {n,m}   最少出现n次，最大不能超过m次
+     */
+
+    // 020-12349876
+    console.log(/0\d{2}-\d{3,8}|0\d{3}-\d{3,7}^$/.test('020-12349876'));
+    console.log(/0\d{2}-\d{3,8}|0\d{3}-\d{3,7}^$/.test('020-123'));
+    console.log(/0\d{2}-\d{3,8}|0\d{3}-\d{3,7}^$/.test('02012349876'));
+    console.log(/0\d{2}-\d{3,8}|0\d{3}-\d{3,7}^$/.test('(020)12349876'));
+    // 身份证号
+    console.log(/^[0-9]\d{17}[0-9xX]$/.test(''));
+    // 手机号码
+    console.log(/^(131|135|137|139)\d{8}$/.test('18011112222'));
+    // 密码
+    console.log(/^\w{6,12}$/.test(''));
+    // 电子邮箱
+    console.log(/^\w+@\w+\.\w{2,}(\.\w{2,})?$/.test('a@136.com.cn.abc.a123'));
+    // 年龄>=18 <105
+    console.log(/^(1[89])|([2-9]\d)$/.test(79));
+    // 简单匹配中文
+    console.log('cjk验证：' + /^[\u4e00-\uFFFF]+$/.test('オンライン'));
+    // 具体匹配中文
+    // u4e00-u9fbf  unicode CJK统一表意字符,u9fa5后至u9fbf为空
+    // uf900-ufaff  CJK兼容象形文字，ufa2d后至ufaff为空
+    console.log(/^[\u4e00-\u9fa5\uf900-\ufa2d]+$/.test('オンライン'));
+
+    /*
+    实现一个注册页面
+    用户名     检查是否为中文，范围是2~4
+    密码       只允许使用英文字母和数字，范围4~18
+    姓别       男/女
+    手机号     11位
+    电子邮箱
+    个人网站   http://www.abc.com/或https://www.abc.com
+    出身年份   1900~2018
+
+    失去焦点时验证数据
+    如果数据可用或不可用都在文本框旁提示，如果不可用字体颜色为红色，可用为绿色
+     */
+</script>
 
 </html>
