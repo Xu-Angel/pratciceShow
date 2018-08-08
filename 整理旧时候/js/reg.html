@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    /*
+    预定义类
+    \d  [0-9]           数字类型(字符串或数学上的数字)
+    \D  [^0-9]          非数字类型
+    \s  [\n\r\t\f\x0B]  空白字符(输出时看不到内容)
+    \S  [^\n\r\t\f\x0B] 非空白字符
+    \w  [a-zA-Z_0-9]    单字字符
+    \W  [^a-zA-Z_0-9]   非单字字符
+    .   [^\n\r]         除了换行和回车以外的其它字符，''或""结果是false
+     */
+    console.log(/\w/.test('2'));
+    console.log(/\w/.test('A'));
+    console.log(/\w/.test('$'));
+    console.log(/./.test('%'));
+    console.log(/./.test(''));
+</script>
+<script>
+    // 简单类就是在//中什么特殊符号都不写
+    // 1. /string/.test('string')，必须完整匹配，内容只多不能少，只要完整含内容就可以
+    console.log(/lucy/.test('lucy'));
+    console.log(/lucy/.test('lucylv'));
+    console.log(/lucy/.test('lu')); // false
+    console.log(/lucy/.test('lvlucy'));
+    console.log(/lucy/.test('lvlu')); // false
+
+    console.log('---------------------------------');
+    // 2. /[string]/.test(string)，只要包含[]里任意一个就可以
+    console.log(/[lucy]/.test('lucy'));
+    console.log(/[lucy]/.test('lucylv'));
+    console.log(/[lucy]/.test('lu'));
+    console.log(/[lucy]/.test('ablucy'));
+    console.log(/[lucy]/.test('ablu'));
+    console.log(/[lucy]/.test('123'));
+    console.log(/[lucy]/.test('www'));
+    console.log(/[lucy]/.test('ss'));
+</script>
+
+</html>
