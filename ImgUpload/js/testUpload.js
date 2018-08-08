@@ -142,7 +142,6 @@ function ImgUpload(ele, options) {
               if(xhr.status == 200){
                   options.onSuccess(JSON.parse(xhr.responseText), index);
               }else {
-                document.querySelector('.gif').style.display = 'none'
                   options.onFailure(xhr.responseText);
               }
           }

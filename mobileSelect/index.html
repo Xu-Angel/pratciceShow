@@ -30,27 +30,88 @@
 <body>
         <link rel="stylesheet" type="text/css" href="./mobileSelect.css">
         <script src="./mobileSelect.js" type="text/javascript"></script>
-  <div id="day">
+  <div id="trigger3">
       <span>dd</span>
   </div><!--Don't forget this trigger in your page-->
 
 <script type="text/javascript">
-var mobileSelect1 = new MobileSelect({
-    trigger: '#day',
-    title: '单项选择',
-    wheels: [
-                {data:['周日','周一','周二','周三','周四','周五','周六']}
-            ],
-    position:[2], //Initialize positioning
-    callback: function (indexArr, data) {
-        console.log(indexArr,data)
-        position:[5]
-       
-    }
-});
-/* setTimeout(() => {
-            mobileSelect1.locatePosition(1,0);
-        },5000) */
+ var mobileSelect3 = new MobileSelect({
+      trigger: '#trigger3',
+      wheels: [
+                  {data:[
+                      {
+                          id:'1',
+                          value:'2017年',
+                          childs:[
+                              {id:'1',value:'1月'},
+                              {id:'2',value:'2月'},
+                              {id:'3',value:'3月'},
+                              {id:'4',value:'4月'},
+                              {id:'5',value:'5月'},
+                              {id:'6',value:'6月'},
+                              {id:'7',value:'7月'},
+                              {id:'8',value:'8月'},
+                              {id:'9',value:'9月'},
+                              {id:'10',value:'10月'},
+                              {id:'11',value:'11月'},
+                              {id:'12',value:'12月'},
+                          ]
+                      },
+                      {id:'1',
+                          value:'2018年',
+                          childs:[
+                          {id:'1',value:'1月'},
+                              {id:'2',value:'2月'},
+                              {id:'3',value:'3月'},
+                              {id:'4',value:'4月'},
+                              {id:'5',value:'5月'},
+                              {id:'6',value:'6月'},
+                              {id:'7',value:'7月'},
+                              {id:'8',value:'8月'},
+                              {id:'9',value:'9月'},
+                              {id:'10',value:'10月'},
+                              {id:'11',value:'11月'},
+                              {id:'12',value:'12月'},
+                          ]},
+                      {id:'1',
+                          value:'2019年',
+                          childs:[
+                          {id:'1',value:'1月'},
+                              {id:'2',value:'2月'},
+                              {id:'3',value:'3月'},
+                              {id:'4',value:'4月'},
+                              {id:'5',value:'5月'},
+                              {id:'6',value:'6月'},
+                              {id:'7',value:'7月'},
+                              {id:'8',value:'8月'},
+                              {id:'9',value:'9月'},
+                              {id:'10',value:'10月'},
+                              {id:'11',value:'11月'},
+                              {id:'12',value:'12月'},
+                          ]},
+                      {id:'1',
+                          value:'2020年',
+                          childs:[
+                          {id:'1',value:'1月'},
+                              {id:'2',value:'2月'},
+                              {id:'3',value:'3月'},
+                              {id:'4',value:'4月'},
+                              {id:'5',value:'5月'},
+                              {id:'6',value:'6月'},
+                              {id:'7',value:'7月'},
+                              {id:'8',value:'8月'},
+                              {id:'9',value:'9月'},
+                              {id:'10',value:'10月'},
+                              {id:'11',value:'11月'},
+                              {id:'12',value:'12月'},
+                          ]}
+                  ]}
+              ],
+      position:[1,7],
+      callback:function(indexArr, data){
+          console.log(data); //返回选中的json数据
+      }
+  });
 </script>
 </script>
 </body>

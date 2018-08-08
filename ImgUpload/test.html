@@ -18,10 +18,10 @@
   <script>
       let imgArr = []
    var options = {
-    path: 'http://test.qidian-new.keywa.cc/image/uploadimg',
+    path: 'http://test.qidian.keywa.cc/Image/upload',
     onSuccess: function (res, index) {
       imgArr.push(res.result)
-      $('.img-remove', 'all').forEach((val, index, arr) => {
+      document.querySelectorAll('.img-remove').forEach((val, index, arr) => {
         document.querySelectorAll('.gif')[index].style.display = 'none'
         val.onclick = () => {
             imgArr.splice(index, 1)
