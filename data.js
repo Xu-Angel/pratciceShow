@@ -1591,3 +1591,43 @@ const data = {
       }
   ]
 }
+
+Promise.resolve()
+    .then(function success (res) {
+        throw new Error('orreo')
+    }, function fail(e) {
+        console.log(e)
+    })
+    .catch(function fail2 (e) {
+        console.error('fail2')
+    })
+    Promise.resolve()
+  .then(function success1 (res) {
+    throw new Error('error')
+  }, function fail1 (e) {
+    console.error('fail1: ', e)
+  })
+  .then(function success2 (res) {
+  }, function fail2 (e) {
+    console.error('fail2: ', e)
+  })
+  setImmediate(() => {
+      console.log('setImmediate')
+    })
+              process.nextTick(() => {
+                console.log('nextTick')
+              })
+  Promise.resolve()
+    .then(() => {
+      console.log('then')
+    })
+  console.log('end')
+
+
+  setTimeout(() => {
+    console.log('setTimeout')
+  }, 0)
+  
+  setImmediate(() => {
+    console.log('setImmediate')
+  })
