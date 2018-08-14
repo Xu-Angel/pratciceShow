@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    JSONP的实现原理
+    1. 通过<script/>的src可以跨域名获取文件得到数据(需要保证得到的内容符合js的语法规则)
+    2. 提供一个函数的名称给服务器
+    3. 服务器会把这个函数的名称和返回的数据拼接在一起，
+       形成了函数的调用，数据会做为参数传递给这个函数
+    注意：
+        * JSONP必需要服务器端支持，如果服务器不支持没有办法实现跨域访问
+        * 在例子中的url参数callback是由服务器端定义，可以是其他的名字，
+          但一般都叫做callback
+        * <script/>只会在页面第一次加载时，读取到数据，没有办法重新获取到
+          新的数据。如果需要重复使用jsonp获取数据，需要动态添加/删除<script/>
+     */
+
+    // 声明一个函数，这个函数是使用jsonp执行成功后回调的
+    function foo(rs){
+        //var rs = JSON.parse(data);
+        var arr = rs.data;
+        console.log(arr[0].now);
+        // 移除动态添加到<head/>获取数据的<script/>
+        removeJsonp();
+    }
+
+    /**
+     * 使用jsonp的方式，获取跨域的数据
+     * @param url       需要获取数据的地址
+     */
+    function jsonp(url){
+        // 创建<script/>
+        var script = document.createElement('script');
+        // 设置<script/>的src数据，这个时候不会读取服务器端的内容
+        script.setAttribute('src', url);
+        // 把<script/>添加到DOM树中，添加完成就会从服务器端读取数据
+        document.querySelector('head').appendChild(script);
+    }
+
+    /**
+     * 删除使用jsonp添加的script节点
+     */
+    function removeJsonp(){
+        // 删除<head/>标签中最后一个<script/>
+        document.querySelector('head script:last-child').remove();
+    }
+
+    setInterval("jsonp('http://172.17.12.10:8080/webserver/stock?callback=foo')", 1000);
+
+</script>
+<!--<script src="http://172.17.12.10:8080/webserver/stock?callback=foo"></script>-->
+</html>
