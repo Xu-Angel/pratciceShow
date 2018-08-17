@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <form action="">
+                <input type="file" accept="image/*" capture="camera"/>    拍照
+                <input type="file" accept="video/*" capture="camcorder"/>   录像
+                <input type="file" accept="video/*" capture="microphone"/>   录像
+                <input type="file" accept="image/*" >        打开文件管理
+                <input type="file" accept="image/*" >
+                <input type="file" name="file"  capture="camera"> 打开相机应用
+
+                
+                 <input type="file" name="file" accept="image/*" >   打开文件管理
+              </form>
+
+              capture 开启摄像头来获取视频（音频？）或者照片（图片），值有camera和新出来的user；
+accept 允许通过 input[type="file"] 上传的文件类型：
+accept="audio/*" 上传音频（iOS中没测试成功，就放弃了）；
+accept="video/*" 上传视频；
+accept="image/*" 上传图片；
+multiple 允许上传多个文件；
+        
+</body>
+</html>
