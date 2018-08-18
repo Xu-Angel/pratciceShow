@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+</head>
+<body>
+    <canvas>
+        你的浏览器不支持canvas，请升级浏览器版本
+        默认大小是300*150
+    </canvas>
+    <script>
+        var canvas = document.querySelector("canvas");
+        //切记不要通过样式设置宽高
+        canvas.width = 200;
+        canvas.height = 200;
+        canvas.style.background="red";
+        canvas.style.border = "1px solid orange"
+        setTimeout(()=>{
+            //清除画布上画的所有内容
+            canvas.width = 100;
+            canvas.height = 100;
+        },2000)
+    </script>
+</body>
+</html>

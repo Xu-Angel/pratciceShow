@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制图片</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100%;
+            height: 400px;
+            margin-top:30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <canvas></canvas>
+</div>
+<script>
+    var canvas = document.querySelector("canvas");
+    //得到canvas的上下文对象getContext("2d/webgl");
+    canvas.width = 400;
+    canvas.height = 400;
+    var ctx = canvas.getContext("2d");
+    var img = document.createElement('img');
+    img.src = "timg.jpg";
+    img.onload = function(){
+        var i = 0;
+        setInterval(()=>{
+          ctx.clearRect(200,200,40,145);
+          ctx.drawImage(img,(i%9)*40,0,40,145,200,200,40,145);
+          i++;
+        },100)
+
+    }
+
+
+</script>
+</body>
+</html>
