@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+  div{
+      width: 200px;
+      height: 50px;
+  }
+    </style>
+</head>
+<body>
+        <form>
+            <input type="text" name="username" placeholder="用户名">
+            <br>
+            <input type="password" name="password" placeholder="密码">
+            <br>
+            <input type="file" name="file">
+            <br>
+        <input type="button" value="上传" >
+<br>            
+         <div></div>
+        </form>
+        
+    <script>
+    function sendForm(form,url){
+        const fileDom=form.querySelector('input[type=file]');
+           const pWordDom=form.querySelector('input[type=password]');
+           const textDom=form.querySelector('input[type=text]');
+           const div=form.querySelector('div');
+           const upBtn=form.querySelector('input[type=button]');
+           let p=document.createElement('p');
+           let p2=document.createElement('p');
+           let p3=document.createElement('p');
+           p3.style.width='173px';
+           p3.style.height='10px';
+           p3.style.backgroundColor='black';
+           p2.style.backgroundColor='blue';
+           p2.style.height='10px';
+           p2.style.width='0px';
+           
+           const perSize=0.01*1024*1024;//*1204
+          upBtn.addEventListener('click',function(){
+           div.appendChild(p);
+           p3.appendChild(p2);
+              
+            div.appendChild(p3);
+            const file=fileDom.files[0];
+           console.log(file)
+           const size=file.size;
+           const fileName=file.name;
+           const totalCount=Math.ceil(size/perSize);
+           let success=0;
+           let percent=0;//完成百分比
+           for(let i=0;i<totalCount;i++){
+               const start=i*perSize;
+               const end=(i+1)*perSize;
+               const formData=new FormData();
+                formData.append('name',fileName);
+                formData.append('total',totalCount);
+                formData.append('index',i);
+                formData.append('data',file.slice(start,end));
+                formData.append('password',pWordDom.value);
+                var xhr=new XMLHttpRequest();
+                xhr.open('post',url);
+                xhr.send(formData);
+                xhr.onload=function(){
+                    percent=(success/totalCount*100).toFixed(0) +"%";
+                    
+                    ++success;
+                    console.log('总共要上传：'+totalCount+'次，现在已完成：'+success+'次')
+                    //显示进度条
+                    //百分比
+                 
+                    p.innerText="正在上传，已上传"+percent;
+                    p2.style.width= (success/totalCount)*173+'px';
+                    console.log(percent)
+                    if(percent=='100%'){
+                        p.innerText="上传完成！";
+                    }
+                        
+                        
+
+                }
+           }
+          })
+
+    }
+    var form=document.querySelector('form');
+    var uploadBtn=document.querySelector('input[type=button]');
+    uploadBtn.addEventListener('click',sendForm(form,'eg.html'))
+    </script>
+</body>
+</html>

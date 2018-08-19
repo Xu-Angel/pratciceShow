@@ -1,0 +1,54 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>z</title>  
+</head>  
+<body>  
+<canvas id="canvas" width="1200" height="600"></canvas>  
+</body>  
+<script>  
+    var ocanvas = document.getElementById("canvas");  
+    var mycanvas = ocanvas.getContext("2d");  
+    var arr = [60,90,150,130,170,190,125,175,155,165,155,145];  
+  
+    //第一先定义一个画线的函数方法    画两条线  
+    function line(aX,aY,bX,bY) {//开始和结束的横坐标  开始和结束的纵坐标  
+        mycanvas.beginPath();  
+        mycanvas.moveTo(aX,aY);  
+        mycanvas.lineTo(bX,bY);  
+        mycanvas.stroke();  
+    }  
+
+
+    //第三定义一个矩形的函数方法  
+    function rect(X,Y,width,height) {  
+        mycanvas.beginPath();  
+        mycanvas.fillStyle="#abcdef";  
+        mycanvas.rect(X,Y,width,height);  
+        mycanvas.fill();  
+        mycanvas.closePath()  
+    }  
+  
+    //第四定义一个方法  定义矩形的具体变量以及高引入数组  
+    function wenrect() {  
+        for(var i=0;i<12;i++){  
+            var width=30;  
+            var height=arr[i]*2;  
+            var X=310+i*40+i*10;  
+            var Y=480-height;  
+            rect(X,Y,width,height);  
+            // write((i+1)+"月",320+i*40+i*10,500)  
+        }  
+    }  
+    wenrect();  
+  
+ /*    //添加字  
+    function write(start,ox,oy) {  
+        mycanvas.beginPath();  
+        mycanvas.fillStyle = "black";  
+        mycanvas.fillText(start,ox,oy);  
+        mycanvas.closePath();  
+    }   */
+</script>  
+</html>  
