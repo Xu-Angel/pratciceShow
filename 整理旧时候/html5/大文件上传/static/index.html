@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大文件分片上传</title>
+    <style>
+        form{
+            width: 500px;
+            height: 400px;
+        }
+        input{
+            line-height: 30px;
+            padding:10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <!--表单自带文件上传个功能，要求enctype="multipart/form-data"，必须有name属性-->
+    <input type="text" name="username" placeholder="请输入你的真实姓名">
+    <input type="password" name="password">
+    <input type="file" name="file">
+    <input type="button" value="点击上传文件">
+</form>
+<script>
+    //sendForm:这个函数可帮我把指定表单中的内容分片上传到指定服务器
+   function sendForm(form,url){
+        //拿到需要上传的文件
+        var file = form.querySelector("[type=file]").files[0];
+        //文件总大小
+        var size = file.size;
+        //文件名
+        var name = file.name;
+        //单片文件大小2M
+        var shareSize = 2*1024*1024;
+        //总共要分成多少片
+        var total= Math.ceil(size/shareSize);
+        //当前已经上传了多少片
+        var success = 0;
+        //获取用户名
+        var username = form.querySelectorAll("input")[0].value;
+        //获取密码
+        var password = form.querySelectorAll("input")[1].value;
+        for(var i=0;i<total;i++){
+            var start = i*shareSize;
+            var end = (i+1)*shareSize>size?size:(i+1)*shareSize;
+
+            var formData = new FormData();
+            formData.append('username',username);
+            formData.append('password',password);
+            formData.append('filename',name);
+            formData.append('total',total);
+            formData.append('index',i);
+            formData.append('data',file.slice(start,end));
+
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('post',url);
+            xhr.send(formData);
+
+            xhr.onload=function(){
+                success++;
+                console.log(success/total*100+"%")
+            }
+        }
+   }
+
+
+   //获取DOM元素
+   var form = document.querySelector('form');
+   var url = "http://172.17.12.14:999/upload";
+   var uploadBtn = document.querySelector("input[type=button]");
+   uploadBtn.onclick=function(){
+       sendForm(form,url);
+   }
+
+</script>
+</body>
+</html>

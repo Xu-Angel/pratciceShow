@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            width: 100%;
+            height: 500px;
+            margin:50px auto;
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4qXTGvclMqTZXkLsU3twnMA7"></script>
+</head>
+<body>
+    j
+    <div id="map">
+
+    </div>
+<script>
+    //获取地理位置信息方式：ip，wifi，手机信号，GPS
+    //HTML5
+    if(navigator.geolocation.getCurrentPosition){
+        navigator.geolocation.getCurrentPosition(function(pos){
+            //原始坐标
+            let lat = pos.coords.latitude;
+            let lon = pos.coords.longitude;
+
+            //BMap是百度地图的核心对象，BMap.Map可以创建地图对象
+            let map = new BMap.Map("map");
+            //设置地图的中心点
+            let point = new BMap.Point(lon,lat);
+
+            //要把原始坐标转换成百度坐标
+            let convertor = new BMap.Convertor();
+            var pointArr = [];
+            pointArr.push(point);
+            convertor.translate(pointArr, 1, 10, function(data){
+                if(data.status === 0){
+                    //地图按照指定等级，等级越高看物体越清晰
+                    map.centerAndZoom(data.points[0],5);
+                    var walking = new BMap.WalkingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+                    walking.search("加庄", "南云五路口");
+                }
+            })
+        },function(){
+
+        })
+    }else{
+        alert("您的浏览器不支持地理定位，请手动输入您的位置")
+    }
+</script>
+</body>
+</html>

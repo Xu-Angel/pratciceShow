@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    479846401688
+    <h3>快递100-查快递，寄快递，上快递100</h3>
+    <ul class="head-ul">
+        <li>快递查询</li>
+        <li>物流查询</li>
+        <li>国际货运</li>
+    </ul>
+
+    <div class="content">
+        <div class="con-one">
+            <div>公司名称</div>
+            <div class="con-select">
+                <select name="" id="sel">
+                    <option value="sf">顺丰快递</option>
+                    <option value="yd">韵达快递</option>
+
+                </select>
+            </div>
+        </div>
+        <!-- con-one end -->
+        <div class="con-two">
+            <div>快递单号</div>
+
+            <div>
+                <input type="text" id="num" placeholder="请输入您的快递单号">
+            </div>
+            <div>
+                <input type="button" value="查询">
+            </div>
+        </div>
+        <!-- con-tow end -->
+        <div class="con-three">
+            <ul class="ul-Container">
+
+            </ul>
+        </div>
+        <!-- con-three end-->
+    </div>
+    <!-- content end-->
+    <div class="result">
+
+    </div>
+    <script>
+        let selectContainer = document.getElementById('sel');
+
+        function getData(data) { //查询函数
+            let resultArr = data.result.list;
+            let resultDiv = document.getElementsByClassName('result')[0];
+            resultDiv.innerHTML = "";
+            let p0 = document.createElement('p');
+            p0.innerText = "快递信息查询结果如下："
+            resultDiv.appendChild(p0);
+            for (let key in resultArr) {
+                let p = document.createElement('p');
+                let p2 = document.createElement('p');
+                p.innerText = resultArr[key]['datetime'];
+
+                console.log(p)
+                p2.innerText = resultArr[key]['remark'];
+                console.log(p2)
+                resultDiv.appendChild(p);
+                resultDiv.appendChild(p2)
+            }
+        }
+
+        function initData(data) { //初始化函数
+            let dataArr = data.result;
+            let tmpLi = '';
+            let tmpOption = '';
+            let ulContaienr = document.getElementsByClassName('ul-Container')[0];
+
+            for (let key in dataArr) {
+                tmpLi += "<li data-value=" + dataArr[key]['no'] + ">" + dataArr[key]['com'] + "</li>";
+                tmpOption += "<option value=" + dataArr[key]['no'] + ">" + dataArr[key]['com'] + "</option>"
+            }
+            ulContaienr.innerHTML = tmpLi;
+            selectContainer.innerHTML = tmpOption;
+            bindClick();
+        }
+
+        document.querySelector('input[type=button]').addEventListener('click', callBackData) //查询
+
+        function bindClick() {
+            /* con-three  每个li 绑定点击 */
+            const lisArr = document.getElementsByClassName('ul-Container')[0].children;
+            for (let i = 0; i < lisArr.length; i++) {
+                lisArr[i].addEventListener('click', callBackData)
+                lisArr[i].addEventListener('click', replaceOption)
+            }
+        }
+
+        function replaceOption() {
+            for (let i = 0; i < lisArr.length; i++) {
+                lisArr[i].classList.remove('now');
+            }
+            this.classList.toggle('now')
+            let tmpOld = selectContainer.firstElementChild;
+            let newChild = document.createElement('option');
+            newChild.value = lisArr[i].dataset['value'];
+            newChild.innerText = lisArr[i].innerText;
+            selectContainer.replaceChild(newChild, tmpOld);
+            selectContainer.value = newChild.value; //直接改变value就好
+            // selectContainer.innerText=newChild.innerText;
+        }
+
+        function callBackData() {
+            let company = document.querySelector('select').value; //直接获取目标值
+            console.log(document.querySelector('select').value)
+            console.log(company)
+            let num = document.getElementById('num').value;
+            console.log(num)
+            var script = document.createElement('script');
+            script.src = "http://v.juhe.cn/exp/index?key=e4465cd312228cbf3bbc33fc47853a40&com=" + company + "&no=" +
+                num + "&callback=getData";
+            document.body.removeChild(document.body.lastChild)
+            document.body.appendChild(script);
+
+        }
+        /* currentTime/60    分
+           currentTime/3600   时
+           currentTime%60    秒
+         */
+    </script>
+    <script src="http://v.juhe.cn/exp/com?key=e4465cd312228cbf3bbc33fc47853a40&callback=initData"></script>
+</body>
+
+</html>

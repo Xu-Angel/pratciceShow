@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆弧</title>
+</head>
+<body>
+<canvas draggable="true">
+    你的浏览器不支持canvas，请升级浏览器版本
+    默认大小是300*150
+</canvas>
+<script>
+    var canvas = document.querySelector("canvas");
+    //得到canvas的上下文对象getContext("2d/webgl");
+    canvas.width = 400;
+    canvas.height = 400;
+    canvas.style.background = "red";
+    var ctx = canvas.getContext("2d");
+    //绘制圆弧
+    //ctx.arc(x,y,r,startAngle,endAngle,是否逆时针)
+    ctx.beginPath();
+    ctx.moveTo(200,200);
+    ctx.arc(200,200,150,Math.PI,Math.PI/2,true);
+    ctx.closePath();
+    ctx.stroke()
+
+</script>
+</body>
+</html>

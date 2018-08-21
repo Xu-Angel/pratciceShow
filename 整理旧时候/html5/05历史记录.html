@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史记录</title>
+</head>
+<body>
+    <input type="button" value="前进">
+    <input type="button" value="后退">
+</body>
+<script>
+    var forward = document.querySelectorAll("input")[0];
+    var back = document.querySelectorAll("input")[1];
+    forward.onclick=()=>{
+        window.history.forward();
+    }
+    back.onclick=()=>{
+        window.history.back()
+    }
+</script>
+</html>

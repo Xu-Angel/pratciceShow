@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制直线</title>
+</head>
+<body>
+    <canvas>
+        你的浏览器不支持canvas，请升级浏览器版本
+        默认大小是300*150
+    </canvas>
+    <script>
+        var canvas = document.querySelector("canvas");
+        //得到canvas的上下文对象getContext("2d/webgl");
+        canvas.width = 400;
+        canvas.height = 400;
+        var ctx = canvas.getContext("2d");
+        //canvas的坐标系：从最左上角0,0开始，x向右增大，y向下增大
+        //设置绘制起点moveTo(x,y)
+        //设置描边的粗细，颜色，
+        for(var i=0;i<=400;i=i+40){
+            ctx.moveTo(0,i);
+            ctx.lineTo(400,i);
+
+            ctx.moveTo(i,0);
+            ctx.lineTo(i,400);
+        }
+        ctx.strokeStyle = "orange";
+        ctx.lineWidth = 10;
+        ctx.stroke()
+    </script>
+</body>
+</html>
