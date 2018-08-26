@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="author" content="helulu">
+  <title>072-HTML5 拖放实例</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+  <p>拖动  图片到矩形框中:</p>
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br/>
+  <img src="images/1.png" id="drag1" draggable="true" ondragstart="drag(event)" width="173" height="173"/>
+</body>
+</html>

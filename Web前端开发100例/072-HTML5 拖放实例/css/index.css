@@ -1,0 +1,11 @@
+* {
+  margin: 10px;
+  padding: 0;
+}
+#div1 {
+  display: inline-block;
+  width:195px;
+  height:195px;
+  padding:10px;
+  border:1px solid #aaa;
+}
