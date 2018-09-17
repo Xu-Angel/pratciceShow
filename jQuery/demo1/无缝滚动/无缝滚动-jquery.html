@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无缝滚动</title>
+<style>
+#div1{
+	
+	border:3px solid #f00;
+	width:942px;/*每张图宽147px+margin-right 10px=157px  157px*6=942*/
+	height:130px;/*图高100px*/
+	overflow:hidden;/*超出部分隐藏*/
+	position:relative;/*因为子元素图片要相对于 div1定位所以写*/
+}
+#div1 img{
+	position:relative;/*要移动得设置position*/
+}
+#div1 ul{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+#div1 li{
+	position:absolute;
+	float:left;
+	text-align:center;
+	width:142px;
+}
+#div1 li a{
+	font:14px/1.5em 微软雅黑;
+	color:#ccc;
+	text-decoration:none;
+	
+	
+}
+</style>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script>
+$(function(){
+//初始化每个图片位置
+$("#div1 li").each(function(index, element) {
+    $(this).css({"left":index*157+"px"});
+});
+var sid;
+function move(){
+	sid=setInterval(function(){
+	$("#div1 li").css({"left":"-=1px"});
+	if($("#div1 li:eq(5)").position().left<=-157){
+		  $("#div1 li:lt(6)").each(function(index, element) {
+            $(this).css({"left":(index*157)+942+"px"});
+        });
+		}
+	if($("#div1 li:eq(11)").position().left<=-157){
+		  $("#div1 li:gt(5)").each(function(index, element) {
+            $(this).css({"left":(index*157)+942+"px"});
+        });
+		}
+	},30);
+}
+move();
+
+	$("#div1").mouseover(function(){
+		clearInterval(sid);
+	});
+	$("#div1").mouseout(function(){
+		move();
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="div1">
+   <ul>
+    <li><a href="1.html"><img src="images/jjx1.jpg"><br>房子1</a></li>
+    
+    <li><a href="2.html"><img src="images/jjx2.jpg"><br>房子2</a></li>
+    <li><a href="3.html"><img src="images/jjx3.jpg"><br>房子3</a></li>
+    <li><a href="4.html"><img src="images/jjx4.jpg"><br>房子4</a></li>
+    <li><a href="5.html"><img src="images/jjx5.jpg"><br>房子5</a></li>
+    <li><a href="6.html"><img src="images/jjx6.jpg"><br>房子6</a></li>
+    <li><a href="1.html"><img src="images/jjx1.jpg"><br>房子1</a></li>
+    <li><a href="2.html"><img src="images/jjx2.jpg"><br>房子2</a></li>
+    <li><a href="3.html"><img src="images/jjx3.jpg"><br>房子3</a></li>
+    <li><a href="4.html"><img src="images/jjx4.jpg"><br>房子4</a></li>
+    <li><a href="5.html"><img src="images/jjx5.jpg"><br>房子5</a></li>
+    <li><a href="6.html"><img src="images/jjx6.jpg"><br>房子6</a></li>
+</div>
+</body>
+</html>

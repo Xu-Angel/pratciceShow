@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>仿天猫焦点图</title>
+		<script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+	    <style>
+	       #focusimg{
+	          border:1px solid #090;
+	          position:relative;
+	          width:600px;
+	          left:50%;
+	          margin-left:-300px;
+            } 
+
+           #imgs{
+	         text-align:center;
+           }
+
+           #imgs img{
+	        vertical-align:top;
+	        border:none;
+           }
+
+          #focus1{
+	        text-align:center;
+	        position:absolute;
+	        top:350px;
+	        left:230px;
+          }
+
+          #focus1 span{
+	          display:inline-block;
+	          _display:block;
+	          _float:left;
+	          width:16px;
+	          height:16px;
+	          _overflow:hidden;
+           	  background:url(img/dot.png) no-repeat;
+	          margin-right:10px;
+           }
+	    </style>
+	    <script type="text/javascript" src="js/jquery-1.11.0.min.js" ></script>
+	    <script>
+	    	$(function(){
+	    		var i=0;	    		
+	    		setInterval(function(){
+	    			if(i==5){
+	    				i=0;
+	    			}
+	    			$("#focus1 span:eq("+i+")")
+	    			.css({"background":"url(img/dotActive.png)"})
+	    			.siblings("span").css({"background":"url(img/dot.png)"});
+	    			$("#imgs img").attr("src","img/"+i+".jpg");
+	    			$("#imgs a").attr("href",i+".html");
+	    			i++;
+	    			
+	    		},2000);
+	    			//点击焦点切换
+	    		$("#focus1 span").click(function(){
+	    			$(this).css({"background":"url(img/dotActive.png)"})
+	    			.siblings("span").css({"background":"url(img/dot.png)"});
+	    			$("#imgs img").attr("src","img/"+($(this).index())+".jpg");
+	    			$("#imgs a").attr("href",($(this).index())+".html");
+	    			i=$(this).index();
+	    		});
+	    	});
+	    </script>
+	</head>
+	<body>
+		<div id="focusimg">
+          <div id="imgs">
+             <a href="0.html">
+               <img src="img/0.jpg">
+            </a>
+          </div>
+        <div id="focus1">
+          <span class="s1" style="background:url(img/dotActive.png);"></span>
+          <span class="s2"></span>
+          <span class="s3"></span>
+          <span class="s4"></span>
+          <span class="s5"></span>
+       </div>
+</div>
+	</body>
+</html>

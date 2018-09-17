@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>仿网易滑动门特效</title>
+		<script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+	    <style>
+	        body,ul{
+	        	/*默认值控制*/
+	        	margin: 0px;
+	        	padding: 0px;
+	        }
+	        #nav{	  
+	        	/*#nav是导航大div*/      
+	        	padding-top:32px;
+	        	position: relative;
+	        }
+	        #nav a{
+	        	/*对#nav 里面的超链接进行统一设置*/
+	        	text-decoration: none;
+	        	font:20px/1.5em 宋体;
+	        	color: #333;
+	        	display: block;
+	        }	       
+	    	#nav .btn{
+	    		/*.btn类是按钮应用的类，方便通过jquery获取*/
+	    		background: url(img/btn.gif);
+	    		position: absolute;
+	    		width: 100px;height: 30px;
+	    		text-align: center;
+	    		border-top: 1px solid #ccc;
+	    		border-bottom: 1px solid #ccc;
+	    		border-left:1px solid #ccc;
+	    	}
+	    	/*.one .two .three 三个类是控制.btn按钮的位置的*/
+	    	#nav .one{	   
+	    		 top:0px; 	
+	    		 left: 0px;
+	    	}
+	    	#nav .two{	   
+	    		  top:0px; 		
+	    		 left: 100px;
+	    	}
+	    	#nav .three{
+	    		top:0px;	    
+	    		left:200px;
+	    		border-right: 1px solid #ccc;
+	    	}
+	    	/*.content是内容区域样式*/
+	    	#nav .content{
+	    		width: 394px;
+	    		height: 400px;
+	    	    display: none;
+	    	    padding-left: 10px;
+	    	
+	    	}
+	    	#nav .content ul{
+	    		list-style: none;
+	    	}
+	    	/*划入事件,按钮激活状态样式*/
+	    	 #nav .active{
+	        	font-weight: bold;
+	        	background: #fff;
+	        	border-bottom: 1px solid #fff;
+	        }
+	    	
+	    </style>
+	    <script>
+	    	$(function(){
+	    		$(".btn").mouseover(function(){
+	    			$(this).addClass("active").next(".content").show()
+	    			.end().siblings().removeClass("active").next(".content").hide();
+	    		});
+	    	});
+	    </script>
+	</head>
+	<body>
+		<div id="nav">
+		  <div class="btn one"><a href="javascript:void();">新闻</a></div>
+		  <div class="content" style="display: block;">
+		   	  <ul>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  	<li>新闻</li>
+		   	  </ul>	
+		   </div>
+		   <div class="btn two"><a href="javascript:void();">图片</a></div>		   
+		   <div class="content">
+		   	   <ul>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	<li>图片</li>
+		   	   	
+		   	   </ul>
+		   </div>
+		   <div class="btn three"><a href="javascript:void();">军事 航空</a></div>		   
+		   <div class="content">
+		   	   <ul>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   	<li>军事</li>
+		   	   </ul>
+		   </div>
+		</div>
+	</body>
+</html>

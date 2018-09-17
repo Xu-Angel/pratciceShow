@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    		.nav{
+    			width: 300px	;
+    		}
+      .nav li{
+      		list-style: none;
+      		float: left;
+      		/*border: 1px solid #000;
+      		padding: 0 10px;
+      		background: #ccc;*/
+      }
+      .active{
+      		border-bottom: 1px;
+      		background: #000;
+      }
+    </style>
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+			$(function(){
+				$("li").mouseover(function(){
+					$(this).addClass("active").siblings().removeClass("active");
+				})
+			})
+    </script>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li class="li1">新闻</li>
+        <li class="li2">军事</li>
+        <li class="li3">图片</li>
+      </ul>
+    </div>
+    <div class="con">
+      
+    </div>
+  </body>
+</html>
