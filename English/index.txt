@@ -1,0 +1,11 @@
+ascending  美 /ə'sɛndɪŋ/  上行，递增，上升
+
+descending  美 /dɪ'sɛndɪŋ/  下行，下降，递减
+
+delimiter  美 /dɪ'lɪmɪtɚ/   分解符， 限定符，分隔符
+
+omit   美 /ə'mɪt/   省略 缺省 遗漏
+
+partition    美 /pɑr'tɪʃən/  分割，分裂，区分
+
+symmetric   美 /sɪ'mɛtrɪk/   adj. 对称的；匀称的
