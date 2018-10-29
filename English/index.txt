@@ -9,3 +9,7 @@ omit   美 /ə'mɪt/   省略 缺省 遗漏
 partition    美 /pɑr'tɪʃən/  分割，分裂，区分
 
 symmetric   美 /sɪ'mɛtrɪk/   adj. 对称的；匀称的
+
+evenly   美 /'ivnli/  adv. 均匀地；平衡地；平坦地；平等地
+
+resolution   美 /,rɛzə'luʃən/   n. [物] 分辨率；决议；解决；决心
