@@ -13,3 +13,5 @@ symmetric   美 /sɪ'mɛtrɪk/   adj. 对称的；匀称的
 evenly   美 /'ivnli/  adv. 均匀地；平衡地；平坦地；平等地
 
 resolution   美 /,rɛzə'luʃən/   n. [物] 分辨率；决议；解决；决心
+
+invoke    美 /ɪn'vok/   vt. 调用；祈求；引起；恳求
