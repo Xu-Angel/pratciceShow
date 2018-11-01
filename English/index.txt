@@ -15,3 +15,9 @@ evenly   美 /'ivnli/  adv. 均匀地；平衡地；平坦地；平等地
 resolution   美 /,rɛzə'luʃən/   n. [物] 分辨率；决议；解决；决心
 
 invoke    美 /ɪn'vok/   vt. 调用；祈求；引起；恳求
+
+justify    美 /'dʒʌstə'fai/   两端对齐
+
+evenly    美 /'ivnli/  adv. 均匀地；平衡地；平坦地；平等地
+
+stretch     美 /strɛtʃ/   vt. 伸展,张开；（大量地）使用，消耗（金钱，时间）；使竭尽所能；使全力以赴；vi. 伸展；足够买（或支付）n. 伸展，延伸
