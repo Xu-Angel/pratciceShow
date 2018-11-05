@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .J_ret_poster {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    </style>
+</head>
+<body>
+  <canvas hidden id="J_poster">你的浏览器版本较低，请换个浏览器试试</canvas>
+  <script src="./qr.js"></script>
+  <script src="./QRT.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/qartjs/1.0.2/qart.min.js"></script>
+  <script>
+    const $ = q => document.querySelector(q),
+        $JPoster = $('#J_poster'),
+        ctx = $JPoster.getContext('2d'),
+        $bg = new Image(), // 需要的背景图片（海报底图）
+        $QR = new Image()  // 二维码
+        $retImg = new Image(), // 最终生成的图片
+        winW = window.innerWidth,
+        winH = window.innerHeight
+
+    // 设置canvas的大小为全屏 且兼容不同像素比
+    let devRatio = window.devicePixelRatio || 1, // 获取设备像素比
+        // ctx的像素比
+        backingStore = ctx.backingStorePixelRatio ||
+        ctx.webkitBackingStorePixelRatio ||
+        ctx.mozBackingStorePixelRatio ||
+        ctx.msBackingStorePixelRatio ||
+        ctx.oBackingStorePixelRatio ||
+        ctx.backingStorePixelRatio || 1;
+    const ratio = devRatio / backingStore;
+    console.log(devRatio, backingStore);
+    // canvas放大像素比倍
+    $JPoster.setAttribute('width', winW * ratio);  
+    $JPoster.setAttribute('height', winH * ratio);
+    // canvas 放大后，相应的绘制图片也要放大
+    ctx.scale(ratio, ratio);
+
+    // 设置生成的图片相关信息
+    $retImg.setAttribute('width', winW);
+    $retImg.setAttribute('height', winH);
+    $retImg.setAttribute('alt', '海报');
+    $retImg.setAttribute('class', 'J_ret_poster');
+    $bg.crossOrigin = ''; // 跨域设置，这里不用设置为`Anonymous`也是可以的
+    $bg.src = './merge_57.jpg';
+    $QR.crossOrigin = ''; // 跨域设置，这里不用设置为`Anonymous`也是可以的
+    console.log(new QArt({
+    value: 'value',
+    imagePath: './example.png',
+    filter: 'filter',
+    size: 195
+	}).make());
+   // $QR.src = './user_57.jpg';
+    var imgBase64 = jrQrcode.getQrBase64('https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQES8DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyelJUTXc5RTBlMGkxWXdET2hyY2IAAgQgWstbAwQAjScA',
+   {
+  padding       : 10,   // 二维码四边空白（默认为10px）
+  width         : 256,  // 二维码图片宽度（默认为256px）
+  height        : 256,  // 二维码图片高度（默认为256px）
+  correctLevel  : QRErrorCorrectLevel.Q,    // 二维码容错level（默认为高）
+  reverse       : false,        // 反色二维码，二维码颜色为上层容器的背景颜色
+  background    : "#fff",    // 二维码背景颜色（默认白色）
+  foreground    : "#000"     // 二维码颜色（默认黑色）
+});
+$QR.src = imgBase64
+
+    $bg.onload = () => {
+        ctx.drawImage($bg, 0, 0, winW, winH); // 从窗口的左上角开始画起,铺满整个屏幕
+        ctx.drawImage($QR, 50, winH - 150, 100, 100); // 从窗口的左上角开始画起,铺满整个屏幕
+        // ctx.drawImage($bg, 100, 100, winW/100, winH/100); // 从窗口的左上角开始画起,铺满整个屏幕
+        // ctx.font = '14px Arial';
+        // ctx.fillStyle = '#fff';
+        // ctx.fillText('这是test测试文字123', 100, 100);
+        console.log($JPoster);
+        const retUrl = $JPoster.toDataURL('image/png'); // 生成的图片url
+        $retImg.setAttribute('src', retUrl);
+        $retImg.onload = () => {
+            $('body').appendChild($retImg); // 添加到body下
+        }
+    }
+ </script>
+</body>
+</html>
