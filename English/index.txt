@@ -23,3 +23,11 @@ evenly    美 /'ivnli/  adv. 均匀地；平衡地；平坦地；平等地
 stretch     美 /strɛtʃ/   vt. 伸展,张开；（大量地）使用，消耗（金钱，时间）；使竭尽所能；使全力以赴；vi. 伸展；足够买（或支付）n. 伸展，延伸
 
 rational   美 /'ræʃnəl/   adj. 合理的；理性的 n. 有理数
+
+explicit  美 /ɪk'splɪsɪt/   adj. 明确的；清楚的；直率的；详述的
+
+disclaimer    美 /dɪs'klemɚ/  n. 不承诺，免责声明；放弃，拒绝
+
+unmodified    美 /,ʌn'mɑdɪfaɪd/ adj. 未改性的 未变性的 未修改
+
+misc    美 /'mɪsk/   n 混合 混杂
