@@ -31,3 +31,9 @@ disclaimer    美 /dɪs'klemɚ/  n. 不承诺，免责声明；放弃，拒绝
 unmodified    美 /,ʌn'mɑdɪfaɪd/ adj. 未改性的 未变性的 未修改
 
 misc    美 /'mɪsk/   n 混合 混杂
+
+isolate   美 /aɪslˌet/  vt. 使隔离；使孤立；使绝缘 n. [生物] 隔离种群 vi. 隔离；孤立 adj. 隔离的；孤立的 过去式 isolated过去分词 isolated现在分词 isolating
+
+implement   美 /'ɪmplɪmɛnt/    vt. 实施，执行；实现，使生效  n. 工具，器具；手段
+
+regression    美 /rɪ'ɡrɛʃən/  n. 回归；退化；逆行；复原
