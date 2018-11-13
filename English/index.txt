@@ -37,3 +37,11 @@ isolate   美 /aɪslˌet/  vt. 使隔离；使孤立；使绝缘 n. [生物] 隔
 implement   美 /'ɪmplɪmɛnt/    vt. 实施，执行；实现，使生效  n. 工具，器具；手段
 
 regression    美 /rɪ'ɡrɛʃən/  n. 回归；退化；逆行；复原
+
+functionality    美 /,fʌŋkʃə'næləti/   n. 功能；[数] 泛函性，函数性
+
+individual      美 /ˌɪndəˈvɪdʒʊəl/    adj. 个人的；个别的；独特的  n. 个人，个体
+
+narrowly      美 /'næroli/      adv. 仔细地；勉强地；狭窄地；严密地
+
+suspend      美 /sə'spɛnd/     vt. 延缓，推迟；使暂停；使悬浮 vi. 悬浮；禁赛
