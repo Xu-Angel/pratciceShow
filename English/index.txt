@@ -57,3 +57,17 @@ literal     美 /'lɪtərəl/   adj. 文字的；逐字的；无夸张的
 capitalize   美 /'kæpɪtəlaɪz/   vt. 使资本化；以大写字母写；估计…的价值 vi. 利用；积累资本
 
 consecutive    美 /kən'sɛkjətɪv/   adj. 连贯的；连续不断的
+
+partial      美 /'pɑrʃəl/    adj. 局部的；偏爱的；不公平的
+
+sequentially     美 /sɪ'kwɛnʃəli/  adv. 从而；继续地；循序地
+
+throttle     美 /'θrɑtl/   vi. 节流，减速；窒息   vt. 压制，扼杀；使……窒息；使……节流   
+
+variadic   可变的
+
+approximately    美 /ə'prɑksɪmətli/    adv. 大约，近似地；近于
+
+binomial    美 /baɪ'nomɪəl/    adj. 二项式的；二种名称的
+
+factorial   美 /fæk'tɔrɪəl/    adj. 因子的，阶乘的
