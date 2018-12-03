@@ -11,17 +11,16 @@
     <script>
          function Changecolor(yy){
              this.btn=document.getElementById(yy);
-             t=this.btn
          }  
-         Changecolor.prototype.change=function(t){
-          t.onclick=function(){
-
+         Changecolor.prototype.change=function(){
+          var self = this // 缓存
+          this.btn.onclick=function(){
                  console.log('dd')
            }
              
          }
-         var hh=new Changecolor('yyy')
-         hh.change(this)
+         var hh=new Changecolor('yyy')  // 实例
+         hh.change()  // 调用
 
     </script>
 </body>

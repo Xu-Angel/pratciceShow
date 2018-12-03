@@ -1,9 +1,9 @@
-alert(a);
+console.log(a);
 a();
 var a=3;
 function a(){
-    alert(10)
+    console.log(10)
 }
-alert(a);
+console.log(a);
 a=6;
 a();
