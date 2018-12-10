@@ -73,3 +73,5 @@ binomial    美 /baɪ'nomɪəl/    adj. 二项式的；二种名称的
 factorial   美 /fæk'tɔrɪəl/    adj. 因子的，阶乘的
 
 tracking  n. 追踪，跟踪  v. 跟踪（track的ing形式） tracking system ;tracking error ;tracking accuracy
+
+singleton     美 /'sɪŋɡltən/   n.一个，独身。单例，单例模式
