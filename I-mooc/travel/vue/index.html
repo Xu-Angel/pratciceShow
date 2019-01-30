@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello world--todolist</title>
+  <style>
+    .actived{
+      color: red;
+    }
+  </style>
+  
+</head>
+<body>
+  <div id="app">
+    <h3>Todo-List</h3>
+    <input type="text" ref="input" v-model="inputValue">
+    <button v-on:click = "handleBtnClick">提交</button>
+    <ul>
+      <todo-item :content="item" :index="index"
+                  v-for="(item, index) in list" :key="index"
+                  @delete="handleDelete">
+    </ul>
+
+    <h3>计算属性&侦听属性</h3>
+    <div>{{fullName}}</div>
+
+    <h3>样式绑定</h3>
+    <div 
+        @click="handleStyleClick"
+        :class='{actived:isActived}'
+      >{{style}}</div>
+
+    <h3>对象列表渲染</h3>
+    <div v-for="(item, key, index) of userInfo" :key="index">{{key}}---{{item}}--{{index}}</div>
+
+    <h3>组件细节</h3>
+    <table>
+      <tbody>
+        <tr is="row"></tr>
+        <tr is="row"></tr>
+        <tr is="row"></tr>
+      </tbody>
+    </table>
+
+    <h3>父子组件传值</h3>
+    <counter count='3' @change="handelChange"></counter>
+    <counter count='2' @change="handelChange"></counter>
+    <div>{{total}}</div>
+
+    <h3>非父子组件通信</h3>
+    <child content="niu"></child>
+    <child content="yi"></child>
+
+    
+  </div>
+  <script>
+    // Vue.component("TodoItem",{
+    //   template: "<li>{{content}}</li>",
+    //   props:["content"]
+    // })
+
+    Vue.prototype.bus = new Vue()
+    Vue.component("child", {
+      template:'<div @click="handleChildClick">{{selfContent}}</div>',
+      props:{
+        content: String
+      },
+      data: function (){
+        return {
+          selfContent : this.content
+        }
+      },
+      methods: {
+        handleChildClick: function () {
+          this.bus.$emit("childChange",this.selfContent)
+        }
+      },
+      mounted: function() {
+        var _this = this
+        this.bus.$on("childChange", function (msg) {
+          _this.selfContent = msg
+        })
+      },
+    })
+    Vue.component("row",{
+      template: "<tr><td>我是row组件</td></tr>",
+    })
+    var counter = {
+      props:['count'],
+      template: "<div @click='handelCountclick'>{{number}}</div>",
+      data:function(){
+        return {
+          number:this.count
+        }
+      },
+      methods: {
+        handelCountclick: function () {
+          this.number++
+          this.$emit("change",1)
+        }
+      }
+    }
+    var TodoItem = {
+      template: "<li @click='handleClick'>{{content}}</li>",
+      props: ["content","index"],
+      methods: {
+        handleClick: function () {
+          this.$emit("delete",this.index);
+        }
+      }
+    }
+    var app = new Vue({
+      el: '#app',
+      data:{
+        list:[],
+        inputValue:'',
+        firstName:'Jack',
+        lastName: 'niu',
+        style:"点击切换样式",
+        isActived:false,
+        userInfo:{
+          name:"niuyi",
+          age:"24",
+          gender:'male'
+        },
+        total:5
+      },
+      components: {
+        TodoItem,
+        counter
+      },
+      methods:{
+        handleBtnClick: function(){
+          this.list.push(this.inputValue)
+          this.inputValue=''
+          this.$refs.input.focus()
+        },
+        handleDelete: function (index) {
+          this.list.splice(index, 1)
+        },
+        handleStyleClick: function() {
+          this.isActived = !this.isActived;
+        },
+        handelChange:function() {
+          this.total++
+        }
+      },
+      computed: {
+        fullName: {
+          get: function () {
+            return this.firstName + " " + this.lastName
+          },
+          set:function(value) {
+
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

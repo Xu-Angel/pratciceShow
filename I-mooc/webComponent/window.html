@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" >
+		
+		<title>弹窗</title>
+		<link rel="stylesheet" type="text/css" href="css/window.css"/>
+		<style type="text/css">
+			body{
+				background: url(http://imooc.niuy.xyz/%E7%85%A7%E7%89%87%E5%A2%99/blog648ac377gy1fw3cjxrz3oj21hc0u07rf.jpg);
+			}
+			.box{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -100px;
+			}
+			.a{
+				
+				height: 40px;
+				width: 200px;
+				border: 1px  solid aliceblue;
+				text-align: center;
+				line-height: 40px;
+				
+				background: aquamarine;
+				color: #FFFFFF;
+				font-weight: bolder;
+				letter-spacing: 3px;
+				border-radius: 3px;
+				cursor: pointer;
+				box-shadow: 0 10px 50px rgba(0,0,0,0.4);
+				margin-bottom: 10px;
+				
+			}
+			.a:hover{
+				background: #64e5ba;
+			}
+			.info{
+				margin-left:-70px ;
+				margin-top: 50px;
+			}
+			.info a{
+				text-decoration: none;
+				color: #DDDDDD;
+				font-weight: bolder;
+			}
+			.info a:hover{
+				text-decoration: underline;
+				color: #fff
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div id="alert" class="a">alert</div>
+			<div id="confirm" class="a">confirm</div>
+			<div id="prompt" class="a">prompt</div>
+			<div id="common" class="a">common</div>
+			<center class="info">
+				<a href="https://github.com/niuyi1017/imooc/tree/master/webComponent">点击查看源码</a>
+				<a href="https://niuyi1017.github.io/">回到博客主页</a>
+				<a href="https://github.com/niuyi1017">查看我的其他项目</a>
+		</center>
+		</div>
+		<!--<center class="info">
+			<a href="#">点击查看源码</a>
+			<a href="#">回到博客主页</a>
+			<a href="#">查看我的其他项目</a>
+		</center>-->
+		<script src="https://cdn.bootcss.com/require.js/2.3.5/require.js" data-main = "js/window-main"></script>
+	</body>
+</html>
