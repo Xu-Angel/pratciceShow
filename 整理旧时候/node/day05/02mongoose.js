@@ -1,7 +1,7 @@
 //1.0 导入包
 const mongoose = require("mongoose");
 //2.0 链接数据库
-mongoose.connect("mongodb://120.77.241.141:27017/students");
+mongoose.connect("mongodb://127.0.0.1:27017/students");
 //3.0 定义一个 json数据文件中对象的属性及属性值的类型
 var infoSchema = new mongoose.Schema({
     title: String,
