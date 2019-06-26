@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片拖拽</title>
+    <style>
+        .from{
+            float: right;
+        }
+        .from,.to{
+            width: 300px;
+            height:300px;
+            background: powderblue;
+            overflow: hidden;
+        }
+       .to{
+           float: right;
+       }
+    </style>
+</head>
+<body>
+    <!-- 图片从一个地方拖拽到另一个地方，也可以拖动回去 -->
+    <div class="from">
+    <img src="./shaooping1.jpg" alt="" draggable="true">
+        
+    </div>
+    <div class="to"></div>
+    <script>
+        const imgOld=document.querySelector('img');
+        const target=document.querySelector('.to');
+        const from=document.querySelector('.from');
+        //临时
+        let tmp=null;
+        imgOld.addEventListener('drag',function(){
+            tmp=this;
+        })
+        target.addEventListener('dragover',function(e){
+            e.preventDefault();
+            
+        })
+        from.addEventListener('dragover',function(e){
+            e.preventDefault();
+        })
+        target.addEventListener('drop',function(e){
+            this.appendChild(tmp);
+        })
+        from.addEventListener('drop',function(e){
+            this.appendChild(tmp);
+        })
+       
+    </script>
+          <style>
+            #draggable {
+              width: 200px;
+              height: 20px;
+              text-align: center;
+              background: white;
+            }
+          
+            .dropzone {
+              width: 200px;
+              height: 20px;
+              background: blueviolet;
+              margin-bottom: 10px;
+              padding: 10px;
+            }
+          </style>
+    <div class="dropzone">
+        <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain','hello')">
+          This div is draggable
+        </div>
+      </div>
+      <div class="dropzone 555">1</div>
+      <div class="dropzone 2">2</div>
+      <div class="dropzone 3">3</div>
+      
+
+      
+      <script>
+        var dragged;
+      
+        /* 拖动目标元素时触发drag事件 */
+        document.addEventListener("drag", function( event ) {
+      
+        }, false);
+      
+        document.addEventListener("dragstart", function( event ) {
+            // 保存拖动元素的引用(ref.)
+            dragged = event.target;
+            // 使其半透明
+            event.target.style.opacity = .5;
+        }, false);
+      
+        document.addEventListener("dragend", function( event ) {
+            // 重置透明度
+            event.target.style.opacity = "";
+        }, false);
+      
+        /* 放置目标元素时触发事件 */
+        document.addEventListener("dragover", function( event ) {
+            // 阻止默认动作以启用drop
+            event.preventDefault();
+        }, false);
+      
+        document.addEventListener("dragenter", function( event ) {
+            // 当可拖动的元素进入可放置的目标时高亮目标节点
+            if ( event.target.className == "dropzone" ) {
+                event.target.style.background = "purple";
+            }
+      
+        }, false);
+      
+        document.addEventListener("dragleave", function( event ) {
+            // 当拖动元素离开可放置目标节点，重置其背景
+            if ( event.target.className == "dropzone" ) {
+                event.target.style.background = "";
+            }
+      
+        }, false);
+      
+        document.addEventListener("drop", function( event ) {
+            // 阻止默认动作（如打开一些元素的链接）
+            event.preventDefault();
+            // 将拖动的元素到所选择的放置目标节点中
+          // way 1. if ( event.target.className == "dropzone" ) {
+                event.target.style.background = "";
+                console.log(event)  //way2.
+               // event.target.appendChild( dragged );
+              //const clone = dragged
+              //dragged.parentNode.appendChild( clone );
+           // }
+          
+        }, false);
+      </script>
+</body>
+</html>
