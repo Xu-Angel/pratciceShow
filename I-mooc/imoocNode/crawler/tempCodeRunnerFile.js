@@ -1,1 +1,0 @@
- // var nubString = https.get(numberBaseUrl + id)
