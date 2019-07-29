@@ -276,3 +276,104 @@
     </tr>
   </table>
 </div>
+
+<table>
+    <caption>Superheros and sidekicks</caption>
+    <colgroup>
+        <col>
+        <col span="2" class="batman">
+        <col span="2" class="flash">
+    </colgroup>
+    <tr>
+        <td> </td>
+        <th scope="col">Batman</th>
+        <th scope="col">Robin</th>
+        <th scope="col">The Flash</th>
+        <th scope="col">Kid Flash</th>
+    </tr>
+    <!-- 利用th  来做分割块 再在区域里面书写 -->
+    <tr>
+        <th style="width:500px">
+          <div style="width:100px">dddd</div>
+          <p>ddd</p>
+          <p>uuu</p>
+        </th>
+        <th style="width:100px">
+          <div>dddd</div>
+          <p >ddd</p>
+          <p>uuu</p>
+        </th>
+        <th style="width: 300px">
+          <div >dddd</div>
+          <p >ddd</p>
+          <p>uuu</p>
+          <span>
+            dddYYY
+          </span>
+        </th>
+    </tr>
+  </table>
+
+<style>
+  .th td,
+.th  th{
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px;
+}
+
+.th td {
+    text-align: center;
+}
+
+.th tr:nth-child(even) {
+    background-color: #eee;
+}
+
+.th th[scope="col"] {
+    background-color: #696969;
+    color: #fff;
+}
+
+.th th[scope="row"] {
+    background-color: #d7d9f2;
+}
+
+.th caption {
+    padding: 10px;
+    caption-side: bottom;
+}
+
+.th table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: .8rem;
+}
+</style>
+<div class="th">
+    <table>
+        <caption>Alien football stars</caption>
+        <tr>
+            <th scope="col">Player</th>
+            <th scope="col">Gloobles</th>
+            <th scope="col">Za'taak</th>
+        </tr>
+        <tr>
+            <th scope="row">TR-7</th>
+            <td>7</td>
+            <td>4,569</td>
+        </tr>
+        <tr>
+            <th scope="row">Khiresh Odo</th>
+            <td>7</td>
+            <td>7,223</td>
+        </tr>
+        <tr>
+            <th scope="row">Mia Oolong</th>
+            <td>9</td>
+            <td>6,219</td>
+        </tr>
+    </table>
+    
+</div>
