@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  ul {
+    list-style: none;
+    padding-left: 0;
+    border: 1px solid red;
+    text-align: center;
+  }
+  .ul > li+li {
+    border-top:1px solid blue;
+  }
+  .ul3 > li+li {
+    border-bottom:1px solid blue;
+  }
+
+  .ul2 > li {
+    border-top: 1px solid blue;
+  }
+  .ul > li:first-child {
+    border-top: none;
+  }
+  .ul4 > li {
+    border-bottom: 1px solid green;
+  }
+  .ul4 > li:last-child {
+    border-bottom: none;
+  }
+  </style>
+</head>
+<body>
+  <ul class="ul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <ul class="ul2">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <ul class="ul3">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <br>
+  <ul class="ul4">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+</body>
+</html>

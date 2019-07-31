@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>display:table实现多列等高布局</title>
+  <style>
+  main {
+    width: 600px;
+    display: table;
+    height: 500px;
+    border-spacing: 30px 0;
+    background: yellowgreen;
+  }
+  main > div {
+    background: green;
+    display: table-cell;
+  }
+  </style>
+</head>
+<body>
+  <pre>
+    <a href="https://www.w3.org/TR/html401/struct/tables.html">W3.ORG</a>
+      table-layout: auto（默认）|fixed。
+
+
+      参数：
+      
+      auto：默认的自动算法。布局将基于各单元格的内容。表格在每一单元格读取计算之后才会显示出来，速度很慢。
+      fixed：固定布局的算法。在这算法中，水平布局是仅仅基于表格的宽度，表格边框的宽度，单元格间距，列的宽度，而和表格内容无关。 解析速度快。
+      
+      fixed布局模型的工作步骤：
+      1.width属性值不是auto的所有列元素会根据width值设置该列的宽度。
+      2.表首行中位于该列的单元格width，根据该单元格宽度设置此列的宽度。如果这个单元格跨多列，则宽度在这些列上平均分配。
+      3.在以上两步之后，如果列的宽度仍为auto，会自动确定其大小，使其宽度尽可能相等。此时，表的宽度设置为表的width值或列宽度之和(取其中较大者)。如果表度度大于其列宽总和，将二者之差除以列数，再把得到的这个宽度增加到每一列上。
+      这种方法的速度很快，因为所有列宽都由表的第一行定义。首行后所有行中的单元格都根据首行所定义的列宽确定大小。后面这些行中的单元格不会改变列宽。这意味着为这些单元格指定的width值都会被忽略。
+      
+      一般在做复杂表格html的时候，有时候你会发现，无论怎么调整第一行每列的width，列宽还是会发生出乎于你意料之外的变动（例如一长串英文文本，并且中间无空格分隔的情况你要这列限定宽度，使得过长文字强制换行且不撑破表格，而往往结果是怎么也调整不到合适的宽度），这个时候在万般无奈之下，你可以使用table-layout:fixed。
+      
+      table疑难杂症之换行
+      
+      用table显示数据有时候会有一个头疼的地方，即不换行显示某段文字，尤其在表头th中用到地方最多。其实你所头疼的并非换行，而是其背后的浏览器兼容加性使得换行的困难程度大大增。这里，你可以查看攻略强制换行与强制不换行这篇文章得到启示，文中详细讨论了在不同情况下攻略换行的方法。
+      
+      总体来说在table中换行个人比较推荐的方式为：先为table设定table-layout:fixed，基本上设定完这个属性后基本的换行问题都能够解决而不会出现table中td,th因为里面各个内容的多寡发生抢夺其他td,th宽度的情形发生。这时如果你依旧有强制换行问题，那么在此td中内部加一层div，再利用word-wrap:break-word; word-break:break-all;这俩个CSS方法可以解决换行的问题。
+      
+      常见而又生疏的几个table标签
+      
+      thead、tfoot以及tbody
+      
+      这三个标签是所谓xhtml的产物，主要是使您有能力对表格中的行进行分组。当您创建某个表格时，您也许希望拥有一个标题行，一些带有数据的行，以及位于底部的一个总计行。这种划分使浏览器有能力支持独立于表格标题和页脚的表格正文滚动。当长的表格被打印时，表格的表头和页脚可被打印在包含表格数据的每张页面上。个人认为其主要用途适用于超长表格的显示优化。
+      
+      thead标签表示HTML表头
+      表格的头部thead，可以使用单独的样式定义表头，并且在打印时可以在分页的上部打印表头。
+      
+      thead标签表示HTML页脚
+      表格的页脚tfoot，可以使用单独的样式定义页脚（脚注或表注），并且在打印时可以在分页的下部打印页脚。
+      
+      tbody标签表示HTML表体
+      浏览器显示表格时，通常是完全下载表格后，再全部显示，所以当表格很长时，可以使用tbody分段显示。
+      
+      注释：如果您使用 thead、tfoot以及tbody元素，您就必须使用全部的元素。它们的出现次序是：thead、tfoot、tbody，这样浏览器就可以在收到所有数据前就可呈现表头和页脚了。您必须在table元素内部使用这些标签，且thead内部必须拥有tr标签。所以书写更为标准的table方式即如下代码：
+      <code>
+          <table border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Month Lists</th>
+                  <th>Date Lists</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>AUG</td>
+                  <td>18</td>
+                </tr>
+              </tbody>
+            </table>
+      </code>
+      个人认为这个东西挺鸡肋，取之无用，弃之可惜。小项目可以增加些语义化，但因为曾经遇到过有多个不同表头在同一表格显示的窘境，限制了日后的开发，所以正式项目从可扩展的角度来说情慎用这些标签。
+      
+      col和colgroup
+      
+      这俩标签也是xhtml的产物，功能强大，兼容奇差。
+      
+      col标签为表格中一个或多个列定义属性值。
+      
+      colgroup标签用于对表格中的列进行组合，以便对其进行格式化。
+      
+      它们的作用主要就是来控制单元格的宽度了，这样省去单独定义每个单元格的麻烦，过去我们往往是在第一行中的th或者td上定义宽度来规定每列的宽度，而col不但可以定义宽度还能同时定义其他的属性，例如可以通过col来控制几列宽度的总和，还可以控制这列的背景色。但理想是丰满的，现实是骨干的，正如前面所说，功能越大不代表其兼容性也越强，据现有的测试下来，col和colgroup能发挥作用还能保证兼容的应用就只有俩：width和background。对于width，个人宁愿使用常规方式，第一行设置宽度，保证列宽。对于bacground，一般实际中表格大面积使用不同背景的情况也很少见。故个人认为：能不用尽量不用。
+      
+      何处用table
+      
+      个人认为，在一个放置数据非常密集且又非常序列化的一个容器里，用table准没错。最常见的例子就是我们常见的购物订单结算页面，上面列有你订单详情：商品名称、单价、购买数量、金额小计、运费等等，最后最下方还会有一个最终订单金额的结果，table在这里可谓是如鱼得水，达到了数据之载体的神效。
+  </pre>
+  <pre>
+    <a href="https://css-tricks.com/fixing-tables-long-strings/">fixing-tables-long-strings</a>
+      什么是table-layout
+      设定表格布局采用哪种布局算法
+      
+      auto
+      表格布局的默认行为。表格及单元格的宽度取决于其包含的内容。不可控性大。
+      
+      fixed
+      （1）表格的宽度由表格所设定的宽度和第一行所有列的宽度决定，其它行某一列的宽度仅由该列首行的单元格决定。
+      （2）使用此布局方式时，整个表格在第一行被下载后就被解析和渲染。
+      （3）相对于 “automatic” 自动布局方式来说可以加速渲染，因为其后的单元格内容并不会自适应当前列宽。
+      （4）任何一个包含溢出内容的单元格可以使用 overflow 属性控制是否允许内容溢出，比如图片的宽度过长或文字使用white-space:nowarp。
+      
+      两个属性布局的概念
+      column 代表 display: table-column
+      
+      固宽布局fixed
+      固宽布局必须要设置table width 100% 或 固定length
+      1、根据表格的宽度width和第一行所有列宽的总和colWidth，也就是说表格在第一行被下载后就被解析和渲染，后面行的列宽以第一行为准
+      2、宽度计算规则：第一行的所有列宽由column或单元格的width决定。当column设置固定宽度后，以column宽度为准；
+        当column设为auto时，根据第一行的某列的宽度，
+        1)、宽度为auto,单元格根据列数平均分配整个table的长度，各列宽度相同。
+        2)、某几列宽度为固定,这几列宽度总和为partColWidth，其它列的宽度为（table-width - partColWidth）/ 剩下的列数
+        3)、若第一行所有列的宽度都为固定，所有列宽度总和设为ColWidth，表格宽度为width。
+            若ColWidth >= width，则表格宽度为ColWidth，所有的列的宽度为自己设置的宽度;
+            若ColWidth < width，则表格宽度为width，所有列的宽度为 (自己设置的宽度/ColWidth) * width
+        4)、若有列合并，根据以上规则得出此列的宽度，合并列里面的列平分合并后的宽度。
+      3、td单元格，当table设置white-space: nowarp; fixed会有内容溢出的问题，直接可以使用overflow:hidden隐藏，
+      或者使用`word-break: break-all;word-wrap: break-word;`强制换行。  
+      如果想查看单元格里面的内容，overflow: scroll，可在单元格里面滚动查看内容。 
+      这里留个问题，table-layout:fixed属性且width = 200px，第一行有合并列，合并列里的列会平分整体宽度；
+      希望第二行开始的宽度分别为 100 70 30，怎么破？
+      第一行有合并列
+      
+      自动宽度布局 auto
+      1、自动宽度布局，速度上虽然不如前者，但它是表格的默认宽度布局方案。慢的原因在于表格会对每一个单元格宽度进行计算，每个单元格的宽度由内容决定。
+      2、宽度计算规则：
+        + 1、获取表格中每个column的宽度，column的宽度由每个单元格宽度决定，每个单元格宽度又由单元格内的内容决定，
+        计算每行某列的单元格，并获取某列单元格的最小值和最大值。
+        + 2、设表格的宽度为width，所有列的宽度和为AllcolWidth，遍历每一行。
+      
+        若width为auto,则表格宽度就是由所有列总和值决定，每列的宽度由自身的内容决定。width = AllcolWidth
+        （1）若每列的宽度为auto,每列的宽度由内容决定，计算出每行每列宽度的最大值和最小值，某列的宽度由某行的最大值决定。
+        （2）若部分列宽度为固定值，AllcolWidth = 未固定列宽为某行的最大值 + 所设置的宽度
+        （3）若每列都有固定的宽度值，表格的宽度即为 AllcolWidth = 各固定值之和
+      
+        若width为100%（宽度为父元素的值）或为固定值
+        （1）若每列的宽度为auto,每列的宽度由内容决定，计算出每行每列宽度的最大值和最小值，根据这些最大值和最小值计算列宽。
+        （2）若部分列宽度为固定值，AllcolWidth = 未固定列宽自适应计算的宽度（在最大值和最小值之间） + 所设置的宽度
+        （3）若每列都有固定的宽度值，需要计算出column宽度、border与单元格间距的总和为AllColWidth.
+            a) width > AllColWidth，多余的宽度会均分给所有列。
+            b) width < AllColWidth，每个column，单元格进行width/AllColWidth比例的缩小。
+        当宽度计算好之后，才开始布局，所以auto比fixed耗时，速度慢。
+      表格宽度在不换行的情况下被撑大
+
+  </pre>
+  <p>设置了display:table-cell的元素对宽度高度敏感，对margin值无反应，响应padding属性，基本上就是活脱脱的一个td标签元素了。</p>
+  <p>caption是表格中除table元素外唯一一个可以设置margin的。</p>
+  <p>使用display:table-cell让大小不固定元素垂直居中已经是很老的方法了，</p>
+  <p>display:table-cell下的列表布局最适用的场景是：列表个数不固定，但是，无论列表几个，都平分容器空间。什么意思呢？就是如果4个列表，希望每个宽度25%，3个就33.3333%，2个列表希望每个宽度50%。此时，没有比display:table-cell更合适的技术了。父级设置display:table同时宽度为容器宽度，或者直接width:100%，此时，display:table-cell子元素就会自动等分。</p>
+  <p>父元素display:table; table-layout:fixed; 即等分~(使宽度生效)</p>
+  <a href="https://www.zhangxinxu.com/study/200908/img-text-vertical-align.html#zhangxinxu">zxx</a>
+  <pre>
+    <a href="https://x-front-team.github.io/2016/10/12/%E8%A1%A8%E6%A0%BC%E5%B8%83%E5%B1%80%E9%82%A3%E4%BA%9B%E4%BA%8B/">表格布局那些事</a>
+    <a href="https://www.cnblogs.com/xiaohuochai/p/5008466.html">深入理解HTML表格</a>
+
+      固定宽度布局
+      固宽布局不依赖表格的单元格内容。表格的列宽是由表格第一行的元素决定的，之后几行的单元格宽度不需要再计算，设置width值也会被忽略。然而，当单元格内容过多超出单元格时，就不那么美妙了，或许需要使用overflow: hidden隐藏溢出，或者使用word-break: break-all;word-wrap: break-word;强制换行。
+      
+      固宽布局时表格是如何渲染的呢？
+      
+      column的宽度是这样计算的：
+      
+      1、如果column元素的width属性有值（非auto），为这一列设置宽度
+      
+      2、如果colum的width值为auto，看表格中第一行的在这一列的单元格的width值是否为auto，如不为auto,为这一列设置宽度。如果单元格跨列，宽度均分后设置
+      
+      3、对于width为auto的列，它的宽度是在table的width值-colum固定宽度值的总和之后，平均分配的。
+      
+      4、column的width值更像是最小宽度，当第一行中这一列单元格宽度大于column的width值时，单元格优先。
+      
+      表格的宽度可能是table元素的width值也可能是各个column宽度总和，就看哪一个值更大了。如果表格的宽度更大。则多余的宽度会被平均分配给各个column。
+      
+      自动宽度布局
+      自动宽度布局，速度上虽然不如前者，但它是表格的默认宽度布局方案。慢的原因在于表格的每一个单元格宽度都需要计算。
+      
+      这种布局下，表格的宽度需要依据各个colum的宽度，每一个column的宽度都需要计算出最小宽度和最大宽度，它们是由每一列的单元格所决定的。每一个单元格的宽度是由其内容决定，它也需要根据一些规则计算自己的最小宽度与最大宽度。
+      
+      如果表格的width不为auto，它需要计算出column宽度、border与单元格间距的总和，将这个总和值与width比较，取大值。如果width更大，多余的宽度会均分给所有的列。如果表格的计算属性width是auto，则表格宽度就是由总和值决定。
+      
+      表格的宽度依赖于单元格，单元格的宽度依赖于单元格内容，当所有这些都计算好的时候，浏览器才开始布局。
+  </pre>
+  <main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </main>
+  <div style="display: table-cell;vertical-align: middle;width: 500px;height: 500px;background: red">
+    <span style="vertical-align: middle;">
+      dfsadfdfdsfd
+      <br>
+      dsdfdsfd
+    </span>
+  </div>
+  <div style="display: table-cell;vertical-align: middle;width: 500px;height: 500px;background: blue;text-align: center;">
+    <span style="vertical-align: middle;">
+      dfsadfdfdsfd
+      <br>
+      dsdfdsfd
+    </span>
+  </div>
+</body>
+</html>

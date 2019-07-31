@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  .header {
+    height: 100px;
+    background: red;
+    filter: blur(1px)
+  }
+  .footer {
+    height: 50px;
+    background: green;
+    filter: blur(2px);
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">header</div>
+    <div>main</div>
+    <div class="footer">footer</div>
+  </div>
+</body>
+</html>
