@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>label for  聊天类键盘不掉下去</p>
+  <table>
+    <tr>
+      <td><input id="id1" type="text" placeholder="hh"> <label for="id1" class="label1">发送</label></td>
+    </tr>
+    <tr>
+      <td><input id="id2" type="text" placeholder="hhh"> <label class="label2">发送送</label></td>
+    </tr>
+  </table>
+  <script>
+  document.querySelector('#id1').addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+    document.body.append('click1')
+    }
+  })
+  document.querySelector('.label1').addEventListener('click', (e) => {
+    document.body.append('click1')
+  })
+  document.querySelector('#id2').addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+    document.body.append('click2')
+    }
+  })
+  document.querySelector('.label2').addEventListener('click', (e) => {
+    document.body.append('click2')
+  })
+  </script>
+</body>
+</html>
