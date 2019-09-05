@@ -95,19 +95,81 @@
         }
       }
       document.querySelector('.cut').addEventListener('click', () => {
-          console.log('cut');
-        })
-        document.querySelector('.copy').addEventListener('click', () => {
-          console.log('copy');
-        })
-        document.querySelector('.paste').addEventListener('click', () => {
-          console.log('paste');
-        })
-      }
+        console.log('cut');
+      })
+      document.querySelector('.copy').addEventListener('click', () => {
+        console.log('copy');
+      })
+      document.querySelector('.paste').addEventListener('click', () => {
+        console.log('paste');
+      })
+    }
   </script>
 </head>
 
 <body>
+  <style>
+  .mod-bubble-menu.with-border {
+    position: absolute;
+    z-index: 100;
+    top: 80px;
+    left: 500px;
+    box-sizing: border-box;
+    min-width: 100px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px 0 rgba(15,32,65,.2);
+    padding: 6px 0;
+    border: 1px solid #c8ccd3;
+}
+.mod-bubble-menu .menu-item {
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+.mod-bubble-menu .menu-item .txt {
+    display: block;
+    font-size: 14px;
+    color: #020202;
+    height: 36px;
+    line-height: 36px;
+    padding: 0  22px;
+    position: relative;
+}
+.mod-bubble-menu .menu-item:hover .txt {
+    background-color: #f4f4f4;
+}
+  </style>
+  <div class="mod-bubble-menu with-border">
+    <ul class="menu-list">
+      <li class="menu-item"> <span class="txt">
+          下载
+        </span> </li>
+      <li class="menu-item"> <span class="txt">
+          分享
+        </span> </li>
+      <li class="menu-item"> <span class="txt">
+          收集文件
+        </span> </li>
+      <li class="menu-item"> <span class="txt">
+          移动到
+        </span> </li>
+      <li class="menu-item"> <span class="txt">
+          重命名
+        </span> </li>
+      <li class="menu-item"> <span class="txt">
+          添加到共享组
+        </span> </li>
+      <li class="menu-item"> <span class="txt">
+          移入保险箱
+        </span>
+        <div class="spliter"></div>
+      </li>
+      <li class="menu-item"> <span class="txt">
+          删除
+        </span> </li>
+    </ul>
+  </div>
   <center>自定义右键菜单，请在页面点击右键查看效果。</center>
   <ul id="menu" style="display: block; top: 54px; left: 645px;">
     <li class=""><em class="cut"></em><a href="javascript:;">剪切</a></li>
