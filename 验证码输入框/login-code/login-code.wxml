@@ -1,0 +1,26 @@
+<view class="container">
+  <block>
+    <input type='number' class='hiddenIpt' bindinput='bindSmsInput' maxlength="{{smsCodeLenght}}" data-flag='smsCode' focus="{{smsCode.isFocus}}"></input>
+      <!-- <view class="f36 c33">
+        请输入手机验证码
+      </view> -->
+      <view class="f34 c66 code-tip" hover-class="none" hover-stop-propagation="false">
+        我们已发送短信验证码到你的手机号
+      </view>
+      <view class="f48 c33" hover-class="none" hover-stop-propagation="false">
+        {{ phoneStr }}
+      </view>
+      <view class="code-box" hover-class="none" hover-stop-propagation="false">
+              <view>
+        <input wx:for="{{smsCodeLenght}}" wx:key="{{index}}" value='{{smsCode.value[index]}}' data-flag='smsCode' disabled catchtap='bindKeyInput'  type='number'></input>
+      </view>
+      </view>
+      <view bind:tap="sendSmsApi" class="f34 c66 tc {{counting ? '' : 'c-blue'}} {{smsError ? 'c-none' : ''}}" hover-class="none" hover-stop-propagation="false">
+        {{timeStr}}
+      </view>
+      <view bind:tap="sendSmsApi" class="f34 c66 tc c-none {{smsError ? 'c-red' : ''}}" hover-class="none" hover-stop-propagation="false">
+        {{timeStr}}
+      </view>
+  </block>
+  <v-dialog id="v-dialog"></v-dialog>
+</view>
