@@ -1,0 +1,81 @@
+/**login.wxss**/
+page{
+  .c33 {
+    color: #333;
+  }
+  .c-red {
+    color: #FF3B30 !important;
+    display: block !important;
+  }
+  .c-none {
+    display: none
+  }
+  .c-blue {
+    color: #4496F9 !important;
+  }
+  .tc {
+    text-align: center;
+  }
+  .c66 {
+    color: #666;
+  }
+  .f26 {
+    font-size: 26rpx;
+  }
+  .f36 {
+    font-size: 36rpx;
+  }
+  .f34 {
+    font-size: 34rpx;
+  }
+  .f48 {
+    font-size: 48rpx;
+  }
+  background-color: #fff;
+  .container{
+    height: 100%;
+    padding: 165rpx 40rpx;
+    padding-top: 38rpx;
+    box-sizing: border-box;
+    .code-tip {
+      margin: 24rpx 0;
+    }
+    .code-box {
+      margin: 44rpx 0 40rpx 0;
+    }
+  }
+  .hiddenIpt {
+    width: 100rpx;
+    height: 100rpx;
+    border: 1px solid red;
+    position: absolute;
+    left: -300rpx;
+  }
+
+  .code-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text {
+      margin-right: 24rpx;
+      font-size: 32rpx;
+      color: #34373a;
+    }
+    view {
+      display: flex;
+      input {
+        height: 100rpx;
+        line-height: 100rpx;
+        font-size: 48rpx;
+        color: #34373a;
+        text-align: center;
+        border-radius: 10rpx;
+        border: 2rpx solid #B1B1B1
+      }
+      input + input {
+        margin-left:12rpx;
+      }
+    }
+  }
+
+}

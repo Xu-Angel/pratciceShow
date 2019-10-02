@@ -1,0 +1,28 @@
+<!--pages/changePW/changePW.wxml-->
+<view class='container'>
+  <text class='tips' wx:if="{{tips}}">{{tips}}</text>
+  <input password class='hiddenIpt' bindinput='bindPasswordInput' maxlength="{{setPasswordLength}}" data-flag='oldPassword' focus="{{oldPassword.isFocus}}"></input>
+  <input password class='hiddenIpt' bindinput='bindPasswordInput' maxlength="{{setPasswordLength}}" data-flag='newPassword' focus="{{newPassword.isFocus}}"></input>
+  <input password class='hiddenIpt' bindinput='bindPasswordInput' maxlength="{{setPasswordLength}}" data-flag='repeatPassword' focus="{{repeatPassword.isFocus}}"></input>
+  <view class='pw-wrap'>
+    <view class='item'>
+      <text>原支付密码</text>
+      <view>
+        <input wx:for="{{setPasswordLength}}" wx:key="{{index}}" value='{{oldPassword.value[index]}}' data-flag='oldPassword' disabled catchtap='bindKeyInput' password type='number'></input>
+      </view>
+    </view>
+    <view class='item'>
+      <text>新支付密码</text>
+      <view>
+        <input wx:for="{{setPasswordLength}}" wx:key="{{index}}" value='{{newPassword.value[index]}}' data-flag='newPassword' disabled catchtap='bindKeyInput' password type='number'></input>
+      </view>
+    </view>
+    <view class='item'>
+      <text>重复新密码</text>
+      <view>
+        <input wx:for="{{setPasswordLength}}" wx:key="{{index}}" value='{{repeatPassword.value[index]}}' data-flag='repeatPassword' disabled catchtap='bindKeyInput' password type='number'></input>
+      </view>
+    </view>
+  </view>
+  <button class='ok' bindtap='submit' type='button'>确定</button>
+</view>
