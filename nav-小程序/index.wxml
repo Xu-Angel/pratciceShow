@@ -1,0 +1,19 @@
+<view class="navigate" style="background-color:{{tabbar.backgroundColor}}">
+  <block wx:for="{{tabbar.list}}" wx:key="{{item.pagePath}}">
+    <view wx:if="{{item.isSpecial}}" class="item" hover-class="none" url="{{item.pagePath}}">
+      <button class='special' open-type="getUserInfo" bindgetuserinfo="{{item.handler}}">
+        <image class="icon" src="{{item.iconPath}}"></image>
+      </button>
+      <view class="text special-text">{{item.text}}</view>
+    </view>
+    <view wx:else class="item" hover-class="none" url="{{item.pagePath}}" bindtap="{{item.handler}}">
+      <image class="icon" src="{{item.pagePath === currentPagePath ? item.selectedIconPath : item.iconPath}}"></image>
+      <view class="text" style="color:{{item.pagePath === currentPagePath ? tabbar.selectedColor : tabbar.color}}">
+        {{item.text}}
+      </view>
+      <button class="primary-btn" wx:if="{{!item.isHome}}" open-type="getUserInfo" bindgetuserinfo="{{item.handler}}">微信授权</button>
+    </view>
+    <!-- <v-dialog id="nav-dialog-{{item.id}}" bind:confirmEvent="dialogEventConfirm" bind:cancelEvent="dialogEventCancel"></v-dialog>
+    <v-toast id="nav-toast"></v-toast> -->
+  </block>
+</view>

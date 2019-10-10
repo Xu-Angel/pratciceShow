@@ -1,0 +1,89 @@
+.navigate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 98rpx;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1); }
+  .navigate .item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20rpx;
+    height: 100%;
+    position: relative; }
+    .navigate .item .primary-btn {
+      position: absolute;
+      opacity: 0;
+      width: 100%; }
+      .navigate .item .primary-btn::after {
+        border: none;
+        background-color: #fff; }
+  .navigate .special {
+    position: absolute;
+    left: 50%;
+    top: -46rpx;
+    width: 100rpx;
+    height: 100rpx;
+    opacity: 1;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    padding: 8rpx; }
+    .navigate .special .icon {
+      width: 85rpx;
+      height: 85rpx;
+      margin-top: 0;
+      margin-bottom: 0; }
+    .navigate .special::after {
+      border: none; }
+  .navigate .special-text {
+    position: absolute;
+    bottom: 10rpx; }
+  .navigate .text {
+    height: 32rpx;
+    line-height: 32rpx;
+    text-align: center;
+    width: 100%;
+    font-size: 22rpx;
+    color: #999; }
+  .navigate .icon {
+    margin-top: 10rpx;
+    margin-bottom: 8rpx;
+    width: 40rpx;
+    height: 42rpx; }
+
+.iphoneX-height {
+  padding-bottom: 66rpx; }
+
+.middle-wrapper.iphoneX-height {
+  bottom: 66rpx; }
+
+.nav--item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rpx;
+  height: 100%;
+  position: relative; }
+
+.tabbar_icon {
+  width: 56rpx;
+  height: 56rpx; }
+
+.special-wrapper .tabbar_icon {
+  width: 84rpx;
+  height: 84rpx; }
+
+.special-text-wrapper {
+  width: 56rpx;
+  height: 56rpx; }
