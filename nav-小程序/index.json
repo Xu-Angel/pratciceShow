@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+  	"v-dialog": "../dialog/index",
+  	"v-toast": "../toast/toast"
+  }
+}
