@@ -13,7 +13,6 @@
       </view>
       <button class="primary-btn" wx:if="{{!item.isHome}}" open-type="getUserInfo" bindgetuserinfo="{{item.handler}}">微信授权</button>
     </view>
-    <!-- <v-dialog id="nav-dialog-{{item.id}}" bind:confirmEvent="dialogEventConfirm" bind:cancelEvent="dialogEventCancel"></v-dialog>
-    <v-toast id="nav-toast"></v-toast> -->
+    <!-- <v-dialog id="Nav-Dialog" bind:confirmEvent="DialogEventConfirm" bind:cancelEvent="DialogEventCancel"></v-dialog> -->
   </block>
 </view>
