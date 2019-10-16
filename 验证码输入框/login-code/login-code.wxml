@@ -12,7 +12,7 @@
       </view>
       <view class="code-box" hover-class="none" hover-stop-propagation="false">
               <view>
-        <input wx:for="{{smsCodeLenght}}" wx:key="{{index}}" value='{{smsCode.value[index]}}' data-flag='smsCode' disabled catchtap='bindKeyInput'  type='number'></input>
+        <input wx:for="{{smsCodeLenght}}" wx:key="{{index}}" value='{{smsCode.value[index]}}' data-flag='smsCode' catchtap='bindKeyInput'  type='number'></input>
       </view>
       </view>
       <view bind:tap="sendSmsApi" class="f34 c66 tc {{counting ? '' : 'c-blue'}} {{smsError ? 'c-none' : ''}}" hover-class="none" hover-stop-propagation="false">

@@ -84,12 +84,12 @@ Component({
     userPerfectInfo(data = {}) {
       return new Promise((resolve, reject) => {
         // 请求响应
-        wx.showLoading({
-          title: '鉴权中',
-          mask: true
-        })
+        // wx.showLoading({
+        //   title: '鉴权中',
+        //   mask: true
+        // })
         user.getPerfectInfo(data).then(function (res) {
-          wx.hideLoading()
+          // wx.hideLoading()
           if (res.result) {
             resolve(res.result)
           }
@@ -163,7 +163,7 @@ Component({
             if (!isCert) {
               wx.showModal({
                 title: '',
-                content: '您尚未完成企业认证，暂无法发布需求',
+                content: '您没有权限，请先进行企业认证',
                 cancelText: '取消',
                 cancelColor: '#000000',
                 confirmText: '立即认证',
