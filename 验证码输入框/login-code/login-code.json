@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "输入验证码",
-  "backgroundColor": "#FFFFFF ",
+  "backgroundColor": "#FFFFFF",
   "navigationBarTextStyle":"black",
   "navigationBarBackgroundColor": "#FFFFFF",
   "disableScroll": true,

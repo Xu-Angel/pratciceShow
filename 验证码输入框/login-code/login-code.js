@@ -1,9 +1,9 @@
-import { config } from '../../config.js';
+import { config } from '../../config.js'
 import { UserModel } from '../../models/user.js'
 import { MyProfileModel } from '../../models/my-profile.js'
 import mta from '../../util/mta_analysis.js'
 
-const base_url = config.api_base_url;
+const base_url = config.api_base_url
 const loginApi = new UserModel()
 const userInfoApi = new MyProfileModel()
 
@@ -33,6 +33,10 @@ Page({
       openId: wx.getStorageSync('openId') || ''
     })
     this.setTimeLimit()
+    // 统计信息
+    if (base_url === 'https://rhh.keywa.com') {
+      mta.Page.init()
+    }
   },
 
   /**
@@ -43,8 +47,11 @@ Page({
     this.data[flag].value = e.detail.value
     this.setData({
       [flag]: this.data[flag]
-    });
+    })
     if (e.detail.cursor === this.data.smsCodeLenght) {
+      this.setData({
+        ['smsCode.isFocus']: false
+      })
       this.submitLogin()
     }
   },
@@ -141,6 +148,7 @@ Page({
       wx.hideLoading()
       if(r.result) {
         wx.setStorageSync('userInfo', r.result)
+        this.getOpenId()
         dialog.show({
           text: '登录成功',
           icon: 'success',
@@ -152,12 +160,12 @@ Page({
           that.isPerfectInfo(r.result.id)
         }, 900)
       } else {
-        if (r.error.code == 500) {
+        if (r.error.code === 500) {
           this.setData({
             smsError: true,
             counting: false,
             timeStr: `验证码错误，请重新输入`
-          });
+          })
         } else {
           this.showToast(r.error.message)
         }
@@ -177,7 +185,8 @@ Page({
         loading: false
       })
       if (res.result) {
-        if([1].includes(res.result.isPerfect)) {
+        const { isPerfect } = res.result
+        if(!isPerfect) { // 提示填资料 跳转
           wx.navigateTo({
             url: '/pages/my-profile/my-profile?origin=login'
           })
@@ -204,13 +213,13 @@ Page({
           counting: true,
           smsError: false,
           timeStr: `${countdown--}s后可点此重新获取`
-        });
+        })
       } else {
-        clearInterval(intervalid);
-        countdown = 0;
+        clearInterval(intervalid)
+        countdown = 0
         this.setData({
           counting: false,
-          timeStr: '重新获取验证码',
+          timeStr: '重新获取验证码'
         })
       }
     }, 1000)
@@ -228,6 +237,24 @@ Page({
     this.data[flag].isFocus = true
     this.setData({
       [flag]: this.data[flag]
-    });
+    })
   },
+  getOpenId () {
+    wx.login({
+      success: res => {
+        // 获取openid
+        if (res.code) {
+          loginApi.getOpenId({ post: { code: res.code } }).then(rs => {
+            if (rs) {
+              wx.setStorageSync('openId', rs.result['openid'])
+              wx.setStorageSync('sessionKey', rs.result['session_key'])
+            }
+          })
+        }
+      },
+      fail: err => {
+        console.log(err)
+      }
+    })
+  }
 })
