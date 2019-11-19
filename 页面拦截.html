@@ -1,0 +1,30 @@
+<html5>
+  <input type="button" id="btn" onclick="openwin()" />
+<script>
+  // function1
+  // document.getElementById('btn').onclick = function() {
+  //   window.open('http://www.alenqi.site')
+  // }
+  // function2
+  // document.getElementById('btn').onclick = function() {
+	// setTimeout(function () {
+	//   window.open('http://segmentfault.com');
+	// }, 1000)
+  // }
+  // function3
+  // window.open('http://www.alenqi.site')
+
+  document.getElementById('btn').addEventListener('click', function() {
+  var newWindow = window.open('loading page')
+  setTimeout(function() {
+    newWindow.location.href = 'http://www.alenqi.site'
+  }, 1000)
+})
+
+</script>
+
+作者：AlenQi
+链接：https://juejin.im/post/5a813bc1f265da4e9a4959ff
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+</html5>
