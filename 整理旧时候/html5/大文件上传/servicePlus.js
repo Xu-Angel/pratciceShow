@@ -4,8 +4,9 @@ const fs = require('fs');
 let sockets = [];
 var app = express();
 
-app.get('//',(req,res)=>{
-    fs.readFile("./static/ajax大文件分片上传.html",(err,data)=>{
+app.get('/', (req, res) => {
+    console.log('inner');
+    fs.readFile("./static/index.html",(err,data)=>{
         if(err){
             return;
         }
@@ -32,7 +33,8 @@ app.post("/upload",(req,res)=>{
                 if(sockets[num].name==fields.username){
                     sockets[num].output[fields.index]=files.data;
                     sockets[num].success++;
-                    console.log(fields.username+"文件上传进度是:"+success/fields.total*100+"%");
+                    console.log(fields.username+"文件上传进度是:"+sockets[num].success/fields.total*100+"%");
+                    console.log(files.data);
                     if(sockets[num].success==fields.total){
                         function read(i){
                             var data = fs.readFileSync(sockets[num].output[i].path);
@@ -74,6 +76,6 @@ app.post("/upload",(req,res)=>{
 
 });
 
-app.listen(999,"172.17.12.14",function(){
+app.listen(999,function(){
     console.log('服务已经开启');
 });

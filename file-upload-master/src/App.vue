@@ -129,6 +129,7 @@ export default {
       onProgress = e => e,
       requestList
     }) {
+      console.log('132');
       return new Promise(resolve => {
         const xhr = new XMLHttpRequest();
         xhr.upload.onprogress = onProgress;
@@ -198,7 +199,7 @@ export default {
         this.status = Status.wait;
         return;
       }
-
+      console.log('shouldUpload:' ,shouldUpload );
       this.data = fileChunkList.map(({ file }, index) => ({
         fileHash: this.container.hash,
         index,
@@ -239,6 +240,7 @@ export default {
     },
     // 通知服务端合并切片
     async mergeRequest() {
+      console.log('mergeRequest');
       await this.request({
         url: "http://localhost:3000/merge",
         headers: {

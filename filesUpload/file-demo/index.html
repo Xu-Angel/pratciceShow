@@ -90,6 +90,7 @@
                                 ctx.drawImage(this, 0, 0, imgWidth, imgHeight);
                             }
                             img.src = canvas.toDataURL("image/jpeg", 1);
+                            document.documentElement.appendChild(canvas)
                         }
                     };
                     reader.readAsDataURL(file);

@@ -53,7 +53,7 @@ module.exports = class {
   // 处理切片
   async handleFormData(req, res) {
     const multipart = new multiparty.Form();
-
+    console.log(UPLOAD_DIR)
     multipart.parse(req, async (err, fields, files) => {
       if (err) {
         console.error(err);
