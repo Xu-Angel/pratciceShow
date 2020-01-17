@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <img src="abc.xxx" alt="xxx" class="cs-img" />
+  <script>
+    window.addEventListener(
+      "error",
+      function (event) {
+        var dom = event.target;
+        if (!/img/i.test(dom.nodeName)) {
+          return;
+        }
+        // 不存在返回null
+        var retry = +dom.getAttribute("data-retry");
+        if (retry >= 3) {
+          // 绝对安全的图片
+          dom.src =
+            "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+        } else {
+          setTimeout(() => {
+            dom.src = "xxxx.png";
+            dom.setAttribute("data-retry", (retry += 1));
+          }, 1000)
+        }
+      },
+      true
+    );
+  </script>
+</body>
+
+</html>
