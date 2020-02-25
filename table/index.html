@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background-color: #fff;
+    }
+
+    div {
+      /* width: 300px;; */
+    }
+
+    li {
+      display: flex;
+      box-sizing: border-box;
+    }
+
+    li>div {
+      flex: 1;
+    }
+
+    li>div>div:nth-child(1) {
+      display: flex;
+      align-items: center;
+      height: 30px;
+      font-size: 14px;
+      color: #00A0FF;
+    }
+
+    li>div>div:nth-child(2) {
+      border: 1px solid #d8d8d8;
+      background: #F2F2F2;
+      color: #000000;
+      font-size: 16px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      width: 80%;
+      text-indent: 4px;
+    }
+
+    li>div:nth-last-child(1)>div:nth-child(2) {
+      width: 100%;
+    }
+
+    li {
+      margin-top: 10px;
+    }
+
+    li>table {
+      text-align: center;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    li>table td {
+      border: 1px solid #d8d8d8;
+    }
+
+    li>table tr:nth-child(1) {
+      height: 35px;
+      background: #F2F2F2;
+      font-size: 14px;
+    }
+
+    li>table tr:nth-child(2) {
+      height: 54px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div style="background: #F2F2F2;padding: 10px">
+      <h3 style="text-align: center;">收款确认单</h3>
+      <div style="overflow: hidden;">
+        <div style="float: left;">公司名称：广东奇化化工交易中心股份有限公司</div>
+        <div style="float: right;">表单编号：KEYWA2020020021</div>
+      </div>
+    </div>
+    <ul>
+      <li>
+        <div>
+          <div>申请人</div>
+          <div>猪八戒</div>
+        </div>
+        <div>
+          <div>销售部门</div>
+          <div>猪八戒</div>
+        </div>
+        <div>
+          <div>内部账号编码</div>
+          <div>猪八戒</div>
+        </div>
+        <div>
+          <div>内部账号名称</div>
+          <div><select name="erpPayType"><option value="">请选择</option>  <option value="09">国外信用证</option>  <option value="JSFS01_SYS">现金</option>  <option value="JSFS02_SYS">现金支票</option>  <option value="JSFS03_SYS">转账支票</option>  <option value="JSFS04_SYS">电汇</option>  <option value="JSFS05_SYS">信汇</option>  <option value="JSFS06_SYS">商业承兑汇票</option>  <option value="JSFS07_SYS">银行承兑汇票</option>  <option value="JSFS08_SYS">国内信用证</option>  <option value="JSFS09_SYS">应收票据背书</option>  <option value="JSFS10_SYS">内部利息结算</option>  <option value="JSFS11_SYS">融资电汇</option>  <option value="JSFS12_SYS">票据退票</option>  <option value="JSFS13_SYS">网上支付</option>  <option value="JSFS21_SYS">集中结算</option>  <option value="JSFS22_SYS">保证金转货款</option>  <option value="JSFS40_SYS">付款交单</option>  <option value="JSFS41_SYS">承兑交单</option>  <option value="JSFS42_SYS">赊账</option>  <option value="JSFS43_SYS">交单付款</option>  <option value="JSFS44_SYS">信用证出口</option> </select></div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div>申请人</div>
+          <div>猪八戒</div>
+        </div>
+        <div>
+          <div>销售部门</div>
+          <div>猪八戒</div>
+        </div>
+        <div>
+          <div>内部账号编码</div>
+          <div>猪八戒</div>
+        </div>
+        <div>
+          <div>内部账号名称</div>
+          <div>猪八戒</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div>申请人</div>
+          <div>猪八戒</div>
+        </div>
+        <div>
+          <div>销售部门</div>
+          <div>猪八戒</div>
+        </div>
+        <div style="flex: 2">
+          <div>内部账号编码</div>
+          <div>猪八戒</div>
+        </div>
+      </li>
+      <li style="margin-top: 15px">
+        <table>
+          <tr>
+            <td>合同编号</td>
+            <td>客户名称</td>
+            <td>结算方式</td>
+            <td>来款原因</td>
+            <td>应收金额</td>
+            <td>手续费</td>
+            <td>长短款</td>
+            <td>现金折扣</td>
+            <td>实收金额</td>
+          </tr>
+          <tr>
+            <td>合同编号</td>
+            <td>客户名称</td>
+            <td>结算方式</td>
+            <td>来款原因</td>
+            <td>应收金额</td>
+            <td>手续费</td>
+            <td>长短款</td>
+            <td>现金折扣</td>
+            <td>实收金额</td>
+          </tr>
+        </table>
+      </li>
+      <li>
+        <div>
+          <div>申请人</div>
+          <div>猪八戒</div>
+        </div>
+        <div>
+          <div>销售部门</div>
+          <div>猪八戒</div>
+        </div>
+        <div>
+          <div>内部账号编码</div>
+          <div>猪八戒</div>
+        </div>
+        <div>
+          <div>内部账号编码</div>
+          <div>猪八戒</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</body>
+
+</html>
