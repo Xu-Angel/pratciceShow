@@ -11,18 +11,9 @@
     <form action="">
         
     </form>
-        1.7 操作form表单
-        1.7.1 属性操作
-        设置属性：
-        // 第一个参数表示：要设置的属性名称
-        // 第二个参数表示：改属性名称对应的值
-        $(selector).attr(“title”, “宅客学院”);
-        获取属性：
-        // 参数为：要获取的属性的名称，改操作会返回指定属性对应的值
+
         $(selector).attr(“title”);
-        此时，返回指定属性的值
-        移除属性：
-        // 参数为：要移除的属性的名称
+        
         $(selector).removeAttr(“title”);
         注意：checked、selected、disabled要使用.prop()方法。
         prop方法通常用来影响DOM元素的动态状态，而不是改变的HTML
@@ -44,5 +35,20 @@
         $(selector).text();
         //设置操作带参数，参数表示要设置的文本内容
         $(selector).text(“我是内容”);
+
+        jq里面关于disable的用法
+        //两种方法设置disabled属性
+        $('#areaSelect').attr("disabled",true);
+        $('#areaSelect').attr("disabled","disabled");
+
+        //三种方法移除disabled属性
+        $('#areaSelect').attr("disabled",false);
+        $('#areaSelect').removeAttr("disabled");
+        $('#areaSelect').attr("disabled","");
+ 
+        Readonly只针对input(text/ password)和textarea有效，而disabled对于所有的表单元素都有效，包括select,radio, checkbox, button等。
+
+        trigger:模拟表单触发
+        $('input[name="paymentMode"][value="1"]').trigger('click');
 </body>
 </html>
