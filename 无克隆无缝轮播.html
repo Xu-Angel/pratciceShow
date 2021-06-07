@@ -1,84 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>轮播</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-        #continer{
-            width: 300px;
-            height: 200px;
-            position: relative;
-            margin: 20px auto;
-            border: 1px solid;
-            overflow: hidden;
-        }
-        #lunbo{
-            width: 9999em;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        li{
-            float: left;
-            width: 300px;
-            height: 200px;
-            text-align: center;
-            line-height: 200px;
-            color: brown;
-            font-size: 30px;
-        }
-    </style>
-</head>
-<body>
-    <div id="continer">
-        <ul class="ul" id="lunbo">
-            <li class="list">1</li>
-            <li class="list">2</li>
-            <li class="list">3</li>
-            <li class="list">4</li>
-            <li class="list">5</li> 
-        </ul>
+<template>
+    <div>
+        <el-dialog v-bind="$attrs" v-on="$listeners" @open="onOpen" @close="onClose" title="Dialog Titile">
+            <el-form ref="elForm" :model="formData" :rules="rules" size="medium" label-width="100px">
+                <el-form-item label="试试水" prop="field101">
+                    <el-input v-model="formData.field101" placeholder="请输入试试水" clearable :style="{width: '100%'}">
+                    </el-input>
+                </el-form-item>
+                <el-form-item label="下拉选择" prop="field102">
+                    <el-select v-model="formData.field102" placeholder="请选择下拉选择" clearable :style="{width: '100%'}">
+                        <el-option v-for="(item, index) in field102Options" :key="index" :label="item.label"
+                            :value="item.value" :disabled="item.disabled"></el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="运行模式" prop="field109">
+                    <el-radio-group v-model="formData.field109" size="medium">
+                        <el-radio v-for="(item, index) in field109Options" :key="index" :label="item.value"
+                            :disabled="item.disabled">{{item.label}}</el-radio>
+                    </el-radio-group>
+                </el-form-item>
+                <el-form-item label="日期选择" prop="field107">
+                    <el-date-picker v-model="formData.field107" format="yyyy-MM-dd" value-format="yyyy-MM-dd"
+                        :style="{width: '100%'}" placeholder="请选择日期选择" clearable></el-date-picker>
+                </el-form-item>
+            </el-form>
+            <div slot="footer">
+                <el-button @click="close">取消</el-button>
+                <el-button type="primary" @click="handelConfirm">确定</el-button>
+            </div>
+        </el-dialog>
     </div>
-</body>
-<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+</template>
 <script>
-    let selectNum = 0
-    function lunboFun (selectNum, time) {
-        $('#lunbo').animate({
-            'left': -1 * selectNum * 300
-        }, time, () => {
-            selectNum++
-            setTimeout(() => {
-                if (selectNum > 4) {
-                    selectNum = 0
-                    $('ul li:last').css({
-                        'position': 'absolute'
-                    }, 0)
-                    $('ul li:last').animate({
-                        'left': -300
-                    }, 0)
-                    $('#lunbo').animate({
-                        'left': 300
-                    }, 0)
-                } else if (selectNum <3) {
-                    $('ul li:last').css({
-                        'position': 'relative',
-                        'left': 0
-                    }, 0)
-                }
-                lunboFun(selectNum, 1000)
-            }, 2000)
-        });
+    export default {
+        inheritAttrs: false,
+        components: {},
+        props: [],
+        data() {
+            return {
+                formData: {
+                    field101: "fdsfsdf",
+                    field102: undefined,
+                    field109: 1,
+                    field107: "2021-05-07",
+                },
+                rules: {
+                    field101: [{
+                        required: true,
+                        message: '请输入试试水',
+                        trigger: 'blur'
+                    }, {
+                        pattern: /\d/,
+                        message: '啊啊',
+                        trigger: 'blur'
+                    }],
+                    field102: [{
+                        required: true,
+                        message: '请选择下拉选择',
+                        trigger: 'change'
+                    }],
+                    field109: [{
+                        required: true,
+                        message: '运行模式不能为空',
+                        trigger: 'change'
+                    }],
+                    field107: [{
+                        required: true,
+                        message: '请选择日期选择',
+                        trigger: 'change'
+                    }],
+                },
+                field102Options: [{
+                    "label": "选项一",
+                    "value": 1
+                }, {
+                    "label": "选项二",
+                    "value": 2
+                }],
+                field109Options: [{
+                    "label": "串行",
+                    "value": 1
+                }, {
+                    "label": "并行",
+                    "value": 2
+                }],
+            }
+        },
+        computed: {},
+        watch: {},
+        created() { },
+        mounted() { },
+        methods: {
+            onOpen() { },
+            onClose() {
+                this.$refs['elForm'].resetFields()
+            },
+            close() {
+                this.$emit('update:visible', false)
+            },
+            handelConfirm() {
+                this.$refs['elForm'].validate(valid => {
+                    if (!valid) return
+                    this.close()
+                })
+            },
+        }
     }
-    lunboFun(selectNum, 1000)
 
 </script>
-</html>
+<style>
+</style>
