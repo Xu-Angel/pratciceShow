@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS和hr标签绘制的分隔线</title>
+    <link rel="stylesheet" href="./hr.css" />
+    <style>
+      h1 {
+        font-family: x-locale-heading-primary, x-locale-heading-secondary, 'Source Han Serif SC', STZhongsong, 'Source Han Sans CN', 'PingFang SC', 'Myriad Pro', 'Hiragino Sans GB';
+      }
+      h3 {
+        font-family: system-ui;
+        border-left: solid #2a80eb;
+        padding-left: 0.5em;
+        margin-top: 1.25em;
+      }
+      h5 {
+        margin-bottom: 0;
+        font-size: 87.5%;
+      }
+      hr {
+        margin: 1em 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">CSS和hr标签绘制的分隔线</h1>
+    <h3>基础样式</h3>
+
+    <h5>实线</h5>
+    <hr class="hr-solid" />
+
+    <h5>点线（1px和2px）</h5>
+    <hr class="hr-dotted" />
+    <hr class="hr-dotted2" />
+
+    <h5>虚线（1px和2px）（浏览器默认，不同浏览器表现细节有差异）</h5>
+    <hr class="hr-dashed" />
+    <hr class="hr-dashed2" />
+
+    <h5>双实线</h5>
+    <hr class="hr-double" />
+
+    <h5>疏密可控的虚线（浏览器表现一致）</h5>
+
+    <hr class="hr-dashed-fixed" />
+    <hr class="hr-dashed-fixed" style="--dashed-filled: 6px; --dashed-open: 5px" />
+
+    <h5>两头虚的分隔线</h5>
+    <hr class="hr-edge-weak" />
+
+    <h5>斜纹分隔线</h5>
+    <hr class="hr-twill" />
+    <hr class="hr-twill-colorful" />
+
+    <h5>波浪线</h5>
+    <hr class="hr-wavy" />
+
+    <h5>阴影线</h5>
+    <hr class="hr-shadow" />
+
+    <h3>花样年华</h3>
+    <h5>中间有装饰</h5>
+    <hr class="hr-mid-circle" />
+    <hr class="hr-mid-square" />
+
+    <h5>中间有多个装饰</h5>
+    <hr class="hr-mid-circle" multiline />
+    <hr class="hr-mid-square" multiline />
+
+    <h5>装饰在两端</h5>
+    <hr class="hr-space-square" />
+
+    <h5>装饰复杂一点点</h5>
+    <hr class="hr-double-arrow" />
+
+    <h3>带文字内容</h3>
+
+    <h5>两端实线</h5>
+    <hr class="hr-solid-content" data-content="分隔线" />
+    <hr class="hr-solid-content" data-content="文字自适应，背景透明" />
+
+    <h5>两端虚线</h5>
+    <hr class="hr-dashed-content" data-content="分隔线" />
+
+    <h5>两端淡出</h5>
+    <hr class="hr-fade-content" data-content="分隔线" />
+
+    <h5>内容装饰</h5>
+    <hr class="hr-mid-border-content" data-content="分隔线" />
+
+    <h3>其他</h3>
+    <p>相关文章介绍：<a href="https://www.zhangxinxu.com/wordpress/?p=9962">看hr标签分隔线如何玩出花</a></p>
+    <p>by zhangxinxu(.com)</p>
+    <p>2021-05-29</p>
+  </body>
+</html>
