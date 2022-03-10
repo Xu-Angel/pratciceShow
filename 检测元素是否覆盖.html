@@ -1,0 +1,92 @@
+<html>
+  <body>
+<style>
+  .bottom,.top {
+    position:fixed;
+    top:0;
+    left:0;
+  }
+  .bottom {
+   
+    width:100px;
+    height: 100px;
+    background:red;
+  }
+  .top {
+    width:100vw;
+    height: 100vh;
+    background:antiquewhite;
+  }
+</style>
+<div class="bottom">
+  底部
+  <button id="close">关闭</button>
+</div>
+<div class="top">
+  顶部
+  <button id="open">打开</button>
+</div>
+</body>
+
+  <script>
+    const closeEl = document.querySelector('#close')
+    const openEl = document.querySelector('#open')
+    const bottomEl = document.querySelector('.bottom')
+    const topEl = document.querySelector('.top')
+    closeEl.addEventListener('click', () => {
+      topEl.style.zIndex = 4
+      bottomEl.style.zIndex = 3
+      console.log(hasOverLayer(bottomEl))
+    })
+    openEl.addEventListener('click', () => {
+      topEl.style.zIndex = 3
+      bottomEl.style.zIndex = 4
+      console.log(hasOverLayer(bottomEl))
+    })
+    new IntersectionObserver(([change]) => {
+      console.log(change.isVisible) // 被覆盖就是false，反之true
+    }, {
+      threshold: [1.0],
+      delay: 1000, 
+      trackVisibility: true,
+    }).observe(bottomEl);
+
+function hasOverLayer(element) {
+  let document = element.ownerDocument,
+      rect = element.getBoundingClientRect(), // 获取目标的矩形信息
+      x = rect.x, 
+      y = rect.y, 
+      width = rect.width, 
+      height = rect.height;
+
+  x |= 0;
+  y |= 0;
+  width |= 0;
+  height |= 0;
+  // 四顶点取样
+  let elements = [
+    document.elementFromPoint(x+1, y+1),
+    document.elementFromPoint(x + width-1, y+1),
+    document.elementFromPoint(x+1, y + height-1),
+    document.elementFromPoint(x + width-1, y + height-1)
+  ];
+  // 判断非本身及非子孙元素
+  return elements.filter((el)=> el !== null).some((el)=> el !== element && !element.contains(el));
+}
+function contains(root, n) {
+  let node = n;
+  while (node) {
+    if (node === root) {
+      return true;
+    }
+    node = node.parentNode;
+  }
+  return false;
+}
+
+console.log(contains(document.body, bottomEl), '-')
+console.log(contains(bottomEl, bottomEl), '-')
+console.log(contains(topEl, bottomEl), '-')
+// dom contains源码
+  </script>
+</html5>

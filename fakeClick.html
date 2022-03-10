@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  when you see the page,the click event has been done
+  <button>x</button>
+
+  <input id="input_username"></input>
+  <script>
+    //---way1
+
+    // btn.click()
+
+    //---way2 https://developer.mozilla.org/zh-CN/docs/Web/API/Event/initEvent
+    // 创建事件.
+
+    // 初始化一个点击事件，
+    const e = document.createEvent('MouseEvents')
+    e.initEvent('click', true, true)
+    btn.dispatchEvent(e)
+
+    //---way3
+    // function fireKeyEvent(element, evtType, keyChar) {
+    // 	element.focus();
+    // 	var KeyboardEventInit = {key:keyChar, code:"", location:0, repeat:false, isComposing:false};
+    // 	var evtObj = new KeyboardEvent(evtType, KeyboardEventInit);
+    // 	element.dispatchEvent(evtObj);
+    // }
+    // var objInput = document.getElementById("input_username");
+    // fireKeyEvent(objInput,"keydown","addddd");
+
+    //----
+    t.value = 'setValue';
+    t.focus()
+  </script>
+</body>
+
+</html>

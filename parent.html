@@ -1,0 +1,31 @@
+<html5>
+  <style>
+    div {
+      border: 1px;
+    }
+  </style>
+  <div class="FFF">FFF</div>
+  <div class="fff">
+    fff
+    <div class="ff">
+      ff
+      <div class="s">s</div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('click', (e) => {
+      // 假设 以fff为界限
+      console.log(e.target.className)
+      console.log(checkElement(e.target, 'fff'))
+    })
+    const checkElementBound = (el, className) => {
+      if (el.className === className) {
+        return true
+      }
+      if (el.parentNode) {
+        return checkElementBound(el.parentNode, className)
+      }
+      return false
+    }
+  </script>
+</html5>

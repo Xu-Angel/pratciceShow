@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .works-item-t {
+        padding-bottom: 133%;
+        position: relative;
+      }
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .img-box {
+        position: relative;
+        padding: 0 50% 66.66% 0;
+      }
+      .banner {
+        padding: 15.15% 0 0;
+        background-size: cover;
+        background-image: url('./111.png');
+      }
+    </style>
+  </head>
+  <body>
+    https://www.zhangxinxu.com/wordpress/2017/08/css-percent-padding-image-layout/
+    <div>
+      背景图
+      <div class="banner"></div>
+    </div>
+    <div class="container">
+      <div>
+        <span>sss</span><br />
+        <span>sss</span><br />
+        <span>sss</span>
+      </div>
+      <div class="works-item-t">
+        <img src="./150x200.png" />
+      </div>
+      图片宽度50%容器宽度，图片高宽比4:3，此时，CSS垂直方向百分比就666了，如下：
+
+      <div>
+        <div class="img-box">
+          <img src="./150x200.png" />
+        </div>
+      </div>
+      https://www.zhangxinxu.com/wordpress/2021/02/css-aspect-ratio/
+      <style>
+        .box {
+          aspect-ratio: 10 / 1;
+          background: deepskyblue;
+        }
+      </style>
+      <div class="box">.box { aspect-ratio: 10 / 1; background: deepskyblue; }</div>
+    </div>
+  </body>
+</html>
