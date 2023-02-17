@@ -1,1 +1,0 @@
-https://www.valentinog.com/blog/cypress/
